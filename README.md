@@ -6,8 +6,8 @@ This is a central multi-package repository under which Dash Platform lives.
 
 When importing a new repository into this multi-package repo, all the commit history will be preserved
 and added to this repo git history. This repository wil have all the commits and history of the repos
-it is constructed from. A new repository can be added via `lerna import %path_to_repo% --preserve-commit` 
-command.
+it is constructed from. A new repository can be added via 
+`lerna import %path_to_repo% --preserve-commit --flatten` command.
 
 ### Running scripts for a specific package withing a repository
 
