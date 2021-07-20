@@ -223,35 +223,35 @@ $root.tendermint = (function() {
             Request.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.echo != null && message.hasOwnProperty("echo"))
+                if (message.echo != null && Object.hasOwnProperty.call(message, "echo"))
                     $root.tendermint.abci.RequestEcho.encode(message.echo, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.flush != null && message.hasOwnProperty("flush"))
+                if (message.flush != null && Object.hasOwnProperty.call(message, "flush"))
                     $root.tendermint.abci.RequestFlush.encode(message.flush, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.info != null && message.hasOwnProperty("info"))
+                if (message.info != null && Object.hasOwnProperty.call(message, "info"))
                     $root.tendermint.abci.RequestInfo.encode(message.info, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.setOption != null && message.hasOwnProperty("setOption"))
+                if (message.setOption != null && Object.hasOwnProperty.call(message, "setOption"))
                     $root.tendermint.abci.RequestSetOption.encode(message.setOption, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.initChain != null && message.hasOwnProperty("initChain"))
+                if (message.initChain != null && Object.hasOwnProperty.call(message, "initChain"))
                     $root.tendermint.abci.RequestInitChain.encode(message.initChain, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.query != null && message.hasOwnProperty("query"))
+                if (message.query != null && Object.hasOwnProperty.call(message, "query"))
                     $root.tendermint.abci.RequestQuery.encode(message.query, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.beginBlock != null && message.hasOwnProperty("beginBlock"))
+                if (message.beginBlock != null && Object.hasOwnProperty.call(message, "beginBlock"))
                     $root.tendermint.abci.RequestBeginBlock.encode(message.beginBlock, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.checkTx != null && message.hasOwnProperty("checkTx"))
+                if (message.checkTx != null && Object.hasOwnProperty.call(message, "checkTx"))
                     $root.tendermint.abci.RequestCheckTx.encode(message.checkTx, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                if (message.deliverTx != null && message.hasOwnProperty("deliverTx"))
+                if (message.deliverTx != null && Object.hasOwnProperty.call(message, "deliverTx"))
                     $root.tendermint.abci.RequestDeliverTx.encode(message.deliverTx, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-                if (message.endBlock != null && message.hasOwnProperty("endBlock"))
+                if (message.endBlock != null && Object.hasOwnProperty.call(message, "endBlock"))
                     $root.tendermint.abci.RequestEndBlock.encode(message.endBlock, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
-                if (message.commit != null && message.hasOwnProperty("commit"))
+                if (message.commit != null && Object.hasOwnProperty.call(message, "commit"))
                     $root.tendermint.abci.RequestCommit.encode(message.commit, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
-                if (message.listSnapshots != null && message.hasOwnProperty("listSnapshots"))
+                if (message.listSnapshots != null && Object.hasOwnProperty.call(message, "listSnapshots"))
                     $root.tendermint.abci.RequestListSnapshots.encode(message.listSnapshots, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
-                if (message.offerSnapshot != null && message.hasOwnProperty("offerSnapshot"))
+                if (message.offerSnapshot != null && Object.hasOwnProperty.call(message, "offerSnapshot"))
                     $root.tendermint.abci.RequestOfferSnapshot.encode(message.offerSnapshot, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
-                if (message.loadSnapshotChunk != null && message.hasOwnProperty("loadSnapshotChunk"))
+                if (message.loadSnapshotChunk != null && Object.hasOwnProperty.call(message, "loadSnapshotChunk"))
                     $root.tendermint.abci.RequestLoadSnapshotChunk.encode(message.loadSnapshotChunk, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
-                if (message.applySnapshotChunk != null && message.hasOwnProperty("applySnapshotChunk"))
+                if (message.applySnapshotChunk != null && Object.hasOwnProperty.call(message, "applySnapshotChunk"))
                     $root.tendermint.abci.RequestApplySnapshotChunk.encode(message.applySnapshotChunk, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
                 return writer;
             };
@@ -770,7 +770,7 @@ $root.tendermint = (function() {
             RequestEcho.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.message != null && message.hasOwnProperty("message"))
+                if (message.message != null && Object.hasOwnProperty.call(message, "message"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.message);
                 return writer;
             };
@@ -1135,11 +1135,11 @@ $root.tendermint = (function() {
             RequestInfo.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.version != null && message.hasOwnProperty("version"))
+                if (message.version != null && Object.hasOwnProperty.call(message, "version"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.version);
-                if (message.blockVersion != null && message.hasOwnProperty("blockVersion"))
+                if (message.blockVersion != null && Object.hasOwnProperty.call(message, "blockVersion"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.blockVersion);
-                if (message.p2pVersion != null && message.hasOwnProperty("p2pVersion"))
+                if (message.p2pVersion != null && Object.hasOwnProperty.call(message, "p2pVersion"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint64(message.p2pVersion);
                 return writer;
             };
@@ -1386,9 +1386,9 @@ $root.tendermint = (function() {
             RequestSetOption.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.key != null && message.hasOwnProperty("key"))
+                if (message.key != null && Object.hasOwnProperty.call(message, "key"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
-                if (message.value != null && message.hasOwnProperty("value"))
+                if (message.value != null && Object.hasOwnProperty.call(message, "value"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.value);
                 return writer;
             };
@@ -1540,9 +1540,10 @@ $root.tendermint = (function() {
              * @property {google.protobuf.ITimestamp|null} [time] RequestInitChain time
              * @property {string|null} [chainId] RequestInitChain chainId
              * @property {tendermint.abci.IConsensusParams|null} [consensusParams] RequestInitChain consensusParams
-             * @property {Array.<tendermint.abci.IValidatorUpdate>|null} [validators] RequestInitChain validators
+             * @property {tendermint.abci.IValidatorSetUpdate|null} [validatorSet] RequestInitChain validatorSet
              * @property {Uint8Array|null} [appStateBytes] RequestInitChain appStateBytes
              * @property {number|Long|null} [initialHeight] RequestInitChain initialHeight
+             * @property {number|null} [initialCoreHeight] RequestInitChain initialCoreHeight
              */
 
             /**
@@ -1554,7 +1555,6 @@ $root.tendermint = (function() {
              * @param {tendermint.abci.IRequestInitChain=} [properties] Properties to set
              */
             function RequestInitChain(properties) {
-                this.validators = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -1586,12 +1586,12 @@ $root.tendermint = (function() {
             RequestInitChain.prototype.consensusParams = null;
 
             /**
-             * RequestInitChain validators.
-             * @member {Array.<tendermint.abci.IValidatorUpdate>} validators
+             * RequestInitChain validatorSet.
+             * @member {tendermint.abci.IValidatorSetUpdate|null|undefined} validatorSet
              * @memberof tendermint.abci.RequestInitChain
              * @instance
              */
-            RequestInitChain.prototype.validators = $util.emptyArray;
+            RequestInitChain.prototype.validatorSet = null;
 
             /**
              * RequestInitChain appStateBytes.
@@ -1608,6 +1608,14 @@ $root.tendermint = (function() {
              * @instance
              */
             RequestInitChain.prototype.initialHeight = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * RequestInitChain initialCoreHeight.
+             * @member {number} initialCoreHeight
+             * @memberof tendermint.abci.RequestInitChain
+             * @instance
+             */
+            RequestInitChain.prototype.initialCoreHeight = 0;
 
             /**
              * Creates a new RequestInitChain instance using the specified properties.
@@ -1633,19 +1641,20 @@ $root.tendermint = (function() {
             RequestInitChain.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.time != null && message.hasOwnProperty("time"))
+                if (message.time != null && Object.hasOwnProperty.call(message, "time"))
                     $root.google.protobuf.Timestamp.encode(message.time, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.chainId != null && message.hasOwnProperty("chainId"))
+                if (message.chainId != null && Object.hasOwnProperty.call(message, "chainId"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.chainId);
-                if (message.consensusParams != null && message.hasOwnProperty("consensusParams"))
+                if (message.consensusParams != null && Object.hasOwnProperty.call(message, "consensusParams"))
                     $root.tendermint.abci.ConsensusParams.encode(message.consensusParams, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.validators != null && message.validators.length)
-                    for (var i = 0; i < message.validators.length; ++i)
-                        $root.tendermint.abci.ValidatorUpdate.encode(message.validators[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.appStateBytes != null && message.hasOwnProperty("appStateBytes"))
+                if (message.validatorSet != null && Object.hasOwnProperty.call(message, "validatorSet"))
+                    $root.tendermint.abci.ValidatorSetUpdate.encode(message.validatorSet, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.appStateBytes != null && Object.hasOwnProperty.call(message, "appStateBytes"))
                     writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.appStateBytes);
-                if (message.initialHeight != null && message.hasOwnProperty("initialHeight"))
+                if (message.initialHeight != null && Object.hasOwnProperty.call(message, "initialHeight"))
                     writer.uint32(/* id 6, wireType 0 =*/48).int64(message.initialHeight);
+                if (message.initialCoreHeight != null && Object.hasOwnProperty.call(message, "initialCoreHeight"))
+                    writer.uint32(/* id 7, wireType 0 =*/56).uint32(message.initialCoreHeight);
                 return writer;
             };
 
@@ -1690,15 +1699,16 @@ $root.tendermint = (function() {
                         message.consensusParams = $root.tendermint.abci.ConsensusParams.decode(reader, reader.uint32());
                         break;
                     case 4:
-                        if (!(message.validators && message.validators.length))
-                            message.validators = [];
-                        message.validators.push($root.tendermint.abci.ValidatorUpdate.decode(reader, reader.uint32()));
+                        message.validatorSet = $root.tendermint.abci.ValidatorSetUpdate.decode(reader, reader.uint32());
                         break;
                     case 5:
                         message.appStateBytes = reader.bytes();
                         break;
                     case 6:
                         message.initialHeight = reader.int64();
+                        break;
+                    case 7:
+                        message.initialCoreHeight = reader.uint32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -1748,14 +1758,10 @@ $root.tendermint = (function() {
                     if (error)
                         return "consensusParams." + error;
                 }
-                if (message.validators != null && message.hasOwnProperty("validators")) {
-                    if (!Array.isArray(message.validators))
-                        return "validators: array expected";
-                    for (var i = 0; i < message.validators.length; ++i) {
-                        var error = $root.tendermint.abci.ValidatorUpdate.verify(message.validators[i]);
-                        if (error)
-                            return "validators." + error;
-                    }
+                if (message.validatorSet != null && message.hasOwnProperty("validatorSet")) {
+                    var error = $root.tendermint.abci.ValidatorSetUpdate.verify(message.validatorSet);
+                    if (error)
+                        return "validatorSet." + error;
                 }
                 if (message.appStateBytes != null && message.hasOwnProperty("appStateBytes"))
                     if (!(message.appStateBytes && typeof message.appStateBytes.length === "number" || $util.isString(message.appStateBytes)))
@@ -1763,6 +1769,9 @@ $root.tendermint = (function() {
                 if (message.initialHeight != null && message.hasOwnProperty("initialHeight"))
                     if (!$util.isInteger(message.initialHeight) && !(message.initialHeight && $util.isInteger(message.initialHeight.low) && $util.isInteger(message.initialHeight.high)))
                         return "initialHeight: integer|Long expected";
+                if (message.initialCoreHeight != null && message.hasOwnProperty("initialCoreHeight"))
+                    if (!$util.isInteger(message.initialCoreHeight))
+                        return "initialCoreHeight: integer expected";
                 return null;
             };
 
@@ -1790,20 +1799,15 @@ $root.tendermint = (function() {
                         throw TypeError(".tendermint.abci.RequestInitChain.consensusParams: object expected");
                     message.consensusParams = $root.tendermint.abci.ConsensusParams.fromObject(object.consensusParams);
                 }
-                if (object.validators) {
-                    if (!Array.isArray(object.validators))
-                        throw TypeError(".tendermint.abci.RequestInitChain.validators: array expected");
-                    message.validators = [];
-                    for (var i = 0; i < object.validators.length; ++i) {
-                        if (typeof object.validators[i] !== "object")
-                            throw TypeError(".tendermint.abci.RequestInitChain.validators: object expected");
-                        message.validators[i] = $root.tendermint.abci.ValidatorUpdate.fromObject(object.validators[i]);
-                    }
+                if (object.validatorSet != null) {
+                    if (typeof object.validatorSet !== "object")
+                        throw TypeError(".tendermint.abci.RequestInitChain.validatorSet: object expected");
+                    message.validatorSet = $root.tendermint.abci.ValidatorSetUpdate.fromObject(object.validatorSet);
                 }
                 if (object.appStateBytes != null)
                     if (typeof object.appStateBytes === "string")
                         $util.base64.decode(object.appStateBytes, message.appStateBytes = $util.newBuffer($util.base64.length(object.appStateBytes)), 0);
-                    else if (object.appStateBytes.length)
+                    else if (object.appStateBytes.length >= 0)
                         message.appStateBytes = object.appStateBytes;
                 if (object.initialHeight != null)
                     if ($util.Long)
@@ -1814,6 +1818,8 @@ $root.tendermint = (function() {
                         message.initialHeight = object.initialHeight;
                     else if (typeof object.initialHeight === "object")
                         message.initialHeight = new $util.LongBits(object.initialHeight.low >>> 0, object.initialHeight.high >>> 0).toNumber();
+                if (object.initialCoreHeight != null)
+                    message.initialCoreHeight = object.initialCoreHeight >>> 0;
                 return message;
             };
 
@@ -1830,12 +1836,11 @@ $root.tendermint = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.arrays || options.defaults)
-                    object.validators = [];
                 if (options.defaults) {
                     object.time = null;
                     object.chainId = "";
                     object.consensusParams = null;
+                    object.validatorSet = null;
                     if (options.bytes === String)
                         object.appStateBytes = "";
                     else {
@@ -1848,6 +1853,7 @@ $root.tendermint = (function() {
                         object.initialHeight = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
                     } else
                         object.initialHeight = options.longs === String ? "0" : 0;
+                    object.initialCoreHeight = 0;
                 }
                 if (message.time != null && message.hasOwnProperty("time"))
                     object.time = $root.google.protobuf.Timestamp.toObject(message.time, options);
@@ -1855,11 +1861,8 @@ $root.tendermint = (function() {
                     object.chainId = message.chainId;
                 if (message.consensusParams != null && message.hasOwnProperty("consensusParams"))
                     object.consensusParams = $root.tendermint.abci.ConsensusParams.toObject(message.consensusParams, options);
-                if (message.validators && message.validators.length) {
-                    object.validators = [];
-                    for (var j = 0; j < message.validators.length; ++j)
-                        object.validators[j] = $root.tendermint.abci.ValidatorUpdate.toObject(message.validators[j], options);
-                }
+                if (message.validatorSet != null && message.hasOwnProperty("validatorSet"))
+                    object.validatorSet = $root.tendermint.abci.ValidatorSetUpdate.toObject(message.validatorSet, options);
                 if (message.appStateBytes != null && message.hasOwnProperty("appStateBytes"))
                     object.appStateBytes = options.bytes === String ? $util.base64.encode(message.appStateBytes, 0, message.appStateBytes.length) : options.bytes === Array ? Array.prototype.slice.call(message.appStateBytes) : message.appStateBytes;
                 if (message.initialHeight != null && message.hasOwnProperty("initialHeight"))
@@ -1867,6 +1870,8 @@ $root.tendermint = (function() {
                         object.initialHeight = options.longs === String ? String(message.initialHeight) : message.initialHeight;
                     else
                         object.initialHeight = options.longs === String ? $util.Long.prototype.toString.call(message.initialHeight) : options.longs === Number ? new $util.LongBits(message.initialHeight.low >>> 0, message.initialHeight.high >>> 0).toNumber() : message.initialHeight;
+                if (message.initialCoreHeight != null && message.hasOwnProperty("initialCoreHeight"))
+                    object.initialCoreHeight = message.initialCoreHeight;
                 return object;
             };
 
@@ -1967,13 +1972,13 @@ $root.tendermint = (function() {
             RequestQuery.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.data != null && message.hasOwnProperty("data"))
+                if (message.data != null && Object.hasOwnProperty.call(message, "data"))
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.data);
-                if (message.path != null && message.hasOwnProperty("path"))
+                if (message.path != null && Object.hasOwnProperty.call(message, "path"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.path);
-                if (message.height != null && message.hasOwnProperty("height"))
+                if (message.height != null && Object.hasOwnProperty.call(message, "height"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int64(message.height);
-                if (message.prove != null && message.hasOwnProperty("prove"))
+                if (message.prove != null && Object.hasOwnProperty.call(message, "prove"))
                     writer.uint32(/* id 4, wireType 0 =*/32).bool(message.prove);
                 return writer;
             };
@@ -2086,7 +2091,7 @@ $root.tendermint = (function() {
                 if (object.data != null)
                     if (typeof object.data === "string")
                         $util.base64.decode(object.data, message.data = $util.newBuffer($util.base64.length(object.data)), 0);
-                    else if (object.data.length)
+                    else if (object.data.length >= 0)
                         message.data = object.data;
                 if (object.path != null)
                     message.path = String(object.path);
@@ -2245,11 +2250,11 @@ $root.tendermint = (function() {
             RequestBeginBlock.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.hash != null && message.hasOwnProperty("hash"))
+                if (message.hash != null && Object.hasOwnProperty.call(message, "hash"))
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.hash);
-                if (message.header != null && message.hasOwnProperty("header"))
+                if (message.header != null && Object.hasOwnProperty.call(message, "header"))
                     $root.tendermint.types.Header.encode(message.header, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.lastCommitInfo != null && message.hasOwnProperty("lastCommitInfo"))
+                if (message.lastCommitInfo != null && Object.hasOwnProperty.call(message, "lastCommitInfo"))
                     $root.tendermint.abci.LastCommitInfo.encode(message.lastCommitInfo, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.byzantineValidators != null && message.byzantineValidators.length)
                     for (var i = 0; i < message.byzantineValidators.length; ++i)
@@ -2377,7 +2382,7 @@ $root.tendermint = (function() {
                 if (object.hash != null)
                     if (typeof object.hash === "string")
                         $util.base64.decode(object.hash, message.hash = $util.newBuffer($util.base64.length(object.hash)), 0);
-                    else if (object.hash.length)
+                    else if (object.hash.length >= 0)
                         message.hash = object.hash;
                 if (object.header != null) {
                     if (typeof object.header !== "object")
@@ -2459,7 +2464,7 @@ $root.tendermint = (function() {
         /**
          * CheckTxType enum.
          * @name tendermint.abci.CheckTxType
-         * @enum {string}
+         * @enum {number}
          * @property {number} NEW=0 NEW value
          * @property {number} RECHECK=1 RECHECK value
          */
@@ -2535,9 +2540,9 @@ $root.tendermint = (function() {
             RequestCheckTx.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.tx != null && message.hasOwnProperty("tx"))
+                if (message.tx != null && Object.hasOwnProperty.call(message, "tx"))
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.tx);
-                if (message.type != null && message.hasOwnProperty("type"))
+                if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.type);
                 return writer;
             };
@@ -2643,7 +2648,7 @@ $root.tendermint = (function() {
                 if (object.tx != null)
                     if (typeof object.tx === "string")
                         $util.base64.decode(object.tx, message.tx = $util.newBuffer($util.base64.length(object.tx)), 0);
-                    else if (object.tx.length)
+                    else if (object.tx.length >= 0)
                         message.tx = object.tx;
                 switch (object.type) {
                 case "NEW":
@@ -2758,7 +2763,7 @@ $root.tendermint = (function() {
             RequestDeliverTx.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.tx != null && message.hasOwnProperty("tx"))
+                if (message.tx != null && Object.hasOwnProperty.call(message, "tx"))
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.tx);
                 return writer;
             };
@@ -2853,7 +2858,7 @@ $root.tendermint = (function() {
                 if (object.tx != null)
                     if (typeof object.tx === "string")
                         $util.base64.decode(object.tx, message.tx = $util.newBuffer($util.base64.length(object.tx)), 0);
-                    else if (object.tx.length)
+                    else if (object.tx.length >= 0)
                         message.tx = object.tx;
                 return message;
             };
@@ -2954,7 +2959,7 @@ $root.tendermint = (function() {
             RequestEndBlock.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.height != null && message.hasOwnProperty("height"))
+                if (message.height != null && Object.hasOwnProperty.call(message, "height"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.height);
                 return writer;
             };
@@ -3484,9 +3489,9 @@ $root.tendermint = (function() {
             RequestOfferSnapshot.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.snapshot != null && message.hasOwnProperty("snapshot"))
+                if (message.snapshot != null && Object.hasOwnProperty.call(message, "snapshot"))
                     $root.tendermint.abci.Snapshot.encode(message.snapshot, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.appHash != null && message.hasOwnProperty("appHash"))
+                if (message.appHash != null && Object.hasOwnProperty.call(message, "appHash"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.appHash);
                 return writer;
             };
@@ -3594,7 +3599,7 @@ $root.tendermint = (function() {
                 if (object.appHash != null)
                     if (typeof object.appHash === "string")
                         $util.base64.decode(object.appHash, message.appHash = $util.newBuffer($util.base64.length(object.appHash)), 0);
-                    else if (object.appHash.length)
+                    else if (object.appHash.length >= 0)
                         message.appHash = object.appHash;
                 return message;
             };
@@ -3717,11 +3722,11 @@ $root.tendermint = (function() {
             RequestLoadSnapshotChunk.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.height != null && message.hasOwnProperty("height"))
+                if (message.height != null && Object.hasOwnProperty.call(message, "height"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.height);
-                if (message.format != null && message.hasOwnProperty("format"))
+                if (message.format != null && Object.hasOwnProperty.call(message, "format"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.format);
-                if (message.chunk != null && message.hasOwnProperty("chunk"))
+                if (message.chunk != null && Object.hasOwnProperty.call(message, "chunk"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.chunk);
                 return writer;
             };
@@ -3963,11 +3968,11 @@ $root.tendermint = (function() {
             RequestApplySnapshotChunk.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.index != null && message.hasOwnProperty("index"))
+                if (message.index != null && Object.hasOwnProperty.call(message, "index"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.index);
-                if (message.chunk != null && message.hasOwnProperty("chunk"))
+                if (message.chunk != null && Object.hasOwnProperty.call(message, "chunk"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.chunk);
-                if (message.sender != null && message.hasOwnProperty("sender"))
+                if (message.sender != null && Object.hasOwnProperty.call(message, "sender"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.sender);
                 return writer;
             };
@@ -4076,7 +4081,7 @@ $root.tendermint = (function() {
                 if (object.chunk != null)
                     if (typeof object.chunk === "string")
                         $util.base64.decode(object.chunk, message.chunk = $util.newBuffer($util.base64.length(object.chunk)), 0);
-                    else if (object.chunk.length)
+                    else if (object.chunk.length >= 0)
                         message.chunk = object.chunk;
                 if (object.sender != null)
                     message.sender = String(object.sender);
@@ -4335,37 +4340,37 @@ $root.tendermint = (function() {
             Response.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.exception != null && message.hasOwnProperty("exception"))
+                if (message.exception != null && Object.hasOwnProperty.call(message, "exception"))
                     $root.tendermint.abci.ResponseException.encode(message.exception, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.echo != null && message.hasOwnProperty("echo"))
+                if (message.echo != null && Object.hasOwnProperty.call(message, "echo"))
                     $root.tendermint.abci.ResponseEcho.encode(message.echo, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.flush != null && message.hasOwnProperty("flush"))
+                if (message.flush != null && Object.hasOwnProperty.call(message, "flush"))
                     $root.tendermint.abci.ResponseFlush.encode(message.flush, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.info != null && message.hasOwnProperty("info"))
+                if (message.info != null && Object.hasOwnProperty.call(message, "info"))
                     $root.tendermint.abci.ResponseInfo.encode(message.info, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.setOption != null && message.hasOwnProperty("setOption"))
+                if (message.setOption != null && Object.hasOwnProperty.call(message, "setOption"))
                     $root.tendermint.abci.ResponseSetOption.encode(message.setOption, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.initChain != null && message.hasOwnProperty("initChain"))
+                if (message.initChain != null && Object.hasOwnProperty.call(message, "initChain"))
                     $root.tendermint.abci.ResponseInitChain.encode(message.initChain, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.query != null && message.hasOwnProperty("query"))
+                if (message.query != null && Object.hasOwnProperty.call(message, "query"))
                     $root.tendermint.abci.ResponseQuery.encode(message.query, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.beginBlock != null && message.hasOwnProperty("beginBlock"))
+                if (message.beginBlock != null && Object.hasOwnProperty.call(message, "beginBlock"))
                     $root.tendermint.abci.ResponseBeginBlock.encode(message.beginBlock, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                if (message.checkTx != null && message.hasOwnProperty("checkTx"))
+                if (message.checkTx != null && Object.hasOwnProperty.call(message, "checkTx"))
                     $root.tendermint.abci.ResponseCheckTx.encode(message.checkTx, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-                if (message.deliverTx != null && message.hasOwnProperty("deliverTx"))
+                if (message.deliverTx != null && Object.hasOwnProperty.call(message, "deliverTx"))
                     $root.tendermint.abci.ResponseDeliverTx.encode(message.deliverTx, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
-                if (message.endBlock != null && message.hasOwnProperty("endBlock"))
+                if (message.endBlock != null && Object.hasOwnProperty.call(message, "endBlock"))
                     $root.tendermint.abci.ResponseEndBlock.encode(message.endBlock, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
-                if (message.commit != null && message.hasOwnProperty("commit"))
+                if (message.commit != null && Object.hasOwnProperty.call(message, "commit"))
                     $root.tendermint.abci.ResponseCommit.encode(message.commit, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
-                if (message.listSnapshots != null && message.hasOwnProperty("listSnapshots"))
+                if (message.listSnapshots != null && Object.hasOwnProperty.call(message, "listSnapshots"))
                     $root.tendermint.abci.ResponseListSnapshots.encode(message.listSnapshots, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
-                if (message.offerSnapshot != null && message.hasOwnProperty("offerSnapshot"))
+                if (message.offerSnapshot != null && Object.hasOwnProperty.call(message, "offerSnapshot"))
                     $root.tendermint.abci.ResponseOfferSnapshot.encode(message.offerSnapshot, writer.uint32(/* id 14, wireType 2 =*/114).fork()).ldelim();
-                if (message.loadSnapshotChunk != null && message.hasOwnProperty("loadSnapshotChunk"))
+                if (message.loadSnapshotChunk != null && Object.hasOwnProperty.call(message, "loadSnapshotChunk"))
                     $root.tendermint.abci.ResponseLoadSnapshotChunk.encode(message.loadSnapshotChunk, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
-                if (message.applySnapshotChunk != null && message.hasOwnProperty("applySnapshotChunk"))
+                if (message.applySnapshotChunk != null && Object.hasOwnProperty.call(message, "applySnapshotChunk"))
                     $root.tendermint.abci.ResponseApplySnapshotChunk.encode(message.applySnapshotChunk, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 return writer;
             };
@@ -4907,7 +4912,7 @@ $root.tendermint = (function() {
             ResponseException.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.error != null && message.hasOwnProperty("error"))
+                if (message.error != null && Object.hasOwnProperty.call(message, "error"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.error);
                 return writer;
             };
@@ -5094,7 +5099,7 @@ $root.tendermint = (function() {
             ResponseEcho.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.message != null && message.hasOwnProperty("message"))
+                if (message.message != null && Object.hasOwnProperty.call(message, "message"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.message);
                 return writer;
             };
@@ -5396,6 +5401,7 @@ $root.tendermint = (function() {
              * @property {number|Long|null} [appVersion] ResponseInfo appVersion
              * @property {number|Long|null} [lastBlockHeight] ResponseInfo lastBlockHeight
              * @property {Uint8Array|null} [lastBlockAppHash] ResponseInfo lastBlockAppHash
+             * @property {number|null} [lastCoreChainLockedHeight] ResponseInfo lastCoreChainLockedHeight
              */
 
             /**
@@ -5454,6 +5460,14 @@ $root.tendermint = (function() {
             ResponseInfo.prototype.lastBlockAppHash = $util.newBuffer([]);
 
             /**
+             * ResponseInfo lastCoreChainLockedHeight.
+             * @member {number} lastCoreChainLockedHeight
+             * @memberof tendermint.abci.ResponseInfo
+             * @instance
+             */
+            ResponseInfo.prototype.lastCoreChainLockedHeight = 0;
+
+            /**
              * Creates a new ResponseInfo instance using the specified properties.
              * @function create
              * @memberof tendermint.abci.ResponseInfo
@@ -5477,16 +5491,18 @@ $root.tendermint = (function() {
             ResponseInfo.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.data != null && message.hasOwnProperty("data"))
+                if (message.data != null && Object.hasOwnProperty.call(message, "data"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.data);
-                if (message.version != null && message.hasOwnProperty("version"))
+                if (message.version != null && Object.hasOwnProperty.call(message, "version"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.version);
-                if (message.appVersion != null && message.hasOwnProperty("appVersion"))
+                if (message.appVersion != null && Object.hasOwnProperty.call(message, "appVersion"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint64(message.appVersion);
-                if (message.lastBlockHeight != null && message.hasOwnProperty("lastBlockHeight"))
+                if (message.lastBlockHeight != null && Object.hasOwnProperty.call(message, "lastBlockHeight"))
                     writer.uint32(/* id 4, wireType 0 =*/32).int64(message.lastBlockHeight);
-                if (message.lastBlockAppHash != null && message.hasOwnProperty("lastBlockAppHash"))
+                if (message.lastBlockAppHash != null && Object.hasOwnProperty.call(message, "lastBlockAppHash"))
                     writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.lastBlockAppHash);
+                if (message.lastCoreChainLockedHeight != null && Object.hasOwnProperty.call(message, "lastCoreChainLockedHeight"))
+                    writer.uint32(/* id 100, wireType 0 =*/800).uint32(message.lastCoreChainLockedHeight);
                 return writer;
             };
 
@@ -5535,6 +5551,9 @@ $root.tendermint = (function() {
                         break;
                     case 5:
                         message.lastBlockAppHash = reader.bytes();
+                        break;
+                    case 100:
+                        message.lastCoreChainLockedHeight = reader.uint32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5586,6 +5605,9 @@ $root.tendermint = (function() {
                 if (message.lastBlockAppHash != null && message.hasOwnProperty("lastBlockAppHash"))
                     if (!(message.lastBlockAppHash && typeof message.lastBlockAppHash.length === "number" || $util.isString(message.lastBlockAppHash)))
                         return "lastBlockAppHash: buffer expected";
+                if (message.lastCoreChainLockedHeight != null && message.hasOwnProperty("lastCoreChainLockedHeight"))
+                    if (!$util.isInteger(message.lastCoreChainLockedHeight))
+                        return "lastCoreChainLockedHeight: integer expected";
                 return null;
             };
 
@@ -5626,8 +5648,10 @@ $root.tendermint = (function() {
                 if (object.lastBlockAppHash != null)
                     if (typeof object.lastBlockAppHash === "string")
                         $util.base64.decode(object.lastBlockAppHash, message.lastBlockAppHash = $util.newBuffer($util.base64.length(object.lastBlockAppHash)), 0);
-                    else if (object.lastBlockAppHash.length)
+                    else if (object.lastBlockAppHash.length >= 0)
                         message.lastBlockAppHash = object.lastBlockAppHash;
+                if (object.lastCoreChainLockedHeight != null)
+                    message.lastCoreChainLockedHeight = object.lastCoreChainLockedHeight >>> 0;
                 return message;
             };
 
@@ -5664,6 +5688,7 @@ $root.tendermint = (function() {
                         if (options.bytes !== Array)
                             object.lastBlockAppHash = $util.newBuffer(object.lastBlockAppHash);
                     }
+                    object.lastCoreChainLockedHeight = 0;
                 }
                 if (message.data != null && message.hasOwnProperty("data"))
                     object.data = message.data;
@@ -5681,6 +5706,8 @@ $root.tendermint = (function() {
                         object.lastBlockHeight = options.longs === String ? $util.Long.prototype.toString.call(message.lastBlockHeight) : options.longs === Number ? new $util.LongBits(message.lastBlockHeight.low >>> 0, message.lastBlockHeight.high >>> 0).toNumber() : message.lastBlockHeight;
                 if (message.lastBlockAppHash != null && message.hasOwnProperty("lastBlockAppHash"))
                     object.lastBlockAppHash = options.bytes === String ? $util.base64.encode(message.lastBlockAppHash, 0, message.lastBlockAppHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.lastBlockAppHash) : message.lastBlockAppHash;
+                if (message.lastCoreChainLockedHeight != null && message.hasOwnProperty("lastCoreChainLockedHeight"))
+                    object.lastCoreChainLockedHeight = message.lastCoreChainLockedHeight;
                 return object;
             };
 
@@ -5772,11 +5799,11 @@ $root.tendermint = (function() {
             ResponseSetOption.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.code != null && message.hasOwnProperty("code"))
+                if (message.code != null && Object.hasOwnProperty.call(message, "code"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.code);
-                if (message.log != null && message.hasOwnProperty("log"))
+                if (message.log != null && Object.hasOwnProperty.call(message, "log"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.log);
-                if (message.info != null && message.hasOwnProperty("info"))
+                if (message.info != null && Object.hasOwnProperty.call(message, "info"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.info);
                 return writer;
             };
@@ -5937,8 +5964,9 @@ $root.tendermint = (function() {
              * @memberof tendermint.abci
              * @interface IResponseInitChain
              * @property {tendermint.abci.IConsensusParams|null} [consensusParams] ResponseInitChain consensusParams
-             * @property {Array.<tendermint.abci.IValidatorUpdate>|null} [validators] ResponseInitChain validators
              * @property {Uint8Array|null} [appHash] ResponseInitChain appHash
+             * @property {tendermint.abci.IValidatorSetUpdate|null} [validatorSetUpdate] ResponseInitChain validatorSetUpdate
+             * @property {tendermint.types.ICoreChainLock|null} [nextCoreChainLockUpdate] ResponseInitChain nextCoreChainLockUpdate
              */
 
             /**
@@ -5950,7 +5978,6 @@ $root.tendermint = (function() {
              * @param {tendermint.abci.IResponseInitChain=} [properties] Properties to set
              */
             function ResponseInitChain(properties) {
-                this.validators = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -5966,20 +5993,28 @@ $root.tendermint = (function() {
             ResponseInitChain.prototype.consensusParams = null;
 
             /**
-             * ResponseInitChain validators.
-             * @member {Array.<tendermint.abci.IValidatorUpdate>} validators
-             * @memberof tendermint.abci.ResponseInitChain
-             * @instance
-             */
-            ResponseInitChain.prototype.validators = $util.emptyArray;
-
-            /**
              * ResponseInitChain appHash.
              * @member {Uint8Array} appHash
              * @memberof tendermint.abci.ResponseInitChain
              * @instance
              */
             ResponseInitChain.prototype.appHash = $util.newBuffer([]);
+
+            /**
+             * ResponseInitChain validatorSetUpdate.
+             * @member {tendermint.abci.IValidatorSetUpdate|null|undefined} validatorSetUpdate
+             * @memberof tendermint.abci.ResponseInitChain
+             * @instance
+             */
+            ResponseInitChain.prototype.validatorSetUpdate = null;
+
+            /**
+             * ResponseInitChain nextCoreChainLockUpdate.
+             * @member {tendermint.types.ICoreChainLock|null|undefined} nextCoreChainLockUpdate
+             * @memberof tendermint.abci.ResponseInitChain
+             * @instance
+             */
+            ResponseInitChain.prototype.nextCoreChainLockUpdate = null;
 
             /**
              * Creates a new ResponseInitChain instance using the specified properties.
@@ -6005,13 +6040,14 @@ $root.tendermint = (function() {
             ResponseInitChain.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.consensusParams != null && message.hasOwnProperty("consensusParams"))
+                if (message.consensusParams != null && Object.hasOwnProperty.call(message, "consensusParams"))
                     $root.tendermint.abci.ConsensusParams.encode(message.consensusParams, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.validators != null && message.validators.length)
-                    for (var i = 0; i < message.validators.length; ++i)
-                        $root.tendermint.abci.ValidatorUpdate.encode(message.validators[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.appHash != null && message.hasOwnProperty("appHash"))
+                if (message.appHash != null && Object.hasOwnProperty.call(message, "appHash"))
                     writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.appHash);
+                if (message.validatorSetUpdate != null && Object.hasOwnProperty.call(message, "validatorSetUpdate"))
+                    $root.tendermint.abci.ValidatorSetUpdate.encode(message.validatorSetUpdate, writer.uint32(/* id 100, wireType 2 =*/802).fork()).ldelim();
+                if (message.nextCoreChainLockUpdate != null && Object.hasOwnProperty.call(message, "nextCoreChainLockUpdate"))
+                    $root.tendermint.types.CoreChainLock.encode(message.nextCoreChainLockUpdate, writer.uint32(/* id 101, wireType 2 =*/810).fork()).ldelim();
                 return writer;
             };
 
@@ -6049,13 +6085,14 @@ $root.tendermint = (function() {
                     case 1:
                         message.consensusParams = $root.tendermint.abci.ConsensusParams.decode(reader, reader.uint32());
                         break;
-                    case 2:
-                        if (!(message.validators && message.validators.length))
-                            message.validators = [];
-                        message.validators.push($root.tendermint.abci.ValidatorUpdate.decode(reader, reader.uint32()));
-                        break;
                     case 3:
                         message.appHash = reader.bytes();
+                        break;
+                    case 100:
+                        message.validatorSetUpdate = $root.tendermint.abci.ValidatorSetUpdate.decode(reader, reader.uint32());
+                        break;
+                    case 101:
+                        message.nextCoreChainLockUpdate = $root.tendermint.types.CoreChainLock.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -6097,18 +6134,19 @@ $root.tendermint = (function() {
                     if (error)
                         return "consensusParams." + error;
                 }
-                if (message.validators != null && message.hasOwnProperty("validators")) {
-                    if (!Array.isArray(message.validators))
-                        return "validators: array expected";
-                    for (var i = 0; i < message.validators.length; ++i) {
-                        var error = $root.tendermint.abci.ValidatorUpdate.verify(message.validators[i]);
-                        if (error)
-                            return "validators." + error;
-                    }
-                }
                 if (message.appHash != null && message.hasOwnProperty("appHash"))
                     if (!(message.appHash && typeof message.appHash.length === "number" || $util.isString(message.appHash)))
                         return "appHash: buffer expected";
+                if (message.validatorSetUpdate != null && message.hasOwnProperty("validatorSetUpdate")) {
+                    var error = $root.tendermint.abci.ValidatorSetUpdate.verify(message.validatorSetUpdate);
+                    if (error)
+                        return "validatorSetUpdate." + error;
+                }
+                if (message.nextCoreChainLockUpdate != null && message.hasOwnProperty("nextCoreChainLockUpdate")) {
+                    var error = $root.tendermint.types.CoreChainLock.verify(message.nextCoreChainLockUpdate);
+                    if (error)
+                        return "nextCoreChainLockUpdate." + error;
+                }
                 return null;
             };
 
@@ -6129,21 +6167,21 @@ $root.tendermint = (function() {
                         throw TypeError(".tendermint.abci.ResponseInitChain.consensusParams: object expected");
                     message.consensusParams = $root.tendermint.abci.ConsensusParams.fromObject(object.consensusParams);
                 }
-                if (object.validators) {
-                    if (!Array.isArray(object.validators))
-                        throw TypeError(".tendermint.abci.ResponseInitChain.validators: array expected");
-                    message.validators = [];
-                    for (var i = 0; i < object.validators.length; ++i) {
-                        if (typeof object.validators[i] !== "object")
-                            throw TypeError(".tendermint.abci.ResponseInitChain.validators: object expected");
-                        message.validators[i] = $root.tendermint.abci.ValidatorUpdate.fromObject(object.validators[i]);
-                    }
-                }
                 if (object.appHash != null)
                     if (typeof object.appHash === "string")
                         $util.base64.decode(object.appHash, message.appHash = $util.newBuffer($util.base64.length(object.appHash)), 0);
-                    else if (object.appHash.length)
+                    else if (object.appHash.length >= 0)
                         message.appHash = object.appHash;
+                if (object.validatorSetUpdate != null) {
+                    if (typeof object.validatorSetUpdate !== "object")
+                        throw TypeError(".tendermint.abci.ResponseInitChain.validatorSetUpdate: object expected");
+                    message.validatorSetUpdate = $root.tendermint.abci.ValidatorSetUpdate.fromObject(object.validatorSetUpdate);
+                }
+                if (object.nextCoreChainLockUpdate != null) {
+                    if (typeof object.nextCoreChainLockUpdate !== "object")
+                        throw TypeError(".tendermint.abci.ResponseInitChain.nextCoreChainLockUpdate: object expected");
+                    message.nextCoreChainLockUpdate = $root.tendermint.types.CoreChainLock.fromObject(object.nextCoreChainLockUpdate);
+                }
                 return message;
             };
 
@@ -6160,8 +6198,6 @@ $root.tendermint = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.arrays || options.defaults)
-                    object.validators = [];
                 if (options.defaults) {
                     object.consensusParams = null;
                     if (options.bytes === String)
@@ -6171,16 +6207,17 @@ $root.tendermint = (function() {
                         if (options.bytes !== Array)
                             object.appHash = $util.newBuffer(object.appHash);
                     }
+                    object.validatorSetUpdate = null;
+                    object.nextCoreChainLockUpdate = null;
                 }
                 if (message.consensusParams != null && message.hasOwnProperty("consensusParams"))
                     object.consensusParams = $root.tendermint.abci.ConsensusParams.toObject(message.consensusParams, options);
-                if (message.validators && message.validators.length) {
-                    object.validators = [];
-                    for (var j = 0; j < message.validators.length; ++j)
-                        object.validators[j] = $root.tendermint.abci.ValidatorUpdate.toObject(message.validators[j], options);
-                }
                 if (message.appHash != null && message.hasOwnProperty("appHash"))
                     object.appHash = options.bytes === String ? $util.base64.encode(message.appHash, 0, message.appHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.appHash) : message.appHash;
+                if (message.validatorSetUpdate != null && message.hasOwnProperty("validatorSetUpdate"))
+                    object.validatorSetUpdate = $root.tendermint.abci.ValidatorSetUpdate.toObject(message.validatorSetUpdate, options);
+                if (message.nextCoreChainLockUpdate != null && message.hasOwnProperty("nextCoreChainLockUpdate"))
+                    object.nextCoreChainLockUpdate = $root.tendermint.types.CoreChainLock.toObject(message.nextCoreChainLockUpdate, options);
                 return object;
             };
 
@@ -6326,23 +6363,23 @@ $root.tendermint = (function() {
             ResponseQuery.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.code != null && message.hasOwnProperty("code"))
+                if (message.code != null && Object.hasOwnProperty.call(message, "code"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.code);
-                if (message.log != null && message.hasOwnProperty("log"))
+                if (message.log != null && Object.hasOwnProperty.call(message, "log"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.log);
-                if (message.info != null && message.hasOwnProperty("info"))
+                if (message.info != null && Object.hasOwnProperty.call(message, "info"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.info);
-                if (message.index != null && message.hasOwnProperty("index"))
+                if (message.index != null && Object.hasOwnProperty.call(message, "index"))
                     writer.uint32(/* id 5, wireType 0 =*/40).int64(message.index);
-                if (message.key != null && message.hasOwnProperty("key"))
+                if (message.key != null && Object.hasOwnProperty.call(message, "key"))
                     writer.uint32(/* id 6, wireType 2 =*/50).bytes(message.key);
-                if (message.value != null && message.hasOwnProperty("value"))
+                if (message.value != null && Object.hasOwnProperty.call(message, "value"))
                     writer.uint32(/* id 7, wireType 2 =*/58).bytes(message.value);
-                if (message.proofOps != null && message.hasOwnProperty("proofOps"))
+                if (message.proofOps != null && Object.hasOwnProperty.call(message, "proofOps"))
                     $root.tendermint.crypto.ProofOps.encode(message.proofOps, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                if (message.height != null && message.hasOwnProperty("height"))
+                if (message.height != null && Object.hasOwnProperty.call(message, "height"))
                     writer.uint32(/* id 9, wireType 0 =*/72).int64(message.height);
-                if (message.codespace != null && message.hasOwnProperty("codespace"))
+                if (message.codespace != null && Object.hasOwnProperty.call(message, "codespace"))
                     writer.uint32(/* id 10, wireType 2 =*/82).string(message.codespace);
                 return writer;
             };
@@ -6502,12 +6539,12 @@ $root.tendermint = (function() {
                 if (object.key != null)
                     if (typeof object.key === "string")
                         $util.base64.decode(object.key, message.key = $util.newBuffer($util.base64.length(object.key)), 0);
-                    else if (object.key.length)
+                    else if (object.key.length >= 0)
                         message.key = object.key;
                 if (object.value != null)
                     if (typeof object.value === "string")
                         $util.base64.decode(object.value, message.value = $util.newBuffer($util.base64.length(object.value)), 0);
-                    else if (object.value.length)
+                    else if (object.value.length >= 0)
                         message.value = object.value;
                 if (object.proofOps != null) {
                     if (typeof object.proofOps !== "object")
@@ -6941,22 +6978,22 @@ $root.tendermint = (function() {
             ResponseCheckTx.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.code != null && message.hasOwnProperty("code"))
+                if (message.code != null && Object.hasOwnProperty.call(message, "code"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.code);
-                if (message.data != null && message.hasOwnProperty("data"))
+                if (message.data != null && Object.hasOwnProperty.call(message, "data"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.data);
-                if (message.log != null && message.hasOwnProperty("log"))
+                if (message.log != null && Object.hasOwnProperty.call(message, "log"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.log);
-                if (message.info != null && message.hasOwnProperty("info"))
+                if (message.info != null && Object.hasOwnProperty.call(message, "info"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.info);
-                if (message.gasWanted != null && message.hasOwnProperty("gasWanted"))
+                if (message.gasWanted != null && Object.hasOwnProperty.call(message, "gasWanted"))
                     writer.uint32(/* id 5, wireType 0 =*/40).int64(message.gasWanted);
-                if (message.gasUsed != null && message.hasOwnProperty("gasUsed"))
+                if (message.gasUsed != null && Object.hasOwnProperty.call(message, "gasUsed"))
                     writer.uint32(/* id 6, wireType 0 =*/48).int64(message.gasUsed);
                 if (message.events != null && message.events.length)
                     for (var i = 0; i < message.events.length; ++i)
                         $root.tendermint.abci.Event.encode(message.events[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.codespace != null && message.hasOwnProperty("codespace"))
+                if (message.codespace != null && Object.hasOwnProperty.call(message, "codespace"))
                     writer.uint32(/* id 8, wireType 2 =*/66).string(message.codespace);
                 return writer;
             };
@@ -7103,7 +7140,7 @@ $root.tendermint = (function() {
                 if (object.data != null)
                     if (typeof object.data === "string")
                         $util.base64.decode(object.data, message.data = $util.newBuffer($util.base64.length(object.data)), 0);
-                    else if (object.data.length)
+                    else if (object.data.length >= 0)
                         message.data = object.data;
                 if (object.log != null)
                     message.log = String(object.log);
@@ -7342,22 +7379,22 @@ $root.tendermint = (function() {
             ResponseDeliverTx.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.code != null && message.hasOwnProperty("code"))
+                if (message.code != null && Object.hasOwnProperty.call(message, "code"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.code);
-                if (message.data != null && message.hasOwnProperty("data"))
+                if (message.data != null && Object.hasOwnProperty.call(message, "data"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.data);
-                if (message.log != null && message.hasOwnProperty("log"))
+                if (message.log != null && Object.hasOwnProperty.call(message, "log"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.log);
-                if (message.info != null && message.hasOwnProperty("info"))
+                if (message.info != null && Object.hasOwnProperty.call(message, "info"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.info);
-                if (message.gasWanted != null && message.hasOwnProperty("gasWanted"))
+                if (message.gasWanted != null && Object.hasOwnProperty.call(message, "gasWanted"))
                     writer.uint32(/* id 5, wireType 0 =*/40).int64(message.gasWanted);
-                if (message.gasUsed != null && message.hasOwnProperty("gasUsed"))
+                if (message.gasUsed != null && Object.hasOwnProperty.call(message, "gasUsed"))
                     writer.uint32(/* id 6, wireType 0 =*/48).int64(message.gasUsed);
                 if (message.events != null && message.events.length)
                     for (var i = 0; i < message.events.length; ++i)
                         $root.tendermint.abci.Event.encode(message.events[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.codespace != null && message.hasOwnProperty("codespace"))
+                if (message.codespace != null && Object.hasOwnProperty.call(message, "codespace"))
                     writer.uint32(/* id 8, wireType 2 =*/66).string(message.codespace);
                 return writer;
             };
@@ -7504,7 +7541,7 @@ $root.tendermint = (function() {
                 if (object.data != null)
                     if (typeof object.data === "string")
                         $util.base64.decode(object.data, message.data = $util.newBuffer($util.base64.length(object.data)), 0);
-                    else if (object.data.length)
+                    else if (object.data.length >= 0)
                         message.data = object.data;
                 if (object.log != null)
                     message.log = String(object.log);
@@ -7629,10 +7666,10 @@ $root.tendermint = (function() {
              * Properties of a ResponseEndBlock.
              * @memberof tendermint.abci
              * @interface IResponseEndBlock
-             * @property {Array.<tendermint.abci.IValidatorUpdate>|null} [validatorUpdates] ResponseEndBlock validatorUpdates
              * @property {tendermint.abci.IConsensusParams|null} [consensusParamUpdates] ResponseEndBlock consensusParamUpdates
              * @property {Array.<tendermint.abci.IEvent>|null} [events] ResponseEndBlock events
              * @property {tendermint.types.ICoreChainLock|null} [nextCoreChainLockUpdate] ResponseEndBlock nextCoreChainLockUpdate
+             * @property {tendermint.abci.IValidatorSetUpdate|null} [validatorSetUpdate] ResponseEndBlock validatorSetUpdate
              */
 
             /**
@@ -7644,21 +7681,12 @@ $root.tendermint = (function() {
              * @param {tendermint.abci.IResponseEndBlock=} [properties] Properties to set
              */
             function ResponseEndBlock(properties) {
-                this.validatorUpdates = [];
                 this.events = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
-
-            /**
-             * ResponseEndBlock validatorUpdates.
-             * @member {Array.<tendermint.abci.IValidatorUpdate>} validatorUpdates
-             * @memberof tendermint.abci.ResponseEndBlock
-             * @instance
-             */
-            ResponseEndBlock.prototype.validatorUpdates = $util.emptyArray;
 
             /**
              * ResponseEndBlock consensusParamUpdates.
@@ -7685,6 +7713,14 @@ $root.tendermint = (function() {
             ResponseEndBlock.prototype.nextCoreChainLockUpdate = null;
 
             /**
+             * ResponseEndBlock validatorSetUpdate.
+             * @member {tendermint.abci.IValidatorSetUpdate|null|undefined} validatorSetUpdate
+             * @memberof tendermint.abci.ResponseEndBlock
+             * @instance
+             */
+            ResponseEndBlock.prototype.validatorSetUpdate = null;
+
+            /**
              * Creates a new ResponseEndBlock instance using the specified properties.
              * @function create
              * @memberof tendermint.abci.ResponseEndBlock
@@ -7708,16 +7744,15 @@ $root.tendermint = (function() {
             ResponseEndBlock.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.validatorUpdates != null && message.validatorUpdates.length)
-                    for (var i = 0; i < message.validatorUpdates.length; ++i)
-                        $root.tendermint.abci.ValidatorUpdate.encode(message.validatorUpdates[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.consensusParamUpdates != null && message.hasOwnProperty("consensusParamUpdates"))
+                if (message.consensusParamUpdates != null && Object.hasOwnProperty.call(message, "consensusParamUpdates"))
                     $root.tendermint.abci.ConsensusParams.encode(message.consensusParamUpdates, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.events != null && message.events.length)
                     for (var i = 0; i < message.events.length; ++i)
                         $root.tendermint.abci.Event.encode(message.events[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.nextCoreChainLockUpdate != null && message.hasOwnProperty("nextCoreChainLockUpdate"))
+                if (message.nextCoreChainLockUpdate != null && Object.hasOwnProperty.call(message, "nextCoreChainLockUpdate"))
                     $root.tendermint.types.CoreChainLock.encode(message.nextCoreChainLockUpdate, writer.uint32(/* id 100, wireType 2 =*/802).fork()).ldelim();
+                if (message.validatorSetUpdate != null && Object.hasOwnProperty.call(message, "validatorSetUpdate"))
+                    $root.tendermint.abci.ValidatorSetUpdate.encode(message.validatorSetUpdate, writer.uint32(/* id 101, wireType 2 =*/810).fork()).ldelim();
                 return writer;
             };
 
@@ -7752,11 +7787,6 @@ $root.tendermint = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1:
-                        if (!(message.validatorUpdates && message.validatorUpdates.length))
-                            message.validatorUpdates = [];
-                        message.validatorUpdates.push($root.tendermint.abci.ValidatorUpdate.decode(reader, reader.uint32()));
-                        break;
                     case 2:
                         message.consensusParamUpdates = $root.tendermint.abci.ConsensusParams.decode(reader, reader.uint32());
                         break;
@@ -7767,6 +7797,9 @@ $root.tendermint = (function() {
                         break;
                     case 100:
                         message.nextCoreChainLockUpdate = $root.tendermint.types.CoreChainLock.decode(reader, reader.uint32());
+                        break;
+                    case 101:
+                        message.validatorSetUpdate = $root.tendermint.abci.ValidatorSetUpdate.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -7803,15 +7836,6 @@ $root.tendermint = (function() {
             ResponseEndBlock.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.validatorUpdates != null && message.hasOwnProperty("validatorUpdates")) {
-                    if (!Array.isArray(message.validatorUpdates))
-                        return "validatorUpdates: array expected";
-                    for (var i = 0; i < message.validatorUpdates.length; ++i) {
-                        var error = $root.tendermint.abci.ValidatorUpdate.verify(message.validatorUpdates[i]);
-                        if (error)
-                            return "validatorUpdates." + error;
-                    }
-                }
                 if (message.consensusParamUpdates != null && message.hasOwnProperty("consensusParamUpdates")) {
                     var error = $root.tendermint.abci.ConsensusParams.verify(message.consensusParamUpdates);
                     if (error)
@@ -7831,6 +7855,11 @@ $root.tendermint = (function() {
                     if (error)
                         return "nextCoreChainLockUpdate." + error;
                 }
+                if (message.validatorSetUpdate != null && message.hasOwnProperty("validatorSetUpdate")) {
+                    var error = $root.tendermint.abci.ValidatorSetUpdate.verify(message.validatorSetUpdate);
+                    if (error)
+                        return "validatorSetUpdate." + error;
+                }
                 return null;
             };
 
@@ -7846,16 +7875,6 @@ $root.tendermint = (function() {
                 if (object instanceof $root.tendermint.abci.ResponseEndBlock)
                     return object;
                 var message = new $root.tendermint.abci.ResponseEndBlock();
-                if (object.validatorUpdates) {
-                    if (!Array.isArray(object.validatorUpdates))
-                        throw TypeError(".tendermint.abci.ResponseEndBlock.validatorUpdates: array expected");
-                    message.validatorUpdates = [];
-                    for (var i = 0; i < object.validatorUpdates.length; ++i) {
-                        if (typeof object.validatorUpdates[i] !== "object")
-                            throw TypeError(".tendermint.abci.ResponseEndBlock.validatorUpdates: object expected");
-                        message.validatorUpdates[i] = $root.tendermint.abci.ValidatorUpdate.fromObject(object.validatorUpdates[i]);
-                    }
-                }
                 if (object.consensusParamUpdates != null) {
                     if (typeof object.consensusParamUpdates !== "object")
                         throw TypeError(".tendermint.abci.ResponseEndBlock.consensusParamUpdates: object expected");
@@ -7876,6 +7895,11 @@ $root.tendermint = (function() {
                         throw TypeError(".tendermint.abci.ResponseEndBlock.nextCoreChainLockUpdate: object expected");
                     message.nextCoreChainLockUpdate = $root.tendermint.types.CoreChainLock.fromObject(object.nextCoreChainLockUpdate);
                 }
+                if (object.validatorSetUpdate != null) {
+                    if (typeof object.validatorSetUpdate !== "object")
+                        throw TypeError(".tendermint.abci.ResponseEndBlock.validatorSetUpdate: object expected");
+                    message.validatorSetUpdate = $root.tendermint.abci.ValidatorSetUpdate.fromObject(object.validatorSetUpdate);
+                }
                 return message;
             };
 
@@ -7892,18 +7916,12 @@ $root.tendermint = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.arrays || options.defaults) {
-                    object.validatorUpdates = [];
+                if (options.arrays || options.defaults)
                     object.events = [];
-                }
                 if (options.defaults) {
                     object.consensusParamUpdates = null;
                     object.nextCoreChainLockUpdate = null;
-                }
-                if (message.validatorUpdates && message.validatorUpdates.length) {
-                    object.validatorUpdates = [];
-                    for (var j = 0; j < message.validatorUpdates.length; ++j)
-                        object.validatorUpdates[j] = $root.tendermint.abci.ValidatorUpdate.toObject(message.validatorUpdates[j], options);
+                    object.validatorSetUpdate = null;
                 }
                 if (message.consensusParamUpdates != null && message.hasOwnProperty("consensusParamUpdates"))
                     object.consensusParamUpdates = $root.tendermint.abci.ConsensusParams.toObject(message.consensusParamUpdates, options);
@@ -7914,6 +7932,8 @@ $root.tendermint = (function() {
                 }
                 if (message.nextCoreChainLockUpdate != null && message.hasOwnProperty("nextCoreChainLockUpdate"))
                     object.nextCoreChainLockUpdate = $root.tendermint.types.CoreChainLock.toObject(message.nextCoreChainLockUpdate, options);
+                if (message.validatorSetUpdate != null && message.hasOwnProperty("validatorSetUpdate"))
+                    object.validatorSetUpdate = $root.tendermint.abci.ValidatorSetUpdate.toObject(message.validatorSetUpdate, options);
                 return object;
             };
 
@@ -7996,9 +8016,9 @@ $root.tendermint = (function() {
             ResponseCommit.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.data != null && message.hasOwnProperty("data"))
+                if (message.data != null && Object.hasOwnProperty.call(message, "data"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.data);
-                if (message.retainHeight != null && message.hasOwnProperty("retainHeight"))
+                if (message.retainHeight != null && Object.hasOwnProperty.call(message, "retainHeight"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int64(message.retainHeight);
                 return writer;
             };
@@ -8099,7 +8119,7 @@ $root.tendermint = (function() {
                 if (object.data != null)
                     if (typeof object.data === "string")
                         $util.base64.decode(object.data, message.data = $util.newBuffer($util.base64.length(object.data)), 0);
-                    else if (object.data.length)
+                    else if (object.data.length >= 0)
                         message.data = object.data;
                 if (object.retainHeight != null)
                     if ($util.Long)
@@ -8428,7 +8448,7 @@ $root.tendermint = (function() {
             ResponseOfferSnapshot.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.result != null && message.hasOwnProperty("result"))
+                if (message.result != null && Object.hasOwnProperty.call(message, "result"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.result);
                 return writer;
             };
@@ -8592,7 +8612,7 @@ $root.tendermint = (function() {
             /**
              * Result enum.
              * @name tendermint.abci.ResponseOfferSnapshot.Result
-             * @enum {string}
+             * @enum {number}
              * @property {number} UNKNOWN=0 UNKNOWN value
              * @property {number} ACCEPT=1 ACCEPT value
              * @property {number} ABORT=2 ABORT value
@@ -8670,7 +8690,7 @@ $root.tendermint = (function() {
             ResponseLoadSnapshotChunk.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.chunk != null && message.hasOwnProperty("chunk"))
+                if (message.chunk != null && Object.hasOwnProperty.call(message, "chunk"))
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.chunk);
                 return writer;
             };
@@ -8765,7 +8785,7 @@ $root.tendermint = (function() {
                 if (object.chunk != null)
                     if (typeof object.chunk === "string")
                         $util.base64.decode(object.chunk, message.chunk = $util.newBuffer($util.base64.length(object.chunk)), 0);
-                    else if (object.chunk.length)
+                    else if (object.chunk.length >= 0)
                         message.chunk = object.chunk;
                 return message;
             };
@@ -8886,7 +8906,7 @@ $root.tendermint = (function() {
             ResponseApplySnapshotChunk.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.result != null && message.hasOwnProperty("result"))
+                if (message.result != null && Object.hasOwnProperty.call(message, "result"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.result);
                 if (message.refetchChunks != null && message.refetchChunks.length) {
                     writer.uint32(/* id 2, wireType 2 =*/18).fork();
@@ -9116,7 +9136,7 @@ $root.tendermint = (function() {
             /**
              * Result enum.
              * @name tendermint.abci.ResponseApplySnapshotChunk.Result
-             * @enum {string}
+             * @enum {number}
              * @property {number} UNKNOWN=0 UNKNOWN value
              * @property {number} ACCEPT=1 ACCEPT value
              * @property {number} ABORT=2 ABORT value
@@ -9221,13 +9241,13 @@ $root.tendermint = (function() {
             ConsensusParams.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.block != null && message.hasOwnProperty("block"))
+                if (message.block != null && Object.hasOwnProperty.call(message, "block"))
                     $root.tendermint.abci.BlockParams.encode(message.block, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.evidence != null && message.hasOwnProperty("evidence"))
+                if (message.evidence != null && Object.hasOwnProperty.call(message, "evidence"))
                     $root.tendermint.types.EvidenceParams.encode(message.evidence, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.validator != null && message.hasOwnProperty("validator"))
+                if (message.validator != null && Object.hasOwnProperty.call(message, "validator"))
                     $root.tendermint.types.ValidatorParams.encode(message.validator, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.version != null && message.hasOwnProperty("version"))
+                if (message.version != null && Object.hasOwnProperty.call(message, "version"))
                     $root.tendermint.types.VersionParams.encode(message.version, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
@@ -9477,9 +9497,9 @@ $root.tendermint = (function() {
             BlockParams.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.maxBytes != null && message.hasOwnProperty("maxBytes"))
+                if (message.maxBytes != null && Object.hasOwnProperty.call(message, "maxBytes"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.maxBytes);
-                if (message.maxGas != null && message.hasOwnProperty("maxGas"))
+                if (message.maxGas != null && Object.hasOwnProperty.call(message, "maxGas"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int64(message.maxGas);
                 return writer;
             };
@@ -9657,7 +9677,9 @@ $root.tendermint = (function() {
              * @memberof tendermint.abci
              * @interface ILastCommitInfo
              * @property {number|null} [round] LastCommitInfo round
-             * @property {Array.<tendermint.abci.IVoteInfo>|null} [votes] LastCommitInfo votes
+             * @property {Uint8Array|null} [quorumHash] LastCommitInfo quorumHash
+             * @property {Uint8Array|null} [blockSignature] LastCommitInfo blockSignature
+             * @property {Uint8Array|null} [stateSignature] LastCommitInfo stateSignature
              */
 
             /**
@@ -9669,7 +9691,6 @@ $root.tendermint = (function() {
              * @param {tendermint.abci.ILastCommitInfo=} [properties] Properties to set
              */
             function LastCommitInfo(properties) {
-                this.votes = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -9685,12 +9706,28 @@ $root.tendermint = (function() {
             LastCommitInfo.prototype.round = 0;
 
             /**
-             * LastCommitInfo votes.
-             * @member {Array.<tendermint.abci.IVoteInfo>} votes
+             * LastCommitInfo quorumHash.
+             * @member {Uint8Array} quorumHash
              * @memberof tendermint.abci.LastCommitInfo
              * @instance
              */
-            LastCommitInfo.prototype.votes = $util.emptyArray;
+            LastCommitInfo.prototype.quorumHash = $util.newBuffer([]);
+
+            /**
+             * LastCommitInfo blockSignature.
+             * @member {Uint8Array} blockSignature
+             * @memberof tendermint.abci.LastCommitInfo
+             * @instance
+             */
+            LastCommitInfo.prototype.blockSignature = $util.newBuffer([]);
+
+            /**
+             * LastCommitInfo stateSignature.
+             * @member {Uint8Array} stateSignature
+             * @memberof tendermint.abci.LastCommitInfo
+             * @instance
+             */
+            LastCommitInfo.prototype.stateSignature = $util.newBuffer([]);
 
             /**
              * Creates a new LastCommitInfo instance using the specified properties.
@@ -9716,11 +9753,14 @@ $root.tendermint = (function() {
             LastCommitInfo.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.round != null && message.hasOwnProperty("round"))
+                if (message.round != null && Object.hasOwnProperty.call(message, "round"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.round);
-                if (message.votes != null && message.votes.length)
-                    for (var i = 0; i < message.votes.length; ++i)
-                        $root.tendermint.abci.VoteInfo.encode(message.votes[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.quorumHash != null && Object.hasOwnProperty.call(message, "quorumHash"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.quorumHash);
+                if (message.blockSignature != null && Object.hasOwnProperty.call(message, "blockSignature"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.blockSignature);
+                if (message.stateSignature != null && Object.hasOwnProperty.call(message, "stateSignature"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.stateSignature);
                 return writer;
             };
 
@@ -9758,10 +9798,14 @@ $root.tendermint = (function() {
                     case 1:
                         message.round = reader.int32();
                         break;
-                    case 2:
-                        if (!(message.votes && message.votes.length))
-                            message.votes = [];
-                        message.votes.push($root.tendermint.abci.VoteInfo.decode(reader, reader.uint32()));
+                    case 3:
+                        message.quorumHash = reader.bytes();
+                        break;
+                    case 4:
+                        message.blockSignature = reader.bytes();
+                        break;
+                    case 5:
+                        message.stateSignature = reader.bytes();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -9801,15 +9845,15 @@ $root.tendermint = (function() {
                 if (message.round != null && message.hasOwnProperty("round"))
                     if (!$util.isInteger(message.round))
                         return "round: integer expected";
-                if (message.votes != null && message.hasOwnProperty("votes")) {
-                    if (!Array.isArray(message.votes))
-                        return "votes: array expected";
-                    for (var i = 0; i < message.votes.length; ++i) {
-                        var error = $root.tendermint.abci.VoteInfo.verify(message.votes[i]);
-                        if (error)
-                            return "votes." + error;
-                    }
-                }
+                if (message.quorumHash != null && message.hasOwnProperty("quorumHash"))
+                    if (!(message.quorumHash && typeof message.quorumHash.length === "number" || $util.isString(message.quorumHash)))
+                        return "quorumHash: buffer expected";
+                if (message.blockSignature != null && message.hasOwnProperty("blockSignature"))
+                    if (!(message.blockSignature && typeof message.blockSignature.length === "number" || $util.isString(message.blockSignature)))
+                        return "blockSignature: buffer expected";
+                if (message.stateSignature != null && message.hasOwnProperty("stateSignature"))
+                    if (!(message.stateSignature && typeof message.stateSignature.length === "number" || $util.isString(message.stateSignature)))
+                        return "stateSignature: buffer expected";
                 return null;
             };
 
@@ -9827,16 +9871,21 @@ $root.tendermint = (function() {
                 var message = new $root.tendermint.abci.LastCommitInfo();
                 if (object.round != null)
                     message.round = object.round | 0;
-                if (object.votes) {
-                    if (!Array.isArray(object.votes))
-                        throw TypeError(".tendermint.abci.LastCommitInfo.votes: array expected");
-                    message.votes = [];
-                    for (var i = 0; i < object.votes.length; ++i) {
-                        if (typeof object.votes[i] !== "object")
-                            throw TypeError(".tendermint.abci.LastCommitInfo.votes: object expected");
-                        message.votes[i] = $root.tendermint.abci.VoteInfo.fromObject(object.votes[i]);
-                    }
-                }
+                if (object.quorumHash != null)
+                    if (typeof object.quorumHash === "string")
+                        $util.base64.decode(object.quorumHash, message.quorumHash = $util.newBuffer($util.base64.length(object.quorumHash)), 0);
+                    else if (object.quorumHash.length >= 0)
+                        message.quorumHash = object.quorumHash;
+                if (object.blockSignature != null)
+                    if (typeof object.blockSignature === "string")
+                        $util.base64.decode(object.blockSignature, message.blockSignature = $util.newBuffer($util.base64.length(object.blockSignature)), 0);
+                    else if (object.blockSignature.length >= 0)
+                        message.blockSignature = object.blockSignature;
+                if (object.stateSignature != null)
+                    if (typeof object.stateSignature === "string")
+                        $util.base64.decode(object.stateSignature, message.stateSignature = $util.newBuffer($util.base64.length(object.stateSignature)), 0);
+                    else if (object.stateSignature.length >= 0)
+                        message.stateSignature = object.stateSignature;
                 return message;
             };
 
@@ -9853,17 +9902,38 @@ $root.tendermint = (function() {
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.arrays || options.defaults)
-                    object.votes = [];
-                if (options.defaults)
+                if (options.defaults) {
                     object.round = 0;
+                    if (options.bytes === String)
+                        object.quorumHash = "";
+                    else {
+                        object.quorumHash = [];
+                        if (options.bytes !== Array)
+                            object.quorumHash = $util.newBuffer(object.quorumHash);
+                    }
+                    if (options.bytes === String)
+                        object.blockSignature = "";
+                    else {
+                        object.blockSignature = [];
+                        if (options.bytes !== Array)
+                            object.blockSignature = $util.newBuffer(object.blockSignature);
+                    }
+                    if (options.bytes === String)
+                        object.stateSignature = "";
+                    else {
+                        object.stateSignature = [];
+                        if (options.bytes !== Array)
+                            object.stateSignature = $util.newBuffer(object.stateSignature);
+                    }
+                }
                 if (message.round != null && message.hasOwnProperty("round"))
                     object.round = message.round;
-                if (message.votes && message.votes.length) {
-                    object.votes = [];
-                    for (var j = 0; j < message.votes.length; ++j)
-                        object.votes[j] = $root.tendermint.abci.VoteInfo.toObject(message.votes[j], options);
-                }
+                if (message.quorumHash != null && message.hasOwnProperty("quorumHash"))
+                    object.quorumHash = options.bytes === String ? $util.base64.encode(message.quorumHash, 0, message.quorumHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.quorumHash) : message.quorumHash;
+                if (message.blockSignature != null && message.hasOwnProperty("blockSignature"))
+                    object.blockSignature = options.bytes === String ? $util.base64.encode(message.blockSignature, 0, message.blockSignature.length) : options.bytes === Array ? Array.prototype.slice.call(message.blockSignature) : message.blockSignature;
+                if (message.stateSignature != null && message.hasOwnProperty("stateSignature"))
+                    object.stateSignature = options.bytes === String ? $util.base64.encode(message.stateSignature, 0, message.stateSignature.length) : options.bytes === Array ? Array.prototype.slice.call(message.stateSignature) : message.stateSignature;
                 return object;
             };
 
@@ -9947,7 +10017,7 @@ $root.tendermint = (function() {
             Event.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.type != null && message.hasOwnProperty("type"))
+                if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.type);
                 if (message.attributes != null && message.attributes.length)
                     for (var i = 0; i < message.attributes.length; ++i)
@@ -10186,11 +10256,11 @@ $root.tendermint = (function() {
             EventAttribute.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.key != null && message.hasOwnProperty("key"))
+                if (message.key != null && Object.hasOwnProperty.call(message, "key"))
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.key);
-                if (message.value != null && message.hasOwnProperty("value"))
+                if (message.value != null && Object.hasOwnProperty.call(message, "value"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.value);
-                if (message.index != null && message.hasOwnProperty("index"))
+                if (message.index != null && Object.hasOwnProperty.call(message, "index"))
                     writer.uint32(/* id 3, wireType 0 =*/24).bool(message.index);
                 return writer;
             };
@@ -10297,12 +10367,12 @@ $root.tendermint = (function() {
                 if (object.key != null)
                     if (typeof object.key === "string")
                         $util.base64.decode(object.key, message.key = $util.newBuffer($util.base64.length(object.key)), 0);
-                    else if (object.key.length)
+                    else if (object.key.length >= 0)
                         message.key = object.key;
                 if (object.value != null)
                     if (typeof object.value === "string")
                         $util.base64.decode(object.value, message.value = $util.newBuffer($util.base64.length(object.value)), 0);
-                    else if (object.value.length)
+                    else if (object.value.length >= 0)
                         message.value = object.value;
                 if (object.index != null)
                     message.index = Boolean(object.index);
@@ -10445,13 +10515,13 @@ $root.tendermint = (function() {
             TxResult.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.height != null && message.hasOwnProperty("height"))
+                if (message.height != null && Object.hasOwnProperty.call(message, "height"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.height);
-                if (message.index != null && message.hasOwnProperty("index"))
+                if (message.index != null && Object.hasOwnProperty.call(message, "index"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.index);
-                if (message.tx != null && message.hasOwnProperty("tx"))
+                if (message.tx != null && Object.hasOwnProperty.call(message, "tx"))
                     writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.tx);
-                if (message.result != null && message.hasOwnProperty("result"))
+                if (message.result != null && Object.hasOwnProperty.call(message, "result"))
                     $root.tendermint.abci.ResponseDeliverTx.encode(message.result, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
@@ -10577,7 +10647,7 @@ $root.tendermint = (function() {
                 if (object.tx != null)
                     if (typeof object.tx === "string")
                         $util.base64.decode(object.tx, message.tx = $util.newBuffer($util.base64.length(object.tx)), 0);
-                    else if (object.tx.length)
+                    else if (object.tx.length >= 0)
                         message.tx = object.tx;
                 if (object.result != null) {
                     if (typeof object.result !== "object")
@@ -10650,8 +10720,8 @@ $root.tendermint = (function() {
              * Properties of a Validator.
              * @memberof tendermint.abci
              * @interface IValidator
-             * @property {Uint8Array|null} [address] Validator address
              * @property {number|Long|null} [power] Validator power
+             * @property {Uint8Array|null} [proTxHash] Validator proTxHash
              */
 
             /**
@@ -10670,20 +10740,20 @@ $root.tendermint = (function() {
             }
 
             /**
-             * Validator address.
-             * @member {Uint8Array} address
-             * @memberof tendermint.abci.Validator
-             * @instance
-             */
-            Validator.prototype.address = $util.newBuffer([]);
-
-            /**
              * Validator power.
              * @member {number|Long} power
              * @memberof tendermint.abci.Validator
              * @instance
              */
             Validator.prototype.power = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Validator proTxHash.
+             * @member {Uint8Array} proTxHash
+             * @memberof tendermint.abci.Validator
+             * @instance
+             */
+            Validator.prototype.proTxHash = $util.newBuffer([]);
 
             /**
              * Creates a new Validator instance using the specified properties.
@@ -10709,10 +10779,10 @@ $root.tendermint = (function() {
             Validator.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.address != null && message.hasOwnProperty("address"))
-                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.address);
-                if (message.power != null && message.hasOwnProperty("power"))
+                if (message.power != null && Object.hasOwnProperty.call(message, "power"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int64(message.power);
+                if (message.proTxHash != null && Object.hasOwnProperty.call(message, "proTxHash"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.proTxHash);
                 return writer;
             };
 
@@ -10747,11 +10817,11 @@ $root.tendermint = (function() {
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
-                    case 1:
-                        message.address = reader.bytes();
-                        break;
                     case 3:
                         message.power = reader.int64();
+                        break;
+                    case 4:
+                        message.proTxHash = reader.bytes();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -10788,12 +10858,12 @@ $root.tendermint = (function() {
             Validator.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
-                if (message.address != null && message.hasOwnProperty("address"))
-                    if (!(message.address && typeof message.address.length === "number" || $util.isString(message.address)))
-                        return "address: buffer expected";
                 if (message.power != null && message.hasOwnProperty("power"))
                     if (!$util.isInteger(message.power) && !(message.power && $util.isInteger(message.power.low) && $util.isInteger(message.power.high)))
                         return "power: integer|Long expected";
+                if (message.proTxHash != null && message.hasOwnProperty("proTxHash"))
+                    if (!(message.proTxHash && typeof message.proTxHash.length === "number" || $util.isString(message.proTxHash)))
+                        return "proTxHash: buffer expected";
                 return null;
             };
 
@@ -10809,11 +10879,6 @@ $root.tendermint = (function() {
                 if (object instanceof $root.tendermint.abci.Validator)
                     return object;
                 var message = new $root.tendermint.abci.Validator();
-                if (object.address != null)
-                    if (typeof object.address === "string")
-                        $util.base64.decode(object.address, message.address = $util.newBuffer($util.base64.length(object.address)), 0);
-                    else if (object.address.length)
-                        message.address = object.address;
                 if (object.power != null)
                     if ($util.Long)
                         (message.power = $util.Long.fromValue(object.power)).unsigned = false;
@@ -10823,6 +10888,11 @@ $root.tendermint = (function() {
                         message.power = object.power;
                     else if (typeof object.power === "object")
                         message.power = new $util.LongBits(object.power.low >>> 0, object.power.high >>> 0).toNumber();
+                if (object.proTxHash != null)
+                    if (typeof object.proTxHash === "string")
+                        $util.base64.decode(object.proTxHash, message.proTxHash = $util.newBuffer($util.base64.length(object.proTxHash)), 0);
+                    else if (object.proTxHash.length >= 0)
+                        message.proTxHash = object.proTxHash;
                 return message;
             };
 
@@ -10840,26 +10910,26 @@ $root.tendermint = (function() {
                     options = {};
                 var object = {};
                 if (options.defaults) {
-                    if (options.bytes === String)
-                        object.address = "";
-                    else {
-                        object.address = [];
-                        if (options.bytes !== Array)
-                            object.address = $util.newBuffer(object.address);
-                    }
                     if ($util.Long) {
                         var long = new $util.Long(0, 0, false);
                         object.power = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
                     } else
                         object.power = options.longs === String ? "0" : 0;
+                    if (options.bytes === String)
+                        object.proTxHash = "";
+                    else {
+                        object.proTxHash = [];
+                        if (options.bytes !== Array)
+                            object.proTxHash = $util.newBuffer(object.proTxHash);
+                    }
                 }
-                if (message.address != null && message.hasOwnProperty("address"))
-                    object.address = options.bytes === String ? $util.base64.encode(message.address, 0, message.address.length) : options.bytes === Array ? Array.prototype.slice.call(message.address) : message.address;
                 if (message.power != null && message.hasOwnProperty("power"))
                     if (typeof message.power === "number")
                         object.power = options.longs === String ? String(message.power) : message.power;
                     else
                         object.power = options.longs === String ? $util.Long.prototype.toString.call(message.power) : options.longs === Number ? new $util.LongBits(message.power.low >>> 0, message.power.high >>> 0).toNumber() : message.power;
+                if (message.proTxHash != null && message.hasOwnProperty("proTxHash"))
+                    object.proTxHash = options.bytes === String ? $util.base64.encode(message.proTxHash, 0, message.proTxHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.proTxHash) : message.proTxHash;
                 return object;
             };
 
@@ -10885,6 +10955,7 @@ $root.tendermint = (function() {
              * @interface IValidatorUpdate
              * @property {tendermint.crypto.IPublicKey|null} [pubKey] ValidatorUpdate pubKey
              * @property {number|Long|null} [power] ValidatorUpdate power
+             * @property {Uint8Array|null} [proTxHash] ValidatorUpdate proTxHash
              */
 
             /**
@@ -10919,6 +10990,14 @@ $root.tendermint = (function() {
             ValidatorUpdate.prototype.power = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
 
             /**
+             * ValidatorUpdate proTxHash.
+             * @member {Uint8Array} proTxHash
+             * @memberof tendermint.abci.ValidatorUpdate
+             * @instance
+             */
+            ValidatorUpdate.prototype.proTxHash = $util.newBuffer([]);
+
+            /**
              * Creates a new ValidatorUpdate instance using the specified properties.
              * @function create
              * @memberof tendermint.abci.ValidatorUpdate
@@ -10942,10 +11021,12 @@ $root.tendermint = (function() {
             ValidatorUpdate.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.pubKey != null && message.hasOwnProperty("pubKey"))
+                if (message.pubKey != null && Object.hasOwnProperty.call(message, "pubKey"))
                     $root.tendermint.crypto.PublicKey.encode(message.pubKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.power != null && message.hasOwnProperty("power"))
+                if (message.power != null && Object.hasOwnProperty.call(message, "power"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int64(message.power);
+                if (message.proTxHash != null && Object.hasOwnProperty.call(message, "proTxHash"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.proTxHash);
                 return writer;
             };
 
@@ -10985,6 +11066,9 @@ $root.tendermint = (function() {
                         break;
                     case 2:
                         message.power = reader.int64();
+                        break;
+                    case 3:
+                        message.proTxHash = reader.bytes();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11029,6 +11113,9 @@ $root.tendermint = (function() {
                 if (message.power != null && message.hasOwnProperty("power"))
                     if (!$util.isInteger(message.power) && !(message.power && $util.isInteger(message.power.low) && $util.isInteger(message.power.high)))
                         return "power: integer|Long expected";
+                if (message.proTxHash != null && message.hasOwnProperty("proTxHash"))
+                    if (!(message.proTxHash && typeof message.proTxHash.length === "number" || $util.isString(message.proTxHash)))
+                        return "proTxHash: buffer expected";
                 return null;
             };
 
@@ -11058,6 +11145,11 @@ $root.tendermint = (function() {
                         message.power = object.power;
                     else if (typeof object.power === "object")
                         message.power = new $util.LongBits(object.power.low >>> 0, object.power.high >>> 0).toNumber();
+                if (object.proTxHash != null)
+                    if (typeof object.proTxHash === "string")
+                        $util.base64.decode(object.proTxHash, message.proTxHash = $util.newBuffer($util.base64.length(object.proTxHash)), 0);
+                    else if (object.proTxHash.length >= 0)
+                        message.proTxHash = object.proTxHash;
                 return message;
             };
 
@@ -11081,6 +11173,13 @@ $root.tendermint = (function() {
                         object.power = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
                     } else
                         object.power = options.longs === String ? "0" : 0;
+                    if (options.bytes === String)
+                        object.proTxHash = "";
+                    else {
+                        object.proTxHash = [];
+                        if (options.bytes !== Array)
+                            object.proTxHash = $util.newBuffer(object.proTxHash);
+                    }
                 }
                 if (message.pubKey != null && message.hasOwnProperty("pubKey"))
                     object.pubKey = $root.tendermint.crypto.PublicKey.toObject(message.pubKey, options);
@@ -11089,6 +11188,8 @@ $root.tendermint = (function() {
                         object.power = options.longs === String ? String(message.power) : message.power;
                     else
                         object.power = options.longs === String ? $util.Long.prototype.toString.call(message.power) : options.longs === Number ? new $util.LongBits(message.power.low >>> 0, message.power.high >>> 0).toNumber() : message.power;
+                if (message.proTxHash != null && message.hasOwnProperty("proTxHash"))
+                    object.proTxHash = options.bytes === String ? $util.base64.encode(message.proTxHash, 0, message.proTxHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.proTxHash) : message.proTxHash;
                 return object;
             };
 
@@ -11104,6 +11205,662 @@ $root.tendermint = (function() {
             };
 
             return ValidatorUpdate;
+        })();
+
+        abci.ValidatorSetUpdate = (function() {
+
+            /**
+             * Properties of a ValidatorSetUpdate.
+             * @memberof tendermint.abci
+             * @interface IValidatorSetUpdate
+             * @property {Array.<tendermint.abci.IValidatorUpdate>|null} [validatorUpdates] ValidatorSetUpdate validatorUpdates
+             * @property {tendermint.crypto.IPublicKey|null} [thresholdPublicKey] ValidatorSetUpdate thresholdPublicKey
+             * @property {Uint8Array|null} [quorumHash] ValidatorSetUpdate quorumHash
+             */
+
+            /**
+             * Constructs a new ValidatorSetUpdate.
+             * @memberof tendermint.abci
+             * @classdesc Represents a ValidatorSetUpdate.
+             * @implements IValidatorSetUpdate
+             * @constructor
+             * @param {tendermint.abci.IValidatorSetUpdate=} [properties] Properties to set
+             */
+            function ValidatorSetUpdate(properties) {
+                this.validatorUpdates = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ValidatorSetUpdate validatorUpdates.
+             * @member {Array.<tendermint.abci.IValidatorUpdate>} validatorUpdates
+             * @memberof tendermint.abci.ValidatorSetUpdate
+             * @instance
+             */
+            ValidatorSetUpdate.prototype.validatorUpdates = $util.emptyArray;
+
+            /**
+             * ValidatorSetUpdate thresholdPublicKey.
+             * @member {tendermint.crypto.IPublicKey|null|undefined} thresholdPublicKey
+             * @memberof tendermint.abci.ValidatorSetUpdate
+             * @instance
+             */
+            ValidatorSetUpdate.prototype.thresholdPublicKey = null;
+
+            /**
+             * ValidatorSetUpdate quorumHash.
+             * @member {Uint8Array} quorumHash
+             * @memberof tendermint.abci.ValidatorSetUpdate
+             * @instance
+             */
+            ValidatorSetUpdate.prototype.quorumHash = $util.newBuffer([]);
+
+            /**
+             * Creates a new ValidatorSetUpdate instance using the specified properties.
+             * @function create
+             * @memberof tendermint.abci.ValidatorSetUpdate
+             * @static
+             * @param {tendermint.abci.IValidatorSetUpdate=} [properties] Properties to set
+             * @returns {tendermint.abci.ValidatorSetUpdate} ValidatorSetUpdate instance
+             */
+            ValidatorSetUpdate.create = function create(properties) {
+                return new ValidatorSetUpdate(properties);
+            };
+
+            /**
+             * Encodes the specified ValidatorSetUpdate message. Does not implicitly {@link tendermint.abci.ValidatorSetUpdate.verify|verify} messages.
+             * @function encode
+             * @memberof tendermint.abci.ValidatorSetUpdate
+             * @static
+             * @param {tendermint.abci.IValidatorSetUpdate} message ValidatorSetUpdate message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ValidatorSetUpdate.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.validatorUpdates != null && message.validatorUpdates.length)
+                    for (var i = 0; i < message.validatorUpdates.length; ++i)
+                        $root.tendermint.abci.ValidatorUpdate.encode(message.validatorUpdates[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.thresholdPublicKey != null && Object.hasOwnProperty.call(message, "thresholdPublicKey"))
+                    $root.tendermint.crypto.PublicKey.encode(message.thresholdPublicKey, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.quorumHash != null && Object.hasOwnProperty.call(message, "quorumHash"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.quorumHash);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified ValidatorSetUpdate message, length delimited. Does not implicitly {@link tendermint.abci.ValidatorSetUpdate.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof tendermint.abci.ValidatorSetUpdate
+             * @static
+             * @param {tendermint.abci.IValidatorSetUpdate} message ValidatorSetUpdate message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ValidatorSetUpdate.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a ValidatorSetUpdate message from the specified reader or buffer.
+             * @function decode
+             * @memberof tendermint.abci.ValidatorSetUpdate
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {tendermint.abci.ValidatorSetUpdate} ValidatorSetUpdate
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ValidatorSetUpdate.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.tendermint.abci.ValidatorSetUpdate();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.validatorUpdates && message.validatorUpdates.length))
+                            message.validatorUpdates = [];
+                        message.validatorUpdates.push($root.tendermint.abci.ValidatorUpdate.decode(reader, reader.uint32()));
+                        break;
+                    case 2:
+                        message.thresholdPublicKey = $root.tendermint.crypto.PublicKey.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.quorumHash = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a ValidatorSetUpdate message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof tendermint.abci.ValidatorSetUpdate
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {tendermint.abci.ValidatorSetUpdate} ValidatorSetUpdate
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ValidatorSetUpdate.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a ValidatorSetUpdate message.
+             * @function verify
+             * @memberof tendermint.abci.ValidatorSetUpdate
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ValidatorSetUpdate.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.validatorUpdates != null && message.hasOwnProperty("validatorUpdates")) {
+                    if (!Array.isArray(message.validatorUpdates))
+                        return "validatorUpdates: array expected";
+                    for (var i = 0; i < message.validatorUpdates.length; ++i) {
+                        var error = $root.tendermint.abci.ValidatorUpdate.verify(message.validatorUpdates[i]);
+                        if (error)
+                            return "validatorUpdates." + error;
+                    }
+                }
+                if (message.thresholdPublicKey != null && message.hasOwnProperty("thresholdPublicKey")) {
+                    var error = $root.tendermint.crypto.PublicKey.verify(message.thresholdPublicKey);
+                    if (error)
+                        return "thresholdPublicKey." + error;
+                }
+                if (message.quorumHash != null && message.hasOwnProperty("quorumHash"))
+                    if (!(message.quorumHash && typeof message.quorumHash.length === "number" || $util.isString(message.quorumHash)))
+                        return "quorumHash: buffer expected";
+                return null;
+            };
+
+            /**
+             * Creates a ValidatorSetUpdate message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof tendermint.abci.ValidatorSetUpdate
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {tendermint.abci.ValidatorSetUpdate} ValidatorSetUpdate
+             */
+            ValidatorSetUpdate.fromObject = function fromObject(object) {
+                if (object instanceof $root.tendermint.abci.ValidatorSetUpdate)
+                    return object;
+                var message = new $root.tendermint.abci.ValidatorSetUpdate();
+                if (object.validatorUpdates) {
+                    if (!Array.isArray(object.validatorUpdates))
+                        throw TypeError(".tendermint.abci.ValidatorSetUpdate.validatorUpdates: array expected");
+                    message.validatorUpdates = [];
+                    for (var i = 0; i < object.validatorUpdates.length; ++i) {
+                        if (typeof object.validatorUpdates[i] !== "object")
+                            throw TypeError(".tendermint.abci.ValidatorSetUpdate.validatorUpdates: object expected");
+                        message.validatorUpdates[i] = $root.tendermint.abci.ValidatorUpdate.fromObject(object.validatorUpdates[i]);
+                    }
+                }
+                if (object.thresholdPublicKey != null) {
+                    if (typeof object.thresholdPublicKey !== "object")
+                        throw TypeError(".tendermint.abci.ValidatorSetUpdate.thresholdPublicKey: object expected");
+                    message.thresholdPublicKey = $root.tendermint.crypto.PublicKey.fromObject(object.thresholdPublicKey);
+                }
+                if (object.quorumHash != null)
+                    if (typeof object.quorumHash === "string")
+                        $util.base64.decode(object.quorumHash, message.quorumHash = $util.newBuffer($util.base64.length(object.quorumHash)), 0);
+                    else if (object.quorumHash.length >= 0)
+                        message.quorumHash = object.quorumHash;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a ValidatorSetUpdate message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof tendermint.abci.ValidatorSetUpdate
+             * @static
+             * @param {tendermint.abci.ValidatorSetUpdate} message ValidatorSetUpdate
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ValidatorSetUpdate.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.validatorUpdates = [];
+                if (options.defaults) {
+                    object.thresholdPublicKey = null;
+                    if (options.bytes === String)
+                        object.quorumHash = "";
+                    else {
+                        object.quorumHash = [];
+                        if (options.bytes !== Array)
+                            object.quorumHash = $util.newBuffer(object.quorumHash);
+                    }
+                }
+                if (message.validatorUpdates && message.validatorUpdates.length) {
+                    object.validatorUpdates = [];
+                    for (var j = 0; j < message.validatorUpdates.length; ++j)
+                        object.validatorUpdates[j] = $root.tendermint.abci.ValidatorUpdate.toObject(message.validatorUpdates[j], options);
+                }
+                if (message.thresholdPublicKey != null && message.hasOwnProperty("thresholdPublicKey"))
+                    object.thresholdPublicKey = $root.tendermint.crypto.PublicKey.toObject(message.thresholdPublicKey, options);
+                if (message.quorumHash != null && message.hasOwnProperty("quorumHash"))
+                    object.quorumHash = options.bytes === String ? $util.base64.encode(message.quorumHash, 0, message.quorumHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.quorumHash) : message.quorumHash;
+                return object;
+            };
+
+            /**
+             * Converts this ValidatorSetUpdate to JSON.
+             * @function toJSON
+             * @memberof tendermint.abci.ValidatorSetUpdate
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ValidatorSetUpdate.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return ValidatorSetUpdate;
+        })();
+
+        abci.ThresholdPublicKeyUpdate = (function() {
+
+            /**
+             * Properties of a ThresholdPublicKeyUpdate.
+             * @memberof tendermint.abci
+             * @interface IThresholdPublicKeyUpdate
+             * @property {tendermint.crypto.IPublicKey|null} [thresholdPublicKey] ThresholdPublicKeyUpdate thresholdPublicKey
+             */
+
+            /**
+             * Constructs a new ThresholdPublicKeyUpdate.
+             * @memberof tendermint.abci
+             * @classdesc Represents a ThresholdPublicKeyUpdate.
+             * @implements IThresholdPublicKeyUpdate
+             * @constructor
+             * @param {tendermint.abci.IThresholdPublicKeyUpdate=} [properties] Properties to set
+             */
+            function ThresholdPublicKeyUpdate(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ThresholdPublicKeyUpdate thresholdPublicKey.
+             * @member {tendermint.crypto.IPublicKey|null|undefined} thresholdPublicKey
+             * @memberof tendermint.abci.ThresholdPublicKeyUpdate
+             * @instance
+             */
+            ThresholdPublicKeyUpdate.prototype.thresholdPublicKey = null;
+
+            /**
+             * Creates a new ThresholdPublicKeyUpdate instance using the specified properties.
+             * @function create
+             * @memberof tendermint.abci.ThresholdPublicKeyUpdate
+             * @static
+             * @param {tendermint.abci.IThresholdPublicKeyUpdate=} [properties] Properties to set
+             * @returns {tendermint.abci.ThresholdPublicKeyUpdate} ThresholdPublicKeyUpdate instance
+             */
+            ThresholdPublicKeyUpdate.create = function create(properties) {
+                return new ThresholdPublicKeyUpdate(properties);
+            };
+
+            /**
+             * Encodes the specified ThresholdPublicKeyUpdate message. Does not implicitly {@link tendermint.abci.ThresholdPublicKeyUpdate.verify|verify} messages.
+             * @function encode
+             * @memberof tendermint.abci.ThresholdPublicKeyUpdate
+             * @static
+             * @param {tendermint.abci.IThresholdPublicKeyUpdate} message ThresholdPublicKeyUpdate message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ThresholdPublicKeyUpdate.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.thresholdPublicKey != null && Object.hasOwnProperty.call(message, "thresholdPublicKey"))
+                    $root.tendermint.crypto.PublicKey.encode(message.thresholdPublicKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified ThresholdPublicKeyUpdate message, length delimited. Does not implicitly {@link tendermint.abci.ThresholdPublicKeyUpdate.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof tendermint.abci.ThresholdPublicKeyUpdate
+             * @static
+             * @param {tendermint.abci.IThresholdPublicKeyUpdate} message ThresholdPublicKeyUpdate message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ThresholdPublicKeyUpdate.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a ThresholdPublicKeyUpdate message from the specified reader or buffer.
+             * @function decode
+             * @memberof tendermint.abci.ThresholdPublicKeyUpdate
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {tendermint.abci.ThresholdPublicKeyUpdate} ThresholdPublicKeyUpdate
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ThresholdPublicKeyUpdate.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.tendermint.abci.ThresholdPublicKeyUpdate();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.thresholdPublicKey = $root.tendermint.crypto.PublicKey.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a ThresholdPublicKeyUpdate message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof tendermint.abci.ThresholdPublicKeyUpdate
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {tendermint.abci.ThresholdPublicKeyUpdate} ThresholdPublicKeyUpdate
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ThresholdPublicKeyUpdate.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a ThresholdPublicKeyUpdate message.
+             * @function verify
+             * @memberof tendermint.abci.ThresholdPublicKeyUpdate
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ThresholdPublicKeyUpdate.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.thresholdPublicKey != null && message.hasOwnProperty("thresholdPublicKey")) {
+                    var error = $root.tendermint.crypto.PublicKey.verify(message.thresholdPublicKey);
+                    if (error)
+                        return "thresholdPublicKey." + error;
+                }
+                return null;
+            };
+
+            /**
+             * Creates a ThresholdPublicKeyUpdate message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof tendermint.abci.ThresholdPublicKeyUpdate
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {tendermint.abci.ThresholdPublicKeyUpdate} ThresholdPublicKeyUpdate
+             */
+            ThresholdPublicKeyUpdate.fromObject = function fromObject(object) {
+                if (object instanceof $root.tendermint.abci.ThresholdPublicKeyUpdate)
+                    return object;
+                var message = new $root.tendermint.abci.ThresholdPublicKeyUpdate();
+                if (object.thresholdPublicKey != null) {
+                    if (typeof object.thresholdPublicKey !== "object")
+                        throw TypeError(".tendermint.abci.ThresholdPublicKeyUpdate.thresholdPublicKey: object expected");
+                    message.thresholdPublicKey = $root.tendermint.crypto.PublicKey.fromObject(object.thresholdPublicKey);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a ThresholdPublicKeyUpdate message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof tendermint.abci.ThresholdPublicKeyUpdate
+             * @static
+             * @param {tendermint.abci.ThresholdPublicKeyUpdate} message ThresholdPublicKeyUpdate
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ThresholdPublicKeyUpdate.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.thresholdPublicKey = null;
+                if (message.thresholdPublicKey != null && message.hasOwnProperty("thresholdPublicKey"))
+                    object.thresholdPublicKey = $root.tendermint.crypto.PublicKey.toObject(message.thresholdPublicKey, options);
+                return object;
+            };
+
+            /**
+             * Converts this ThresholdPublicKeyUpdate to JSON.
+             * @function toJSON
+             * @memberof tendermint.abci.ThresholdPublicKeyUpdate
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ThresholdPublicKeyUpdate.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return ThresholdPublicKeyUpdate;
+        })();
+
+        abci.QuorumHashUpdate = (function() {
+
+            /**
+             * Properties of a QuorumHashUpdate.
+             * @memberof tendermint.abci
+             * @interface IQuorumHashUpdate
+             * @property {Uint8Array|null} [quorumHash] QuorumHashUpdate quorumHash
+             */
+
+            /**
+             * Constructs a new QuorumHashUpdate.
+             * @memberof tendermint.abci
+             * @classdesc Represents a QuorumHashUpdate.
+             * @implements IQuorumHashUpdate
+             * @constructor
+             * @param {tendermint.abci.IQuorumHashUpdate=} [properties] Properties to set
+             */
+            function QuorumHashUpdate(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * QuorumHashUpdate quorumHash.
+             * @member {Uint8Array} quorumHash
+             * @memberof tendermint.abci.QuorumHashUpdate
+             * @instance
+             */
+            QuorumHashUpdate.prototype.quorumHash = $util.newBuffer([]);
+
+            /**
+             * Creates a new QuorumHashUpdate instance using the specified properties.
+             * @function create
+             * @memberof tendermint.abci.QuorumHashUpdate
+             * @static
+             * @param {tendermint.abci.IQuorumHashUpdate=} [properties] Properties to set
+             * @returns {tendermint.abci.QuorumHashUpdate} QuorumHashUpdate instance
+             */
+            QuorumHashUpdate.create = function create(properties) {
+                return new QuorumHashUpdate(properties);
+            };
+
+            /**
+             * Encodes the specified QuorumHashUpdate message. Does not implicitly {@link tendermint.abci.QuorumHashUpdate.verify|verify} messages.
+             * @function encode
+             * @memberof tendermint.abci.QuorumHashUpdate
+             * @static
+             * @param {tendermint.abci.IQuorumHashUpdate} message QuorumHashUpdate message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            QuorumHashUpdate.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.quorumHash != null && Object.hasOwnProperty.call(message, "quorumHash"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.quorumHash);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified QuorumHashUpdate message, length delimited. Does not implicitly {@link tendermint.abci.QuorumHashUpdate.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof tendermint.abci.QuorumHashUpdate
+             * @static
+             * @param {tendermint.abci.IQuorumHashUpdate} message QuorumHashUpdate message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            QuorumHashUpdate.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a QuorumHashUpdate message from the specified reader or buffer.
+             * @function decode
+             * @memberof tendermint.abci.QuorumHashUpdate
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {tendermint.abci.QuorumHashUpdate} QuorumHashUpdate
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            QuorumHashUpdate.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.tendermint.abci.QuorumHashUpdate();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.quorumHash = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a QuorumHashUpdate message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof tendermint.abci.QuorumHashUpdate
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {tendermint.abci.QuorumHashUpdate} QuorumHashUpdate
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            QuorumHashUpdate.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a QuorumHashUpdate message.
+             * @function verify
+             * @memberof tendermint.abci.QuorumHashUpdate
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            QuorumHashUpdate.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.quorumHash != null && message.hasOwnProperty("quorumHash"))
+                    if (!(message.quorumHash && typeof message.quorumHash.length === "number" || $util.isString(message.quorumHash)))
+                        return "quorumHash: buffer expected";
+                return null;
+            };
+
+            /**
+             * Creates a QuorumHashUpdate message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof tendermint.abci.QuorumHashUpdate
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {tendermint.abci.QuorumHashUpdate} QuorumHashUpdate
+             */
+            QuorumHashUpdate.fromObject = function fromObject(object) {
+                if (object instanceof $root.tendermint.abci.QuorumHashUpdate)
+                    return object;
+                var message = new $root.tendermint.abci.QuorumHashUpdate();
+                if (object.quorumHash != null)
+                    if (typeof object.quorumHash === "string")
+                        $util.base64.decode(object.quorumHash, message.quorumHash = $util.newBuffer($util.base64.length(object.quorumHash)), 0);
+                    else if (object.quorumHash.length >= 0)
+                        message.quorumHash = object.quorumHash;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a QuorumHashUpdate message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof tendermint.abci.QuorumHashUpdate
+             * @static
+             * @param {tendermint.abci.QuorumHashUpdate} message QuorumHashUpdate
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            QuorumHashUpdate.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    if (options.bytes === String)
+                        object.quorumHash = "";
+                    else {
+                        object.quorumHash = [];
+                        if (options.bytes !== Array)
+                            object.quorumHash = $util.newBuffer(object.quorumHash);
+                    }
+                if (message.quorumHash != null && message.hasOwnProperty("quorumHash"))
+                    object.quorumHash = options.bytes === String ? $util.base64.encode(message.quorumHash, 0, message.quorumHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.quorumHash) : message.quorumHash;
+                return object;
+            };
+
+            /**
+             * Converts this QuorumHashUpdate to JSON.
+             * @function toJSON
+             * @memberof tendermint.abci.QuorumHashUpdate
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            QuorumHashUpdate.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return QuorumHashUpdate;
         })();
 
         abci.VoteInfo = (function() {
@@ -11171,9 +11928,9 @@ $root.tendermint = (function() {
             VoteInfo.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.validator != null && message.hasOwnProperty("validator"))
+                if (message.validator != null && Object.hasOwnProperty.call(message, "validator"))
                     $root.tendermint.abci.Validator.encode(message.validator, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.signedLastBlock != null && message.hasOwnProperty("signedLastBlock"))
+                if (message.signedLastBlock != null && Object.hasOwnProperty.call(message, "signedLastBlock"))
                     writer.uint32(/* id 2, wireType 0 =*/16).bool(message.signedLastBlock);
                 return writer;
             };
@@ -11324,7 +12081,7 @@ $root.tendermint = (function() {
         /**
          * EvidenceType enum.
          * @name tendermint.abci.EvidenceType
-         * @enum {string}
+         * @enum {number}
          * @property {number} UNKNOWN=0 UNKNOWN value
          * @property {number} DUPLICATE_VOTE=1 DUPLICATE_VOTE value
          * @property {number} LIGHT_CLIENT_ATTACK=2 LIGHT_CLIENT_ATTACK value
@@ -11429,15 +12186,15 @@ $root.tendermint = (function() {
             Evidence.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.type != null && message.hasOwnProperty("type"))
+                if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
-                if (message.validator != null && message.hasOwnProperty("validator"))
+                if (message.validator != null && Object.hasOwnProperty.call(message, "validator"))
                     $root.tendermint.abci.Validator.encode(message.validator, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.height != null && message.hasOwnProperty("height"))
+                if (message.height != null && Object.hasOwnProperty.call(message, "height"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int64(message.height);
-                if (message.time != null && message.hasOwnProperty("time"))
+                if (message.time != null && Object.hasOwnProperty.call(message, "time"))
                     $root.google.protobuf.Timestamp.encode(message.time, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.totalVotingPower != null && message.hasOwnProperty("totalVotingPower"))
+                if (message.totalVotingPower != null && Object.hasOwnProperty.call(message, "totalVotingPower"))
                     writer.uint32(/* id 5, wireType 0 =*/40).int64(message.totalVotingPower);
                 return writer;
             };
@@ -11680,6 +12437,7 @@ $root.tendermint = (function() {
              * @property {number|null} [chunks] Snapshot chunks
              * @property {Uint8Array|null} [hash] Snapshot hash
              * @property {Uint8Array|null} [metadata] Snapshot metadata
+             * @property {number|null} [coreChainLockedHeight] Snapshot coreChainLockedHeight
              */
 
             /**
@@ -11738,6 +12496,14 @@ $root.tendermint = (function() {
             Snapshot.prototype.metadata = $util.newBuffer([]);
 
             /**
+             * Snapshot coreChainLockedHeight.
+             * @member {number} coreChainLockedHeight
+             * @memberof tendermint.abci.Snapshot
+             * @instance
+             */
+            Snapshot.prototype.coreChainLockedHeight = 0;
+
+            /**
              * Creates a new Snapshot instance using the specified properties.
              * @function create
              * @memberof tendermint.abci.Snapshot
@@ -11761,16 +12527,18 @@ $root.tendermint = (function() {
             Snapshot.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.height != null && message.hasOwnProperty("height"))
+                if (message.height != null && Object.hasOwnProperty.call(message, "height"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.height);
-                if (message.format != null && message.hasOwnProperty("format"))
+                if (message.format != null && Object.hasOwnProperty.call(message, "format"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.format);
-                if (message.chunks != null && message.hasOwnProperty("chunks"))
+                if (message.chunks != null && Object.hasOwnProperty.call(message, "chunks"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.chunks);
-                if (message.hash != null && message.hasOwnProperty("hash"))
+                if (message.hash != null && Object.hasOwnProperty.call(message, "hash"))
                     writer.uint32(/* id 4, wireType 2 =*/34).bytes(message.hash);
-                if (message.metadata != null && message.hasOwnProperty("metadata"))
+                if (message.metadata != null && Object.hasOwnProperty.call(message, "metadata"))
                     writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.metadata);
+                if (message.coreChainLockedHeight != null && Object.hasOwnProperty.call(message, "coreChainLockedHeight"))
+                    writer.uint32(/* id 100, wireType 0 =*/800).uint32(message.coreChainLockedHeight);
                 return writer;
             };
 
@@ -11819,6 +12587,9 @@ $root.tendermint = (function() {
                         break;
                     case 5:
                         message.metadata = reader.bytes();
+                        break;
+                    case 100:
+                        message.coreChainLockedHeight = reader.uint32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -11870,6 +12641,9 @@ $root.tendermint = (function() {
                 if (message.metadata != null && message.hasOwnProperty("metadata"))
                     if (!(message.metadata && typeof message.metadata.length === "number" || $util.isString(message.metadata)))
                         return "metadata: buffer expected";
+                if (message.coreChainLockedHeight != null && message.hasOwnProperty("coreChainLockedHeight"))
+                    if (!$util.isInteger(message.coreChainLockedHeight))
+                        return "coreChainLockedHeight: integer expected";
                 return null;
             };
 
@@ -11901,13 +12675,15 @@ $root.tendermint = (function() {
                 if (object.hash != null)
                     if (typeof object.hash === "string")
                         $util.base64.decode(object.hash, message.hash = $util.newBuffer($util.base64.length(object.hash)), 0);
-                    else if (object.hash.length)
+                    else if (object.hash.length >= 0)
                         message.hash = object.hash;
                 if (object.metadata != null)
                     if (typeof object.metadata === "string")
                         $util.base64.decode(object.metadata, message.metadata = $util.newBuffer($util.base64.length(object.metadata)), 0);
-                    else if (object.metadata.length)
+                    else if (object.metadata.length >= 0)
                         message.metadata = object.metadata;
+                if (object.coreChainLockedHeight != null)
+                    message.coreChainLockedHeight = object.coreChainLockedHeight >>> 0;
                 return message;
             };
 
@@ -11946,6 +12722,7 @@ $root.tendermint = (function() {
                         if (options.bytes !== Array)
                             object.metadata = $util.newBuffer(object.metadata);
                     }
+                    object.coreChainLockedHeight = 0;
                 }
                 if (message.height != null && message.hasOwnProperty("height"))
                     if (typeof message.height === "number")
@@ -11960,6 +12737,8 @@ $root.tendermint = (function() {
                     object.hash = options.bytes === String ? $util.base64.encode(message.hash, 0, message.hash.length) : options.bytes === Array ? Array.prototype.slice.call(message.hash) : message.hash;
                 if (message.metadata != null && message.hasOwnProperty("metadata"))
                     object.metadata = options.bytes === String ? $util.base64.encode(message.metadata, 0, message.metadata.length) : options.bytes === Array ? Array.prototype.slice.call(message.metadata) : message.metadata;
+                if (message.coreChainLockedHeight != null && message.hasOwnProperty("coreChainLockedHeight"))
+                    object.coreChainLockedHeight = message.coreChainLockedHeight;
                 return object;
             };
 
@@ -12603,11 +13382,11 @@ $root.tendermint = (function() {
             Proof.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.total != null && message.hasOwnProperty("total"))
+                if (message.total != null && Object.hasOwnProperty.call(message, "total"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.total);
-                if (message.index != null && message.hasOwnProperty("index"))
+                if (message.index != null && Object.hasOwnProperty.call(message, "index"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int64(message.index);
-                if (message.leafHash != null && message.hasOwnProperty("leafHash"))
+                if (message.leafHash != null && Object.hasOwnProperty.call(message, "leafHash"))
                     writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.leafHash);
                 if (message.aunts != null && message.aunts.length)
                     for (var i = 0; i < message.aunts.length; ++i)
@@ -12747,7 +13526,7 @@ $root.tendermint = (function() {
                 if (object.leafHash != null)
                     if (typeof object.leafHash === "string")
                         $util.base64.decode(object.leafHash, message.leafHash = $util.newBuffer($util.base64.length(object.leafHash)), 0);
-                    else if (object.leafHash.length)
+                    else if (object.leafHash.length >= 0)
                         message.leafHash = object.leafHash;
                 if (object.aunts) {
                     if (!Array.isArray(object.aunts))
@@ -12756,7 +13535,7 @@ $root.tendermint = (function() {
                     for (var i = 0; i < object.aunts.length; ++i)
                         if (typeof object.aunts[i] === "string")
                             $util.base64.decode(object.aunts[i], message.aunts[i] = $util.newBuffer($util.base64.length(object.aunts[i])), 0);
-                        else if (object.aunts[i].length)
+                        else if (object.aunts[i].length >= 0)
                             message.aunts[i] = object.aunts[i];
                 }
                 return message;
@@ -12895,9 +13674,9 @@ $root.tendermint = (function() {
             ValueOp.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.key != null && message.hasOwnProperty("key"))
+                if (message.key != null && Object.hasOwnProperty.call(message, "key"))
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.key);
-                if (message.proof != null && message.hasOwnProperty("proof"))
+                if (message.proof != null && Object.hasOwnProperty.call(message, "proof"))
                     $root.tendermint.crypto.Proof.encode(message.proof, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
@@ -13000,7 +13779,7 @@ $root.tendermint = (function() {
                 if (object.key != null)
                     if (typeof object.key === "string")
                         $util.base64.decode(object.key, message.key = $util.newBuffer($util.base64.length(object.key)), 0);
-                    else if (object.key.length)
+                    else if (object.key.length >= 0)
                         message.key = object.key;
                 if (object.proof != null) {
                     if (typeof object.proof !== "object")
@@ -13128,11 +13907,11 @@ $root.tendermint = (function() {
             DominoOp.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.key != null && message.hasOwnProperty("key"))
+                if (message.key != null && Object.hasOwnProperty.call(message, "key"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
-                if (message.input != null && message.hasOwnProperty("input"))
+                if (message.input != null && Object.hasOwnProperty.call(message, "input"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.input);
-                if (message.output != null && message.hasOwnProperty("output"))
+                if (message.output != null && Object.hasOwnProperty.call(message, "output"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.output);
                 return writer;
             };
@@ -13360,11 +14139,11 @@ $root.tendermint = (function() {
             ProofOp.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.type != null && message.hasOwnProperty("type"))
+                if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.type);
-                if (message.key != null && message.hasOwnProperty("key"))
+                if (message.key != null && Object.hasOwnProperty.call(message, "key"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.key);
-                if (message.data != null && message.hasOwnProperty("data"))
+                if (message.data != null && Object.hasOwnProperty.call(message, "data"))
                     writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.data);
                 return writer;
             };
@@ -13473,12 +14252,12 @@ $root.tendermint = (function() {
                 if (object.key != null)
                     if (typeof object.key === "string")
                         $util.base64.decode(object.key, message.key = $util.newBuffer($util.base64.length(object.key)), 0);
-                    else if (object.key.length)
+                    else if (object.key.length >= 0)
                         message.key = object.key;
                 if (object.data != null)
                     if (typeof object.data === "string")
                         $util.base64.decode(object.data, message.data = $util.newBuffer($util.base64.length(object.data)), 0);
-                    else if (object.data.length)
+                    else if (object.data.length >= 0)
                         message.data = object.data;
                 return message;
             };
@@ -13832,11 +14611,11 @@ $root.tendermint = (function() {
             PublicKey.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.ed25519 != null && message.hasOwnProperty("ed25519"))
+                if (message.ed25519 != null && Object.hasOwnProperty.call(message, "ed25519"))
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.ed25519);
-                if (message.secp256k1 != null && message.hasOwnProperty("secp256k1"))
+                if (message.secp256k1 != null && Object.hasOwnProperty.call(message, "secp256k1"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.secp256k1);
-                if (message.bls12381 != null && message.hasOwnProperty("bls12381"))
+                if (message.bls12381 != null && Object.hasOwnProperty.call(message, "bls12381"))
                     writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.bls12381);
                 return writer;
             };
@@ -13954,17 +14733,17 @@ $root.tendermint = (function() {
                 if (object.ed25519 != null)
                     if (typeof object.ed25519 === "string")
                         $util.base64.decode(object.ed25519, message.ed25519 = $util.newBuffer($util.base64.length(object.ed25519)), 0);
-                    else if (object.ed25519.length)
+                    else if (object.ed25519.length >= 0)
                         message.ed25519 = object.ed25519;
                 if (object.secp256k1 != null)
                     if (typeof object.secp256k1 === "string")
                         $util.base64.decode(object.secp256k1, message.secp256k1 = $util.newBuffer($util.base64.length(object.secp256k1)), 0);
-                    else if (object.secp256k1.length)
+                    else if (object.secp256k1.length >= 0)
                         message.secp256k1 = object.secp256k1;
                 if (object.bls12381 != null)
                     if (typeof object.bls12381 === "string")
                         $util.base64.decode(object.bls12381, message.bls12381 = $util.newBuffer($util.base64.length(object.bls12381)), 0);
-                    else if (object.bls12381.length)
+                    else if (object.bls12381.length >= 0)
                         message.bls12381 = object.bls12381;
                 return message;
             };
@@ -14025,6 +14804,44 @@ $root.tendermint = (function() {
          * @namespace
          */
         var types = {};
+
+        /**
+         * BlockIDFlag enum.
+         * @name tendermint.types.BlockIDFlag
+         * @enum {number}
+         * @property {number} BLOCK_ID_FLAG_UNKNOWN=0 BLOCK_ID_FLAG_UNKNOWN value
+         * @property {number} BLOCK_ID_FLAG_ABSENT=1 BLOCK_ID_FLAG_ABSENT value
+         * @property {number} BLOCK_ID_FLAG_COMMIT=2 BLOCK_ID_FLAG_COMMIT value
+         * @property {number} BLOCK_ID_FLAG_NIL=3 BLOCK_ID_FLAG_NIL value
+         */
+        types.BlockIDFlag = (function() {
+            var valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "BLOCK_ID_FLAG_UNKNOWN"] = 0;
+            values[valuesById[1] = "BLOCK_ID_FLAG_ABSENT"] = 1;
+            values[valuesById[2] = "BLOCK_ID_FLAG_COMMIT"] = 2;
+            values[valuesById[3] = "BLOCK_ID_FLAG_NIL"] = 3;
+            return values;
+        })();
+
+        /**
+         * SignedMsgType enum.
+         * @name tendermint.types.SignedMsgType
+         * @enum {number}
+         * @property {number} SIGNED_MSG_TYPE_UNKNOWN=0 SIGNED_MSG_TYPE_UNKNOWN value
+         * @property {number} SIGNED_MSG_TYPE_PREVOTE=1 SIGNED_MSG_TYPE_PREVOTE value
+         * @property {number} SIGNED_MSG_TYPE_PRECOMMIT=2 SIGNED_MSG_TYPE_PRECOMMIT value
+         * @property {number} SIGNED_MSG_TYPE_COMMIT=3 SIGNED_MSG_TYPE_COMMIT value
+         * @property {number} SIGNED_MSG_TYPE_PROPOSAL=32 SIGNED_MSG_TYPE_PROPOSAL value
+         */
+        types.SignedMsgType = (function() {
+            var valuesById = {}, values = Object.create(valuesById);
+            values[valuesById[0] = "SIGNED_MSG_TYPE_UNKNOWN"] = 0;
+            values[valuesById[1] = "SIGNED_MSG_TYPE_PREVOTE"] = 1;
+            values[valuesById[2] = "SIGNED_MSG_TYPE_PRECOMMIT"] = 2;
+            values[valuesById[3] = "SIGNED_MSG_TYPE_COMMIT"] = 3;
+            values[valuesById[32] = "SIGNED_MSG_TYPE_PROPOSAL"] = 32;
+            return values;
+        })();
 
         types.PartSetHeader = (function() {
 
@@ -14091,9 +14908,9 @@ $root.tendermint = (function() {
             PartSetHeader.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.total != null && message.hasOwnProperty("total"))
+                if (message.total != null && Object.hasOwnProperty.call(message, "total"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.total);
-                if (message.hash != null && message.hasOwnProperty("hash"))
+                if (message.hash != null && Object.hasOwnProperty.call(message, "hash"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.hash);
                 return writer;
             };
@@ -14196,7 +15013,7 @@ $root.tendermint = (function() {
                 if (object.hash != null)
                     if (typeof object.hash === "string")
                         $util.base64.decode(object.hash, message.hash = $util.newBuffer($util.base64.length(object.hash)), 0);
-                    else if (object.hash.length)
+                    else if (object.hash.length >= 0)
                         message.hash = object.hash;
                 return message;
             };
@@ -14243,6 +15060,252 @@ $root.tendermint = (function() {
             };
 
             return PartSetHeader;
+        })();
+
+        types.Part = (function() {
+
+            /**
+             * Properties of a Part.
+             * @memberof tendermint.types
+             * @interface IPart
+             * @property {number|null} [index] Part index
+             * @property {Uint8Array|null} [bytes] Part bytes
+             * @property {tendermint.crypto.IProof|null} [proof] Part proof
+             */
+
+            /**
+             * Constructs a new Part.
+             * @memberof tendermint.types
+             * @classdesc Represents a Part.
+             * @implements IPart
+             * @constructor
+             * @param {tendermint.types.IPart=} [properties] Properties to set
+             */
+            function Part(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Part index.
+             * @member {number} index
+             * @memberof tendermint.types.Part
+             * @instance
+             */
+            Part.prototype.index = 0;
+
+            /**
+             * Part bytes.
+             * @member {Uint8Array} bytes
+             * @memberof tendermint.types.Part
+             * @instance
+             */
+            Part.prototype.bytes = $util.newBuffer([]);
+
+            /**
+             * Part proof.
+             * @member {tendermint.crypto.IProof|null|undefined} proof
+             * @memberof tendermint.types.Part
+             * @instance
+             */
+            Part.prototype.proof = null;
+
+            /**
+             * Creates a new Part instance using the specified properties.
+             * @function create
+             * @memberof tendermint.types.Part
+             * @static
+             * @param {tendermint.types.IPart=} [properties] Properties to set
+             * @returns {tendermint.types.Part} Part instance
+             */
+            Part.create = function create(properties) {
+                return new Part(properties);
+            };
+
+            /**
+             * Encodes the specified Part message. Does not implicitly {@link tendermint.types.Part.verify|verify} messages.
+             * @function encode
+             * @memberof tendermint.types.Part
+             * @static
+             * @param {tendermint.types.IPart} message Part message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Part.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.index != null && Object.hasOwnProperty.call(message, "index"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.index);
+                if (message.bytes != null && Object.hasOwnProperty.call(message, "bytes"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.bytes);
+                if (message.proof != null && Object.hasOwnProperty.call(message, "proof"))
+                    $root.tendermint.crypto.Proof.encode(message.proof, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Part message, length delimited. Does not implicitly {@link tendermint.types.Part.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof tendermint.types.Part
+             * @static
+             * @param {tendermint.types.IPart} message Part message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Part.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Part message from the specified reader or buffer.
+             * @function decode
+             * @memberof tendermint.types.Part
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {tendermint.types.Part} Part
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Part.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.tendermint.types.Part();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.index = reader.uint32();
+                        break;
+                    case 2:
+                        message.bytes = reader.bytes();
+                        break;
+                    case 3:
+                        message.proof = $root.tendermint.crypto.Proof.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Part message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof tendermint.types.Part
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {tendermint.types.Part} Part
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Part.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Part message.
+             * @function verify
+             * @memberof tendermint.types.Part
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Part.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.index != null && message.hasOwnProperty("index"))
+                    if (!$util.isInteger(message.index))
+                        return "index: integer expected";
+                if (message.bytes != null && message.hasOwnProperty("bytes"))
+                    if (!(message.bytes && typeof message.bytes.length === "number" || $util.isString(message.bytes)))
+                        return "bytes: buffer expected";
+                if (message.proof != null && message.hasOwnProperty("proof")) {
+                    var error = $root.tendermint.crypto.Proof.verify(message.proof);
+                    if (error)
+                        return "proof." + error;
+                }
+                return null;
+            };
+
+            /**
+             * Creates a Part message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof tendermint.types.Part
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {tendermint.types.Part} Part
+             */
+            Part.fromObject = function fromObject(object) {
+                if (object instanceof $root.tendermint.types.Part)
+                    return object;
+                var message = new $root.tendermint.types.Part();
+                if (object.index != null)
+                    message.index = object.index >>> 0;
+                if (object.bytes != null)
+                    if (typeof object.bytes === "string")
+                        $util.base64.decode(object.bytes, message.bytes = $util.newBuffer($util.base64.length(object.bytes)), 0);
+                    else if (object.bytes.length >= 0)
+                        message.bytes = object.bytes;
+                if (object.proof != null) {
+                    if (typeof object.proof !== "object")
+                        throw TypeError(".tendermint.types.Part.proof: object expected");
+                    message.proof = $root.tendermint.crypto.Proof.fromObject(object.proof);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Part message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof tendermint.types.Part
+             * @static
+             * @param {tendermint.types.Part} message Part
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Part.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.index = 0;
+                    if (options.bytes === String)
+                        object.bytes = "";
+                    else {
+                        object.bytes = [];
+                        if (options.bytes !== Array)
+                            object.bytes = $util.newBuffer(object.bytes);
+                    }
+                    object.proof = null;
+                }
+                if (message.index != null && message.hasOwnProperty("index"))
+                    object.index = message.index;
+                if (message.bytes != null && message.hasOwnProperty("bytes"))
+                    object.bytes = options.bytes === String ? $util.base64.encode(message.bytes, 0, message.bytes.length) : options.bytes === Array ? Array.prototype.slice.call(message.bytes) : message.bytes;
+                if (message.proof != null && message.hasOwnProperty("proof"))
+                    object.proof = $root.tendermint.crypto.Proof.toObject(message.proof, options);
+                return object;
+            };
+
+            /**
+             * Converts this Part to JSON.
+             * @function toJSON
+             * @memberof tendermint.types.Part
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Part.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Part;
         })();
 
         types.BlockID = (function() {
@@ -14310,9 +15373,9 @@ $root.tendermint = (function() {
             BlockID.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.hash != null && message.hasOwnProperty("hash"))
+                if (message.hash != null && Object.hasOwnProperty.call(message, "hash"))
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.hash);
-                if (message.partSetHeader != null && message.hasOwnProperty("partSetHeader"))
+                if (message.partSetHeader != null && Object.hasOwnProperty.call(message, "partSetHeader"))
                     $root.tendermint.types.PartSetHeader.encode(message.partSetHeader, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
@@ -14415,7 +15478,7 @@ $root.tendermint = (function() {
                 if (object.hash != null)
                     if (typeof object.hash === "string")
                         $util.base64.decode(object.hash, message.hash = $util.newBuffer($util.base64.length(object.hash)), 0);
-                    else if (object.hash.length)
+                    else if (object.hash.length >= 0)
                         message.hash = object.hash;
                 if (object.partSetHeader != null) {
                     if (typeof object.partSetHeader !== "object")
@@ -14469,6 +15532,202 @@ $root.tendermint = (function() {
             return BlockID;
         })();
 
+        types.StateID = (function() {
+
+            /**
+             * Properties of a StateID.
+             * @memberof tendermint.types
+             * @interface IStateID
+             * @property {Uint8Array|null} [lastAppHash] StateID lastAppHash
+             */
+
+            /**
+             * Constructs a new StateID.
+             * @memberof tendermint.types
+             * @classdesc Represents a StateID.
+             * @implements IStateID
+             * @constructor
+             * @param {tendermint.types.IStateID=} [properties] Properties to set
+             */
+            function StateID(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * StateID lastAppHash.
+             * @member {Uint8Array} lastAppHash
+             * @memberof tendermint.types.StateID
+             * @instance
+             */
+            StateID.prototype.lastAppHash = $util.newBuffer([]);
+
+            /**
+             * Creates a new StateID instance using the specified properties.
+             * @function create
+             * @memberof tendermint.types.StateID
+             * @static
+             * @param {tendermint.types.IStateID=} [properties] Properties to set
+             * @returns {tendermint.types.StateID} StateID instance
+             */
+            StateID.create = function create(properties) {
+                return new StateID(properties);
+            };
+
+            /**
+             * Encodes the specified StateID message. Does not implicitly {@link tendermint.types.StateID.verify|verify} messages.
+             * @function encode
+             * @memberof tendermint.types.StateID
+             * @static
+             * @param {tendermint.types.IStateID} message StateID message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            StateID.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.lastAppHash != null && Object.hasOwnProperty.call(message, "lastAppHash"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.lastAppHash);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified StateID message, length delimited. Does not implicitly {@link tendermint.types.StateID.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof tendermint.types.StateID
+             * @static
+             * @param {tendermint.types.IStateID} message StateID message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            StateID.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a StateID message from the specified reader or buffer.
+             * @function decode
+             * @memberof tendermint.types.StateID
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {tendermint.types.StateID} StateID
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            StateID.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.tendermint.types.StateID();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.lastAppHash = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a StateID message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof tendermint.types.StateID
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {tendermint.types.StateID} StateID
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            StateID.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a StateID message.
+             * @function verify
+             * @memberof tendermint.types.StateID
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            StateID.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.lastAppHash != null && message.hasOwnProperty("lastAppHash"))
+                    if (!(message.lastAppHash && typeof message.lastAppHash.length === "number" || $util.isString(message.lastAppHash)))
+                        return "lastAppHash: buffer expected";
+                return null;
+            };
+
+            /**
+             * Creates a StateID message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof tendermint.types.StateID
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {tendermint.types.StateID} StateID
+             */
+            StateID.fromObject = function fromObject(object) {
+                if (object instanceof $root.tendermint.types.StateID)
+                    return object;
+                var message = new $root.tendermint.types.StateID();
+                if (object.lastAppHash != null)
+                    if (typeof object.lastAppHash === "string")
+                        $util.base64.decode(object.lastAppHash, message.lastAppHash = $util.newBuffer($util.base64.length(object.lastAppHash)), 0);
+                    else if (object.lastAppHash.length >= 0)
+                        message.lastAppHash = object.lastAppHash;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a StateID message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof tendermint.types.StateID
+             * @static
+             * @param {tendermint.types.StateID} message StateID
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            StateID.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    if (options.bytes === String)
+                        object.lastAppHash = "";
+                    else {
+                        object.lastAppHash = [];
+                        if (options.bytes !== Array)
+                            object.lastAppHash = $util.newBuffer(object.lastAppHash);
+                    }
+                if (message.lastAppHash != null && message.hasOwnProperty("lastAppHash"))
+                    object.lastAppHash = options.bytes === String ? $util.base64.encode(message.lastAppHash, 0, message.lastAppHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.lastAppHash) : message.lastAppHash;
+                return object;
+            };
+
+            /**
+             * Converts this StateID to JSON.
+             * @function toJSON
+             * @memberof tendermint.types.StateID
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            StateID.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return StateID;
+        })();
+
         types.Header = (function() {
 
             /**
@@ -14489,7 +15748,7 @@ $root.tendermint = (function() {
              * @property {Uint8Array|null} [appHash] Header appHash
              * @property {Uint8Array|null} [lastResultsHash] Header lastResultsHash
              * @property {Uint8Array|null} [evidenceHash] Header evidenceHash
-             * @property {Uint8Array|null} [proposerAddress] Header proposerAddress
+             * @property {Uint8Array|null} [proposerProTxHash] Header proposerProTxHash
              */
 
             /**
@@ -14620,12 +15879,12 @@ $root.tendermint = (function() {
             Header.prototype.evidenceHash = $util.newBuffer([]);
 
             /**
-             * Header proposerAddress.
-             * @member {Uint8Array} proposerAddress
+             * Header proposerProTxHash.
+             * @member {Uint8Array} proposerProTxHash
              * @memberof tendermint.types.Header
              * @instance
              */
-            Header.prototype.proposerAddress = $util.newBuffer([]);
+            Header.prototype.proposerProTxHash = $util.newBuffer([]);
 
             /**
              * Creates a new Header instance using the specified properties.
@@ -14651,36 +15910,36 @@ $root.tendermint = (function() {
             Header.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.version != null && message.hasOwnProperty("version"))
+                if (message.version != null && Object.hasOwnProperty.call(message, "version"))
                     $root.tendermint.version.Consensus.encode(message.version, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.chainId != null && message.hasOwnProperty("chainId"))
+                if (message.chainId != null && Object.hasOwnProperty.call(message, "chainId"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.chainId);
-                if (message.height != null && message.hasOwnProperty("height"))
+                if (message.height != null && Object.hasOwnProperty.call(message, "height"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int64(message.height);
-                if (message.time != null && message.hasOwnProperty("time"))
+                if (message.time != null && Object.hasOwnProperty.call(message, "time"))
                     $root.google.protobuf.Timestamp.encode(message.time, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.lastBlockId != null && message.hasOwnProperty("lastBlockId"))
+                if (message.lastBlockId != null && Object.hasOwnProperty.call(message, "lastBlockId"))
                     $root.tendermint.types.BlockID.encode(message.lastBlockId, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.lastCommitHash != null && message.hasOwnProperty("lastCommitHash"))
+                if (message.lastCommitHash != null && Object.hasOwnProperty.call(message, "lastCommitHash"))
                     writer.uint32(/* id 6, wireType 2 =*/50).bytes(message.lastCommitHash);
-                if (message.dataHash != null && message.hasOwnProperty("dataHash"))
+                if (message.dataHash != null && Object.hasOwnProperty.call(message, "dataHash"))
                     writer.uint32(/* id 7, wireType 2 =*/58).bytes(message.dataHash);
-                if (message.validatorsHash != null && message.hasOwnProperty("validatorsHash"))
+                if (message.validatorsHash != null && Object.hasOwnProperty.call(message, "validatorsHash"))
                     writer.uint32(/* id 8, wireType 2 =*/66).bytes(message.validatorsHash);
-                if (message.nextValidatorsHash != null && message.hasOwnProperty("nextValidatorsHash"))
+                if (message.nextValidatorsHash != null && Object.hasOwnProperty.call(message, "nextValidatorsHash"))
                     writer.uint32(/* id 9, wireType 2 =*/74).bytes(message.nextValidatorsHash);
-                if (message.consensusHash != null && message.hasOwnProperty("consensusHash"))
+                if (message.consensusHash != null && Object.hasOwnProperty.call(message, "consensusHash"))
                     writer.uint32(/* id 10, wireType 2 =*/82).bytes(message.consensusHash);
-                if (message.appHash != null && message.hasOwnProperty("appHash"))
+                if (message.appHash != null && Object.hasOwnProperty.call(message, "appHash"))
                     writer.uint32(/* id 11, wireType 2 =*/90).bytes(message.appHash);
-                if (message.lastResultsHash != null && message.hasOwnProperty("lastResultsHash"))
+                if (message.lastResultsHash != null && Object.hasOwnProperty.call(message, "lastResultsHash"))
                     writer.uint32(/* id 12, wireType 2 =*/98).bytes(message.lastResultsHash);
-                if (message.evidenceHash != null && message.hasOwnProperty("evidenceHash"))
+                if (message.evidenceHash != null && Object.hasOwnProperty.call(message, "evidenceHash"))
                     writer.uint32(/* id 13, wireType 2 =*/106).bytes(message.evidenceHash);
-                if (message.proposerAddress != null && message.hasOwnProperty("proposerAddress"))
-                    writer.uint32(/* id 14, wireType 2 =*/114).bytes(message.proposerAddress);
-                if (message.coreChainLockedHeight != null && message.hasOwnProperty("coreChainLockedHeight"))
+                if (message.coreChainLockedHeight != null && Object.hasOwnProperty.call(message, "coreChainLockedHeight"))
                     writer.uint32(/* id 100, wireType 0 =*/800).uint32(message.coreChainLockedHeight);
+                if (message.proposerProTxHash != null && Object.hasOwnProperty.call(message, "proposerProTxHash"))
+                    writer.uint32(/* id 101, wireType 2 =*/810).bytes(message.proposerProTxHash);
                 return writer;
             };
 
@@ -14757,8 +16016,8 @@ $root.tendermint = (function() {
                     case 13:
                         message.evidenceHash = reader.bytes();
                         break;
-                    case 14:
-                        message.proposerAddress = reader.bytes();
+                    case 101:
+                        message.proposerProTxHash = reader.bytes();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -14843,9 +16102,9 @@ $root.tendermint = (function() {
                 if (message.evidenceHash != null && message.hasOwnProperty("evidenceHash"))
                     if (!(message.evidenceHash && typeof message.evidenceHash.length === "number" || $util.isString(message.evidenceHash)))
                         return "evidenceHash: buffer expected";
-                if (message.proposerAddress != null && message.hasOwnProperty("proposerAddress"))
-                    if (!(message.proposerAddress && typeof message.proposerAddress.length === "number" || $util.isString(message.proposerAddress)))
-                        return "proposerAddress: buffer expected";
+                if (message.proposerProTxHash != null && message.hasOwnProperty("proposerProTxHash"))
+                    if (!(message.proposerProTxHash && typeof message.proposerProTxHash.length === "number" || $util.isString(message.proposerProTxHash)))
+                        return "proposerProTxHash: buffer expected";
                 return null;
             };
 
@@ -14892,48 +16151,48 @@ $root.tendermint = (function() {
                 if (object.lastCommitHash != null)
                     if (typeof object.lastCommitHash === "string")
                         $util.base64.decode(object.lastCommitHash, message.lastCommitHash = $util.newBuffer($util.base64.length(object.lastCommitHash)), 0);
-                    else if (object.lastCommitHash.length)
+                    else if (object.lastCommitHash.length >= 0)
                         message.lastCommitHash = object.lastCommitHash;
                 if (object.dataHash != null)
                     if (typeof object.dataHash === "string")
                         $util.base64.decode(object.dataHash, message.dataHash = $util.newBuffer($util.base64.length(object.dataHash)), 0);
-                    else if (object.dataHash.length)
+                    else if (object.dataHash.length >= 0)
                         message.dataHash = object.dataHash;
                 if (object.validatorsHash != null)
                     if (typeof object.validatorsHash === "string")
                         $util.base64.decode(object.validatorsHash, message.validatorsHash = $util.newBuffer($util.base64.length(object.validatorsHash)), 0);
-                    else if (object.validatorsHash.length)
+                    else if (object.validatorsHash.length >= 0)
                         message.validatorsHash = object.validatorsHash;
                 if (object.nextValidatorsHash != null)
                     if (typeof object.nextValidatorsHash === "string")
                         $util.base64.decode(object.nextValidatorsHash, message.nextValidatorsHash = $util.newBuffer($util.base64.length(object.nextValidatorsHash)), 0);
-                    else if (object.nextValidatorsHash.length)
+                    else if (object.nextValidatorsHash.length >= 0)
                         message.nextValidatorsHash = object.nextValidatorsHash;
                 if (object.consensusHash != null)
                     if (typeof object.consensusHash === "string")
                         $util.base64.decode(object.consensusHash, message.consensusHash = $util.newBuffer($util.base64.length(object.consensusHash)), 0);
-                    else if (object.consensusHash.length)
+                    else if (object.consensusHash.length >= 0)
                         message.consensusHash = object.consensusHash;
                 if (object.appHash != null)
                     if (typeof object.appHash === "string")
                         $util.base64.decode(object.appHash, message.appHash = $util.newBuffer($util.base64.length(object.appHash)), 0);
-                    else if (object.appHash.length)
+                    else if (object.appHash.length >= 0)
                         message.appHash = object.appHash;
                 if (object.lastResultsHash != null)
                     if (typeof object.lastResultsHash === "string")
                         $util.base64.decode(object.lastResultsHash, message.lastResultsHash = $util.newBuffer($util.base64.length(object.lastResultsHash)), 0);
-                    else if (object.lastResultsHash.length)
+                    else if (object.lastResultsHash.length >= 0)
                         message.lastResultsHash = object.lastResultsHash;
                 if (object.evidenceHash != null)
                     if (typeof object.evidenceHash === "string")
                         $util.base64.decode(object.evidenceHash, message.evidenceHash = $util.newBuffer($util.base64.length(object.evidenceHash)), 0);
-                    else if (object.evidenceHash.length)
+                    else if (object.evidenceHash.length >= 0)
                         message.evidenceHash = object.evidenceHash;
-                if (object.proposerAddress != null)
-                    if (typeof object.proposerAddress === "string")
-                        $util.base64.decode(object.proposerAddress, message.proposerAddress = $util.newBuffer($util.base64.length(object.proposerAddress)), 0);
-                    else if (object.proposerAddress.length)
-                        message.proposerAddress = object.proposerAddress;
+                if (object.proposerProTxHash != null)
+                    if (typeof object.proposerProTxHash === "string")
+                        $util.base64.decode(object.proposerProTxHash, message.proposerProTxHash = $util.newBuffer($util.base64.length(object.proposerProTxHash)), 0);
+                    else if (object.proposerProTxHash.length >= 0)
+                        message.proposerProTxHash = object.proposerProTxHash;
                 return message;
             };
 
@@ -15016,14 +16275,14 @@ $root.tendermint = (function() {
                         if (options.bytes !== Array)
                             object.evidenceHash = $util.newBuffer(object.evidenceHash);
                     }
-                    if (options.bytes === String)
-                        object.proposerAddress = "";
-                    else {
-                        object.proposerAddress = [];
-                        if (options.bytes !== Array)
-                            object.proposerAddress = $util.newBuffer(object.proposerAddress);
-                    }
                     object.coreChainLockedHeight = 0;
+                    if (options.bytes === String)
+                        object.proposerProTxHash = "";
+                    else {
+                        object.proposerProTxHash = [];
+                        if (options.bytes !== Array)
+                            object.proposerProTxHash = $util.newBuffer(object.proposerProTxHash);
+                    }
                 }
                 if (message.version != null && message.hasOwnProperty("version"))
                     object.version = $root.tendermint.version.Consensus.toObject(message.version, options);
@@ -15054,10 +16313,10 @@ $root.tendermint = (function() {
                     object.lastResultsHash = options.bytes === String ? $util.base64.encode(message.lastResultsHash, 0, message.lastResultsHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.lastResultsHash) : message.lastResultsHash;
                 if (message.evidenceHash != null && message.hasOwnProperty("evidenceHash"))
                     object.evidenceHash = options.bytes === String ? $util.base64.encode(message.evidenceHash, 0, message.evidenceHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.evidenceHash) : message.evidenceHash;
-                if (message.proposerAddress != null && message.hasOwnProperty("proposerAddress"))
-                    object.proposerAddress = options.bytes === String ? $util.base64.encode(message.proposerAddress, 0, message.proposerAddress.length) : options.bytes === Array ? Array.prototype.slice.call(message.proposerAddress) : message.proposerAddress;
                 if (message.coreChainLockedHeight != null && message.hasOwnProperty("coreChainLockedHeight"))
                     object.coreChainLockedHeight = message.coreChainLockedHeight;
+                if (message.proposerProTxHash != null && message.hasOwnProperty("proposerProTxHash"))
+                    object.proposerProTxHash = options.bytes === String ? $util.base64.encode(message.proposerProTxHash, 0, message.proposerProTxHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.proposerProTxHash) : message.proposerProTxHash;
                 return object;
             };
 
@@ -15149,11 +16408,11 @@ $root.tendermint = (function() {
             CoreChainLock.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.coreBlockHeight != null && message.hasOwnProperty("coreBlockHeight"))
+                if (message.coreBlockHeight != null && Object.hasOwnProperty.call(message, "coreBlockHeight"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.coreBlockHeight);
-                if (message.coreBlockHash != null && message.hasOwnProperty("coreBlockHash"))
+                if (message.coreBlockHash != null && Object.hasOwnProperty.call(message, "coreBlockHash"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.coreBlockHash);
-                if (message.signature != null && message.hasOwnProperty("signature"))
+                if (message.signature != null && Object.hasOwnProperty.call(message, "signature"))
                     writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.signature);
                 return writer;
             };
@@ -15262,12 +16521,12 @@ $root.tendermint = (function() {
                 if (object.coreBlockHash != null)
                     if (typeof object.coreBlockHash === "string")
                         $util.base64.decode(object.coreBlockHash, message.coreBlockHash = $util.newBuffer($util.base64.length(object.coreBlockHash)), 0);
-                    else if (object.coreBlockHash.length)
+                    else if (object.coreBlockHash.length >= 0)
                         message.coreBlockHash = object.coreBlockHash;
                 if (object.signature != null)
                     if (typeof object.signature === "string")
                         $util.base64.decode(object.signature, message.signature = $util.newBuffer($util.base64.length(object.signature)), 0);
-                    else if (object.signature.length)
+                    else if (object.signature.length >= 0)
                         message.signature = object.signature;
                 return message;
             };
@@ -15323,6 +16582,3365 @@ $root.tendermint = (function() {
             };
 
             return CoreChainLock;
+        })();
+
+        types.Data = (function() {
+
+            /**
+             * Properties of a Data.
+             * @memberof tendermint.types
+             * @interface IData
+             * @property {Array.<Uint8Array>|null} [txs] Data txs
+             */
+
+            /**
+             * Constructs a new Data.
+             * @memberof tendermint.types
+             * @classdesc Represents a Data.
+             * @implements IData
+             * @constructor
+             * @param {tendermint.types.IData=} [properties] Properties to set
+             */
+            function Data(properties) {
+                this.txs = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Data txs.
+             * @member {Array.<Uint8Array>} txs
+             * @memberof tendermint.types.Data
+             * @instance
+             */
+            Data.prototype.txs = $util.emptyArray;
+
+            /**
+             * Creates a new Data instance using the specified properties.
+             * @function create
+             * @memberof tendermint.types.Data
+             * @static
+             * @param {tendermint.types.IData=} [properties] Properties to set
+             * @returns {tendermint.types.Data} Data instance
+             */
+            Data.create = function create(properties) {
+                return new Data(properties);
+            };
+
+            /**
+             * Encodes the specified Data message. Does not implicitly {@link tendermint.types.Data.verify|verify} messages.
+             * @function encode
+             * @memberof tendermint.types.Data
+             * @static
+             * @param {tendermint.types.IData} message Data message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Data.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.txs != null && message.txs.length)
+                    for (var i = 0; i < message.txs.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.txs[i]);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Data message, length delimited. Does not implicitly {@link tendermint.types.Data.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof tendermint.types.Data
+             * @static
+             * @param {tendermint.types.IData} message Data message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Data.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Data message from the specified reader or buffer.
+             * @function decode
+             * @memberof tendermint.types.Data
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {tendermint.types.Data} Data
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Data.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.tendermint.types.Data();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.txs && message.txs.length))
+                            message.txs = [];
+                        message.txs.push(reader.bytes());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Data message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof tendermint.types.Data
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {tendermint.types.Data} Data
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Data.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Data message.
+             * @function verify
+             * @memberof tendermint.types.Data
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Data.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.txs != null && message.hasOwnProperty("txs")) {
+                    if (!Array.isArray(message.txs))
+                        return "txs: array expected";
+                    for (var i = 0; i < message.txs.length; ++i)
+                        if (!(message.txs[i] && typeof message.txs[i].length === "number" || $util.isString(message.txs[i])))
+                            return "txs: buffer[] expected";
+                }
+                return null;
+            };
+
+            /**
+             * Creates a Data message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof tendermint.types.Data
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {tendermint.types.Data} Data
+             */
+            Data.fromObject = function fromObject(object) {
+                if (object instanceof $root.tendermint.types.Data)
+                    return object;
+                var message = new $root.tendermint.types.Data();
+                if (object.txs) {
+                    if (!Array.isArray(object.txs))
+                        throw TypeError(".tendermint.types.Data.txs: array expected");
+                    message.txs = [];
+                    for (var i = 0; i < object.txs.length; ++i)
+                        if (typeof object.txs[i] === "string")
+                            $util.base64.decode(object.txs[i], message.txs[i] = $util.newBuffer($util.base64.length(object.txs[i])), 0);
+                        else if (object.txs[i].length >= 0)
+                            message.txs[i] = object.txs[i];
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Data message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof tendermint.types.Data
+             * @static
+             * @param {tendermint.types.Data} message Data
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Data.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.txs = [];
+                if (message.txs && message.txs.length) {
+                    object.txs = [];
+                    for (var j = 0; j < message.txs.length; ++j)
+                        object.txs[j] = options.bytes === String ? $util.base64.encode(message.txs[j], 0, message.txs[j].length) : options.bytes === Array ? Array.prototype.slice.call(message.txs[j]) : message.txs[j];
+                }
+                return object;
+            };
+
+            /**
+             * Converts this Data to JSON.
+             * @function toJSON
+             * @memberof tendermint.types.Data
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Data.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Data;
+        })();
+
+        types.Vote = (function() {
+
+            /**
+             * Properties of a Vote.
+             * @memberof tendermint.types
+             * @interface IVote
+             * @property {tendermint.types.SignedMsgType|null} [type] Vote type
+             * @property {number|Long|null} [height] Vote height
+             * @property {number|null} [round] Vote round
+             * @property {tendermint.types.IBlockID|null} [blockId] Vote blockId
+             * @property {tendermint.types.IStateID|null} [stateId] Vote stateId
+             * @property {Uint8Array|null} [validatorProTxHash] Vote validatorProTxHash
+             * @property {number|null} [validatorIndex] Vote validatorIndex
+             * @property {Uint8Array|null} [blockSignature] Vote blockSignature
+             * @property {Uint8Array|null} [stateSignature] Vote stateSignature
+             */
+
+            /**
+             * Constructs a new Vote.
+             * @memberof tendermint.types
+             * @classdesc Represents a Vote.
+             * @implements IVote
+             * @constructor
+             * @param {tendermint.types.IVote=} [properties] Properties to set
+             */
+            function Vote(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Vote type.
+             * @member {tendermint.types.SignedMsgType} type
+             * @memberof tendermint.types.Vote
+             * @instance
+             */
+            Vote.prototype.type = 0;
+
+            /**
+             * Vote height.
+             * @member {number|Long} height
+             * @memberof tendermint.types.Vote
+             * @instance
+             */
+            Vote.prototype.height = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Vote round.
+             * @member {number} round
+             * @memberof tendermint.types.Vote
+             * @instance
+             */
+            Vote.prototype.round = 0;
+
+            /**
+             * Vote blockId.
+             * @member {tendermint.types.IBlockID|null|undefined} blockId
+             * @memberof tendermint.types.Vote
+             * @instance
+             */
+            Vote.prototype.blockId = null;
+
+            /**
+             * Vote stateId.
+             * @member {tendermint.types.IStateID|null|undefined} stateId
+             * @memberof tendermint.types.Vote
+             * @instance
+             */
+            Vote.prototype.stateId = null;
+
+            /**
+             * Vote validatorProTxHash.
+             * @member {Uint8Array} validatorProTxHash
+             * @memberof tendermint.types.Vote
+             * @instance
+             */
+            Vote.prototype.validatorProTxHash = $util.newBuffer([]);
+
+            /**
+             * Vote validatorIndex.
+             * @member {number} validatorIndex
+             * @memberof tendermint.types.Vote
+             * @instance
+             */
+            Vote.prototype.validatorIndex = 0;
+
+            /**
+             * Vote blockSignature.
+             * @member {Uint8Array} blockSignature
+             * @memberof tendermint.types.Vote
+             * @instance
+             */
+            Vote.prototype.blockSignature = $util.newBuffer([]);
+
+            /**
+             * Vote stateSignature.
+             * @member {Uint8Array} stateSignature
+             * @memberof tendermint.types.Vote
+             * @instance
+             */
+            Vote.prototype.stateSignature = $util.newBuffer([]);
+
+            /**
+             * Creates a new Vote instance using the specified properties.
+             * @function create
+             * @memberof tendermint.types.Vote
+             * @static
+             * @param {tendermint.types.IVote=} [properties] Properties to set
+             * @returns {tendermint.types.Vote} Vote instance
+             */
+            Vote.create = function create(properties) {
+                return new Vote(properties);
+            };
+
+            /**
+             * Encodes the specified Vote message. Does not implicitly {@link tendermint.types.Vote.verify|verify} messages.
+             * @function encode
+             * @memberof tendermint.types.Vote
+             * @static
+             * @param {tendermint.types.IVote} message Vote message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Vote.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.type != null && Object.hasOwnProperty.call(message, "type"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
+                if (message.height != null && Object.hasOwnProperty.call(message, "height"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.height);
+                if (message.round != null && Object.hasOwnProperty.call(message, "round"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.round);
+                if (message.blockId != null && Object.hasOwnProperty.call(message, "blockId"))
+                    $root.tendermint.types.BlockID.encode(message.blockId, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.validatorProTxHash != null && Object.hasOwnProperty.call(message, "validatorProTxHash"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).bytes(message.validatorProTxHash);
+                if (message.validatorIndex != null && Object.hasOwnProperty.call(message, "validatorIndex"))
+                    writer.uint32(/* id 7, wireType 0 =*/56).int32(message.validatorIndex);
+                if (message.blockSignature != null && Object.hasOwnProperty.call(message, "blockSignature"))
+                    writer.uint32(/* id 8, wireType 2 =*/66).bytes(message.blockSignature);
+                if (message.stateId != null && Object.hasOwnProperty.call(message, "stateId"))
+                    $root.tendermint.types.StateID.encode(message.stateId, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                if (message.stateSignature != null && Object.hasOwnProperty.call(message, "stateSignature"))
+                    writer.uint32(/* id 10, wireType 2 =*/82).bytes(message.stateSignature);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Vote message, length delimited. Does not implicitly {@link tendermint.types.Vote.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof tendermint.types.Vote
+             * @static
+             * @param {tendermint.types.IVote} message Vote message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Vote.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Vote message from the specified reader or buffer.
+             * @function decode
+             * @memberof tendermint.types.Vote
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {tendermint.types.Vote} Vote
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Vote.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.tendermint.types.Vote();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.type = reader.int32();
+                        break;
+                    case 2:
+                        message.height = reader.int64();
+                        break;
+                    case 3:
+                        message.round = reader.int32();
+                        break;
+                    case 4:
+                        message.blockId = $root.tendermint.types.BlockID.decode(reader, reader.uint32());
+                        break;
+                    case 9:
+                        message.stateId = $root.tendermint.types.StateID.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.validatorProTxHash = reader.bytes();
+                        break;
+                    case 7:
+                        message.validatorIndex = reader.int32();
+                        break;
+                    case 8:
+                        message.blockSignature = reader.bytes();
+                        break;
+                    case 10:
+                        message.stateSignature = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Vote message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof tendermint.types.Vote
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {tendermint.types.Vote} Vote
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Vote.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Vote message.
+             * @function verify
+             * @memberof tendermint.types.Vote
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Vote.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.type != null && message.hasOwnProperty("type"))
+                    switch (message.type) {
+                    default:
+                        return "type: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 32:
+                        break;
+                    }
+                if (message.height != null && message.hasOwnProperty("height"))
+                    if (!$util.isInteger(message.height) && !(message.height && $util.isInteger(message.height.low) && $util.isInteger(message.height.high)))
+                        return "height: integer|Long expected";
+                if (message.round != null && message.hasOwnProperty("round"))
+                    if (!$util.isInteger(message.round))
+                        return "round: integer expected";
+                if (message.blockId != null && message.hasOwnProperty("blockId")) {
+                    var error = $root.tendermint.types.BlockID.verify(message.blockId);
+                    if (error)
+                        return "blockId." + error;
+                }
+                if (message.stateId != null && message.hasOwnProperty("stateId")) {
+                    var error = $root.tendermint.types.StateID.verify(message.stateId);
+                    if (error)
+                        return "stateId." + error;
+                }
+                if (message.validatorProTxHash != null && message.hasOwnProperty("validatorProTxHash"))
+                    if (!(message.validatorProTxHash && typeof message.validatorProTxHash.length === "number" || $util.isString(message.validatorProTxHash)))
+                        return "validatorProTxHash: buffer expected";
+                if (message.validatorIndex != null && message.hasOwnProperty("validatorIndex"))
+                    if (!$util.isInteger(message.validatorIndex))
+                        return "validatorIndex: integer expected";
+                if (message.blockSignature != null && message.hasOwnProperty("blockSignature"))
+                    if (!(message.blockSignature && typeof message.blockSignature.length === "number" || $util.isString(message.blockSignature)))
+                        return "blockSignature: buffer expected";
+                if (message.stateSignature != null && message.hasOwnProperty("stateSignature"))
+                    if (!(message.stateSignature && typeof message.stateSignature.length === "number" || $util.isString(message.stateSignature)))
+                        return "stateSignature: buffer expected";
+                return null;
+            };
+
+            /**
+             * Creates a Vote message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof tendermint.types.Vote
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {tendermint.types.Vote} Vote
+             */
+            Vote.fromObject = function fromObject(object) {
+                if (object instanceof $root.tendermint.types.Vote)
+                    return object;
+                var message = new $root.tendermint.types.Vote();
+                switch (object.type) {
+                case "SIGNED_MSG_TYPE_UNKNOWN":
+                case 0:
+                    message.type = 0;
+                    break;
+                case "SIGNED_MSG_TYPE_PREVOTE":
+                case 1:
+                    message.type = 1;
+                    break;
+                case "SIGNED_MSG_TYPE_PRECOMMIT":
+                case 2:
+                    message.type = 2;
+                    break;
+                case "SIGNED_MSG_TYPE_COMMIT":
+                case 3:
+                    message.type = 3;
+                    break;
+                case "SIGNED_MSG_TYPE_PROPOSAL":
+                case 32:
+                    message.type = 32;
+                    break;
+                }
+                if (object.height != null)
+                    if ($util.Long)
+                        (message.height = $util.Long.fromValue(object.height)).unsigned = false;
+                    else if (typeof object.height === "string")
+                        message.height = parseInt(object.height, 10);
+                    else if (typeof object.height === "number")
+                        message.height = object.height;
+                    else if (typeof object.height === "object")
+                        message.height = new $util.LongBits(object.height.low >>> 0, object.height.high >>> 0).toNumber();
+                if (object.round != null)
+                    message.round = object.round | 0;
+                if (object.blockId != null) {
+                    if (typeof object.blockId !== "object")
+                        throw TypeError(".tendermint.types.Vote.blockId: object expected");
+                    message.blockId = $root.tendermint.types.BlockID.fromObject(object.blockId);
+                }
+                if (object.stateId != null) {
+                    if (typeof object.stateId !== "object")
+                        throw TypeError(".tendermint.types.Vote.stateId: object expected");
+                    message.stateId = $root.tendermint.types.StateID.fromObject(object.stateId);
+                }
+                if (object.validatorProTxHash != null)
+                    if (typeof object.validatorProTxHash === "string")
+                        $util.base64.decode(object.validatorProTxHash, message.validatorProTxHash = $util.newBuffer($util.base64.length(object.validatorProTxHash)), 0);
+                    else if (object.validatorProTxHash.length >= 0)
+                        message.validatorProTxHash = object.validatorProTxHash;
+                if (object.validatorIndex != null)
+                    message.validatorIndex = object.validatorIndex | 0;
+                if (object.blockSignature != null)
+                    if (typeof object.blockSignature === "string")
+                        $util.base64.decode(object.blockSignature, message.blockSignature = $util.newBuffer($util.base64.length(object.blockSignature)), 0);
+                    else if (object.blockSignature.length >= 0)
+                        message.blockSignature = object.blockSignature;
+                if (object.stateSignature != null)
+                    if (typeof object.stateSignature === "string")
+                        $util.base64.decode(object.stateSignature, message.stateSignature = $util.newBuffer($util.base64.length(object.stateSignature)), 0);
+                    else if (object.stateSignature.length >= 0)
+                        message.stateSignature = object.stateSignature;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Vote message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof tendermint.types.Vote
+             * @static
+             * @param {tendermint.types.Vote} message Vote
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Vote.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.type = options.enums === String ? "SIGNED_MSG_TYPE_UNKNOWN" : 0;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.height = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.height = options.longs === String ? "0" : 0;
+                    object.round = 0;
+                    object.blockId = null;
+                    if (options.bytes === String)
+                        object.validatorProTxHash = "";
+                    else {
+                        object.validatorProTxHash = [];
+                        if (options.bytes !== Array)
+                            object.validatorProTxHash = $util.newBuffer(object.validatorProTxHash);
+                    }
+                    object.validatorIndex = 0;
+                    if (options.bytes === String)
+                        object.blockSignature = "";
+                    else {
+                        object.blockSignature = [];
+                        if (options.bytes !== Array)
+                            object.blockSignature = $util.newBuffer(object.blockSignature);
+                    }
+                    object.stateId = null;
+                    if (options.bytes === String)
+                        object.stateSignature = "";
+                    else {
+                        object.stateSignature = [];
+                        if (options.bytes !== Array)
+                            object.stateSignature = $util.newBuffer(object.stateSignature);
+                    }
+                }
+                if (message.type != null && message.hasOwnProperty("type"))
+                    object.type = options.enums === String ? $root.tendermint.types.SignedMsgType[message.type] : message.type;
+                if (message.height != null && message.hasOwnProperty("height"))
+                    if (typeof message.height === "number")
+                        object.height = options.longs === String ? String(message.height) : message.height;
+                    else
+                        object.height = options.longs === String ? $util.Long.prototype.toString.call(message.height) : options.longs === Number ? new $util.LongBits(message.height.low >>> 0, message.height.high >>> 0).toNumber() : message.height;
+                if (message.round != null && message.hasOwnProperty("round"))
+                    object.round = message.round;
+                if (message.blockId != null && message.hasOwnProperty("blockId"))
+                    object.blockId = $root.tendermint.types.BlockID.toObject(message.blockId, options);
+                if (message.validatorProTxHash != null && message.hasOwnProperty("validatorProTxHash"))
+                    object.validatorProTxHash = options.bytes === String ? $util.base64.encode(message.validatorProTxHash, 0, message.validatorProTxHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.validatorProTxHash) : message.validatorProTxHash;
+                if (message.validatorIndex != null && message.hasOwnProperty("validatorIndex"))
+                    object.validatorIndex = message.validatorIndex;
+                if (message.blockSignature != null && message.hasOwnProperty("blockSignature"))
+                    object.blockSignature = options.bytes === String ? $util.base64.encode(message.blockSignature, 0, message.blockSignature.length) : options.bytes === Array ? Array.prototype.slice.call(message.blockSignature) : message.blockSignature;
+                if (message.stateId != null && message.hasOwnProperty("stateId"))
+                    object.stateId = $root.tendermint.types.StateID.toObject(message.stateId, options);
+                if (message.stateSignature != null && message.hasOwnProperty("stateSignature"))
+                    object.stateSignature = options.bytes === String ? $util.base64.encode(message.stateSignature, 0, message.stateSignature.length) : options.bytes === Array ? Array.prototype.slice.call(message.stateSignature) : message.stateSignature;
+                return object;
+            };
+
+            /**
+             * Converts this Vote to JSON.
+             * @function toJSON
+             * @memberof tendermint.types.Vote
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Vote.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Vote;
+        })();
+
+        types.Commit = (function() {
+
+            /**
+             * Properties of a Commit.
+             * @memberof tendermint.types
+             * @interface ICommit
+             * @property {number|Long|null} [height] Commit height
+             * @property {number|null} [round] Commit round
+             * @property {tendermint.types.IBlockID|null} [blockId] Commit blockId
+             * @property {tendermint.types.IStateID|null} [stateId] Commit stateId
+             * @property {Uint8Array|null} [quorumHash] Commit quorumHash
+             * @property {Uint8Array|null} [thresholdBlockSignature] Commit thresholdBlockSignature
+             * @property {Uint8Array|null} [thresholdStateSignature] Commit thresholdStateSignature
+             */
+
+            /**
+             * Constructs a new Commit.
+             * @memberof tendermint.types
+             * @classdesc Represents a Commit.
+             * @implements ICommit
+             * @constructor
+             * @param {tendermint.types.ICommit=} [properties] Properties to set
+             */
+            function Commit(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Commit height.
+             * @member {number|Long} height
+             * @memberof tendermint.types.Commit
+             * @instance
+             */
+            Commit.prototype.height = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Commit round.
+             * @member {number} round
+             * @memberof tendermint.types.Commit
+             * @instance
+             */
+            Commit.prototype.round = 0;
+
+            /**
+             * Commit blockId.
+             * @member {tendermint.types.IBlockID|null|undefined} blockId
+             * @memberof tendermint.types.Commit
+             * @instance
+             */
+            Commit.prototype.blockId = null;
+
+            /**
+             * Commit stateId.
+             * @member {tendermint.types.IStateID|null|undefined} stateId
+             * @memberof tendermint.types.Commit
+             * @instance
+             */
+            Commit.prototype.stateId = null;
+
+            /**
+             * Commit quorumHash.
+             * @member {Uint8Array} quorumHash
+             * @memberof tendermint.types.Commit
+             * @instance
+             */
+            Commit.prototype.quorumHash = $util.newBuffer([]);
+
+            /**
+             * Commit thresholdBlockSignature.
+             * @member {Uint8Array} thresholdBlockSignature
+             * @memberof tendermint.types.Commit
+             * @instance
+             */
+            Commit.prototype.thresholdBlockSignature = $util.newBuffer([]);
+
+            /**
+             * Commit thresholdStateSignature.
+             * @member {Uint8Array} thresholdStateSignature
+             * @memberof tendermint.types.Commit
+             * @instance
+             */
+            Commit.prototype.thresholdStateSignature = $util.newBuffer([]);
+
+            /**
+             * Creates a new Commit instance using the specified properties.
+             * @function create
+             * @memberof tendermint.types.Commit
+             * @static
+             * @param {tendermint.types.ICommit=} [properties] Properties to set
+             * @returns {tendermint.types.Commit} Commit instance
+             */
+            Commit.create = function create(properties) {
+                return new Commit(properties);
+            };
+
+            /**
+             * Encodes the specified Commit message. Does not implicitly {@link tendermint.types.Commit.verify|verify} messages.
+             * @function encode
+             * @memberof tendermint.types.Commit
+             * @static
+             * @param {tendermint.types.ICommit} message Commit message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Commit.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.height != null && Object.hasOwnProperty.call(message, "height"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.height);
+                if (message.round != null && Object.hasOwnProperty.call(message, "round"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.round);
+                if (message.blockId != null && Object.hasOwnProperty.call(message, "blockId"))
+                    $root.tendermint.types.BlockID.encode(message.blockId, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.stateId != null && Object.hasOwnProperty.call(message, "stateId"))
+                    $root.tendermint.types.StateID.encode(message.stateId, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.quorumHash != null && Object.hasOwnProperty.call(message, "quorumHash"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).bytes(message.quorumHash);
+                if (message.thresholdBlockSignature != null && Object.hasOwnProperty.call(message, "thresholdBlockSignature"))
+                    writer.uint32(/* id 7, wireType 2 =*/58).bytes(message.thresholdBlockSignature);
+                if (message.thresholdStateSignature != null && Object.hasOwnProperty.call(message, "thresholdStateSignature"))
+                    writer.uint32(/* id 8, wireType 2 =*/66).bytes(message.thresholdStateSignature);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Commit message, length delimited. Does not implicitly {@link tendermint.types.Commit.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof tendermint.types.Commit
+             * @static
+             * @param {tendermint.types.ICommit} message Commit message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Commit.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Commit message from the specified reader or buffer.
+             * @function decode
+             * @memberof tendermint.types.Commit
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {tendermint.types.Commit} Commit
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Commit.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.tendermint.types.Commit();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.height = reader.int64();
+                        break;
+                    case 2:
+                        message.round = reader.int32();
+                        break;
+                    case 3:
+                        message.blockId = $root.tendermint.types.BlockID.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.stateId = $root.tendermint.types.StateID.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.quorumHash = reader.bytes();
+                        break;
+                    case 7:
+                        message.thresholdBlockSignature = reader.bytes();
+                        break;
+                    case 8:
+                        message.thresholdStateSignature = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Commit message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof tendermint.types.Commit
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {tendermint.types.Commit} Commit
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Commit.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Commit message.
+             * @function verify
+             * @memberof tendermint.types.Commit
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Commit.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.height != null && message.hasOwnProperty("height"))
+                    if (!$util.isInteger(message.height) && !(message.height && $util.isInteger(message.height.low) && $util.isInteger(message.height.high)))
+                        return "height: integer|Long expected";
+                if (message.round != null && message.hasOwnProperty("round"))
+                    if (!$util.isInteger(message.round))
+                        return "round: integer expected";
+                if (message.blockId != null && message.hasOwnProperty("blockId")) {
+                    var error = $root.tendermint.types.BlockID.verify(message.blockId);
+                    if (error)
+                        return "blockId." + error;
+                }
+                if (message.stateId != null && message.hasOwnProperty("stateId")) {
+                    var error = $root.tendermint.types.StateID.verify(message.stateId);
+                    if (error)
+                        return "stateId." + error;
+                }
+                if (message.quorumHash != null && message.hasOwnProperty("quorumHash"))
+                    if (!(message.quorumHash && typeof message.quorumHash.length === "number" || $util.isString(message.quorumHash)))
+                        return "quorumHash: buffer expected";
+                if (message.thresholdBlockSignature != null && message.hasOwnProperty("thresholdBlockSignature"))
+                    if (!(message.thresholdBlockSignature && typeof message.thresholdBlockSignature.length === "number" || $util.isString(message.thresholdBlockSignature)))
+                        return "thresholdBlockSignature: buffer expected";
+                if (message.thresholdStateSignature != null && message.hasOwnProperty("thresholdStateSignature"))
+                    if (!(message.thresholdStateSignature && typeof message.thresholdStateSignature.length === "number" || $util.isString(message.thresholdStateSignature)))
+                        return "thresholdStateSignature: buffer expected";
+                return null;
+            };
+
+            /**
+             * Creates a Commit message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof tendermint.types.Commit
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {tendermint.types.Commit} Commit
+             */
+            Commit.fromObject = function fromObject(object) {
+                if (object instanceof $root.tendermint.types.Commit)
+                    return object;
+                var message = new $root.tendermint.types.Commit();
+                if (object.height != null)
+                    if ($util.Long)
+                        (message.height = $util.Long.fromValue(object.height)).unsigned = false;
+                    else if (typeof object.height === "string")
+                        message.height = parseInt(object.height, 10);
+                    else if (typeof object.height === "number")
+                        message.height = object.height;
+                    else if (typeof object.height === "object")
+                        message.height = new $util.LongBits(object.height.low >>> 0, object.height.high >>> 0).toNumber();
+                if (object.round != null)
+                    message.round = object.round | 0;
+                if (object.blockId != null) {
+                    if (typeof object.blockId !== "object")
+                        throw TypeError(".tendermint.types.Commit.blockId: object expected");
+                    message.blockId = $root.tendermint.types.BlockID.fromObject(object.blockId);
+                }
+                if (object.stateId != null) {
+                    if (typeof object.stateId !== "object")
+                        throw TypeError(".tendermint.types.Commit.stateId: object expected");
+                    message.stateId = $root.tendermint.types.StateID.fromObject(object.stateId);
+                }
+                if (object.quorumHash != null)
+                    if (typeof object.quorumHash === "string")
+                        $util.base64.decode(object.quorumHash, message.quorumHash = $util.newBuffer($util.base64.length(object.quorumHash)), 0);
+                    else if (object.quorumHash.length >= 0)
+                        message.quorumHash = object.quorumHash;
+                if (object.thresholdBlockSignature != null)
+                    if (typeof object.thresholdBlockSignature === "string")
+                        $util.base64.decode(object.thresholdBlockSignature, message.thresholdBlockSignature = $util.newBuffer($util.base64.length(object.thresholdBlockSignature)), 0);
+                    else if (object.thresholdBlockSignature.length >= 0)
+                        message.thresholdBlockSignature = object.thresholdBlockSignature;
+                if (object.thresholdStateSignature != null)
+                    if (typeof object.thresholdStateSignature === "string")
+                        $util.base64.decode(object.thresholdStateSignature, message.thresholdStateSignature = $util.newBuffer($util.base64.length(object.thresholdStateSignature)), 0);
+                    else if (object.thresholdStateSignature.length >= 0)
+                        message.thresholdStateSignature = object.thresholdStateSignature;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Commit message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof tendermint.types.Commit
+             * @static
+             * @param {tendermint.types.Commit} message Commit
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Commit.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.height = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.height = options.longs === String ? "0" : 0;
+                    object.round = 0;
+                    object.blockId = null;
+                    object.stateId = null;
+                    if (options.bytes === String)
+                        object.quorumHash = "";
+                    else {
+                        object.quorumHash = [];
+                        if (options.bytes !== Array)
+                            object.quorumHash = $util.newBuffer(object.quorumHash);
+                    }
+                    if (options.bytes === String)
+                        object.thresholdBlockSignature = "";
+                    else {
+                        object.thresholdBlockSignature = [];
+                        if (options.bytes !== Array)
+                            object.thresholdBlockSignature = $util.newBuffer(object.thresholdBlockSignature);
+                    }
+                    if (options.bytes === String)
+                        object.thresholdStateSignature = "";
+                    else {
+                        object.thresholdStateSignature = [];
+                        if (options.bytes !== Array)
+                            object.thresholdStateSignature = $util.newBuffer(object.thresholdStateSignature);
+                    }
+                }
+                if (message.height != null && message.hasOwnProperty("height"))
+                    if (typeof message.height === "number")
+                        object.height = options.longs === String ? String(message.height) : message.height;
+                    else
+                        object.height = options.longs === String ? $util.Long.prototype.toString.call(message.height) : options.longs === Number ? new $util.LongBits(message.height.low >>> 0, message.height.high >>> 0).toNumber() : message.height;
+                if (message.round != null && message.hasOwnProperty("round"))
+                    object.round = message.round;
+                if (message.blockId != null && message.hasOwnProperty("blockId"))
+                    object.blockId = $root.tendermint.types.BlockID.toObject(message.blockId, options);
+                if (message.stateId != null && message.hasOwnProperty("stateId"))
+                    object.stateId = $root.tendermint.types.StateID.toObject(message.stateId, options);
+                if (message.quorumHash != null && message.hasOwnProperty("quorumHash"))
+                    object.quorumHash = options.bytes === String ? $util.base64.encode(message.quorumHash, 0, message.quorumHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.quorumHash) : message.quorumHash;
+                if (message.thresholdBlockSignature != null && message.hasOwnProperty("thresholdBlockSignature"))
+                    object.thresholdBlockSignature = options.bytes === String ? $util.base64.encode(message.thresholdBlockSignature, 0, message.thresholdBlockSignature.length) : options.bytes === Array ? Array.prototype.slice.call(message.thresholdBlockSignature) : message.thresholdBlockSignature;
+                if (message.thresholdStateSignature != null && message.hasOwnProperty("thresholdStateSignature"))
+                    object.thresholdStateSignature = options.bytes === String ? $util.base64.encode(message.thresholdStateSignature, 0, message.thresholdStateSignature.length) : options.bytes === Array ? Array.prototype.slice.call(message.thresholdStateSignature) : message.thresholdStateSignature;
+                return object;
+            };
+
+            /**
+             * Converts this Commit to JSON.
+             * @function toJSON
+             * @memberof tendermint.types.Commit
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Commit.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Commit;
+        })();
+
+        types.Proposal = (function() {
+
+            /**
+             * Properties of a Proposal.
+             * @memberof tendermint.types
+             * @interface IProposal
+             * @property {tendermint.types.SignedMsgType|null} [type] Proposal type
+             * @property {number|Long|null} [height] Proposal height
+             * @property {number|null} [coreChainLockedHeight] Proposal coreChainLockedHeight
+             * @property {number|null} [round] Proposal round
+             * @property {number|null} [polRound] Proposal polRound
+             * @property {tendermint.types.IBlockID|null} [blockId] Proposal blockId
+             * @property {google.protobuf.ITimestamp|null} [timestamp] Proposal timestamp
+             * @property {Uint8Array|null} [signature] Proposal signature
+             */
+
+            /**
+             * Constructs a new Proposal.
+             * @memberof tendermint.types
+             * @classdesc Represents a Proposal.
+             * @implements IProposal
+             * @constructor
+             * @param {tendermint.types.IProposal=} [properties] Properties to set
+             */
+            function Proposal(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Proposal type.
+             * @member {tendermint.types.SignedMsgType} type
+             * @memberof tendermint.types.Proposal
+             * @instance
+             */
+            Proposal.prototype.type = 0;
+
+            /**
+             * Proposal height.
+             * @member {number|Long} height
+             * @memberof tendermint.types.Proposal
+             * @instance
+             */
+            Proposal.prototype.height = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Proposal coreChainLockedHeight.
+             * @member {number} coreChainLockedHeight
+             * @memberof tendermint.types.Proposal
+             * @instance
+             */
+            Proposal.prototype.coreChainLockedHeight = 0;
+
+            /**
+             * Proposal round.
+             * @member {number} round
+             * @memberof tendermint.types.Proposal
+             * @instance
+             */
+            Proposal.prototype.round = 0;
+
+            /**
+             * Proposal polRound.
+             * @member {number} polRound
+             * @memberof tendermint.types.Proposal
+             * @instance
+             */
+            Proposal.prototype.polRound = 0;
+
+            /**
+             * Proposal blockId.
+             * @member {tendermint.types.IBlockID|null|undefined} blockId
+             * @memberof tendermint.types.Proposal
+             * @instance
+             */
+            Proposal.prototype.blockId = null;
+
+            /**
+             * Proposal timestamp.
+             * @member {google.protobuf.ITimestamp|null|undefined} timestamp
+             * @memberof tendermint.types.Proposal
+             * @instance
+             */
+            Proposal.prototype.timestamp = null;
+
+            /**
+             * Proposal signature.
+             * @member {Uint8Array} signature
+             * @memberof tendermint.types.Proposal
+             * @instance
+             */
+            Proposal.prototype.signature = $util.newBuffer([]);
+
+            /**
+             * Creates a new Proposal instance using the specified properties.
+             * @function create
+             * @memberof tendermint.types.Proposal
+             * @static
+             * @param {tendermint.types.IProposal=} [properties] Properties to set
+             * @returns {tendermint.types.Proposal} Proposal instance
+             */
+            Proposal.create = function create(properties) {
+                return new Proposal(properties);
+            };
+
+            /**
+             * Encodes the specified Proposal message. Does not implicitly {@link tendermint.types.Proposal.verify|verify} messages.
+             * @function encode
+             * @memberof tendermint.types.Proposal
+             * @static
+             * @param {tendermint.types.IProposal} message Proposal message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Proposal.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.type != null && Object.hasOwnProperty.call(message, "type"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.type);
+                if (message.height != null && Object.hasOwnProperty.call(message, "height"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.height);
+                if (message.round != null && Object.hasOwnProperty.call(message, "round"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int32(message.round);
+                if (message.polRound != null && Object.hasOwnProperty.call(message, "polRound"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int32(message.polRound);
+                if (message.blockId != null && Object.hasOwnProperty.call(message, "blockId"))
+                    $root.tendermint.types.BlockID.encode(message.blockId, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.timestamp != null && Object.hasOwnProperty.call(message, "timestamp"))
+                    $root.google.protobuf.Timestamp.encode(message.timestamp, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                if (message.signature != null && Object.hasOwnProperty.call(message, "signature"))
+                    writer.uint32(/* id 7, wireType 2 =*/58).bytes(message.signature);
+                if (message.coreChainLockedHeight != null && Object.hasOwnProperty.call(message, "coreChainLockedHeight"))
+                    writer.uint32(/* id 100, wireType 0 =*/800).uint32(message.coreChainLockedHeight);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Proposal message, length delimited. Does not implicitly {@link tendermint.types.Proposal.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof tendermint.types.Proposal
+             * @static
+             * @param {tendermint.types.IProposal} message Proposal message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Proposal.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Proposal message from the specified reader or buffer.
+             * @function decode
+             * @memberof tendermint.types.Proposal
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {tendermint.types.Proposal} Proposal
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Proposal.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.tendermint.types.Proposal();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.type = reader.int32();
+                        break;
+                    case 2:
+                        message.height = reader.int64();
+                        break;
+                    case 100:
+                        message.coreChainLockedHeight = reader.uint32();
+                        break;
+                    case 3:
+                        message.round = reader.int32();
+                        break;
+                    case 4:
+                        message.polRound = reader.int32();
+                        break;
+                    case 5:
+                        message.blockId = $root.tendermint.types.BlockID.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.timestamp = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 7:
+                        message.signature = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Proposal message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof tendermint.types.Proposal
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {tendermint.types.Proposal} Proposal
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Proposal.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Proposal message.
+             * @function verify
+             * @memberof tendermint.types.Proposal
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Proposal.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.type != null && message.hasOwnProperty("type"))
+                    switch (message.type) {
+                    default:
+                        return "type: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 32:
+                        break;
+                    }
+                if (message.height != null && message.hasOwnProperty("height"))
+                    if (!$util.isInteger(message.height) && !(message.height && $util.isInteger(message.height.low) && $util.isInteger(message.height.high)))
+                        return "height: integer|Long expected";
+                if (message.coreChainLockedHeight != null && message.hasOwnProperty("coreChainLockedHeight"))
+                    if (!$util.isInteger(message.coreChainLockedHeight))
+                        return "coreChainLockedHeight: integer expected";
+                if (message.round != null && message.hasOwnProperty("round"))
+                    if (!$util.isInteger(message.round))
+                        return "round: integer expected";
+                if (message.polRound != null && message.hasOwnProperty("polRound"))
+                    if (!$util.isInteger(message.polRound))
+                        return "polRound: integer expected";
+                if (message.blockId != null && message.hasOwnProperty("blockId")) {
+                    var error = $root.tendermint.types.BlockID.verify(message.blockId);
+                    if (error)
+                        return "blockId." + error;
+                }
+                if (message.timestamp != null && message.hasOwnProperty("timestamp")) {
+                    var error = $root.google.protobuf.Timestamp.verify(message.timestamp);
+                    if (error)
+                        return "timestamp." + error;
+                }
+                if (message.signature != null && message.hasOwnProperty("signature"))
+                    if (!(message.signature && typeof message.signature.length === "number" || $util.isString(message.signature)))
+                        return "signature: buffer expected";
+                return null;
+            };
+
+            /**
+             * Creates a Proposal message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof tendermint.types.Proposal
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {tendermint.types.Proposal} Proposal
+             */
+            Proposal.fromObject = function fromObject(object) {
+                if (object instanceof $root.tendermint.types.Proposal)
+                    return object;
+                var message = new $root.tendermint.types.Proposal();
+                switch (object.type) {
+                case "SIGNED_MSG_TYPE_UNKNOWN":
+                case 0:
+                    message.type = 0;
+                    break;
+                case "SIGNED_MSG_TYPE_PREVOTE":
+                case 1:
+                    message.type = 1;
+                    break;
+                case "SIGNED_MSG_TYPE_PRECOMMIT":
+                case 2:
+                    message.type = 2;
+                    break;
+                case "SIGNED_MSG_TYPE_COMMIT":
+                case 3:
+                    message.type = 3;
+                    break;
+                case "SIGNED_MSG_TYPE_PROPOSAL":
+                case 32:
+                    message.type = 32;
+                    break;
+                }
+                if (object.height != null)
+                    if ($util.Long)
+                        (message.height = $util.Long.fromValue(object.height)).unsigned = false;
+                    else if (typeof object.height === "string")
+                        message.height = parseInt(object.height, 10);
+                    else if (typeof object.height === "number")
+                        message.height = object.height;
+                    else if (typeof object.height === "object")
+                        message.height = new $util.LongBits(object.height.low >>> 0, object.height.high >>> 0).toNumber();
+                if (object.coreChainLockedHeight != null)
+                    message.coreChainLockedHeight = object.coreChainLockedHeight >>> 0;
+                if (object.round != null)
+                    message.round = object.round | 0;
+                if (object.polRound != null)
+                    message.polRound = object.polRound | 0;
+                if (object.blockId != null) {
+                    if (typeof object.blockId !== "object")
+                        throw TypeError(".tendermint.types.Proposal.blockId: object expected");
+                    message.blockId = $root.tendermint.types.BlockID.fromObject(object.blockId);
+                }
+                if (object.timestamp != null) {
+                    if (typeof object.timestamp !== "object")
+                        throw TypeError(".tendermint.types.Proposal.timestamp: object expected");
+                    message.timestamp = $root.google.protobuf.Timestamp.fromObject(object.timestamp);
+                }
+                if (object.signature != null)
+                    if (typeof object.signature === "string")
+                        $util.base64.decode(object.signature, message.signature = $util.newBuffer($util.base64.length(object.signature)), 0);
+                    else if (object.signature.length >= 0)
+                        message.signature = object.signature;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Proposal message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof tendermint.types.Proposal
+             * @static
+             * @param {tendermint.types.Proposal} message Proposal
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Proposal.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.type = options.enums === String ? "SIGNED_MSG_TYPE_UNKNOWN" : 0;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.height = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.height = options.longs === String ? "0" : 0;
+                    object.round = 0;
+                    object.polRound = 0;
+                    object.blockId = null;
+                    object.timestamp = null;
+                    if (options.bytes === String)
+                        object.signature = "";
+                    else {
+                        object.signature = [];
+                        if (options.bytes !== Array)
+                            object.signature = $util.newBuffer(object.signature);
+                    }
+                    object.coreChainLockedHeight = 0;
+                }
+                if (message.type != null && message.hasOwnProperty("type"))
+                    object.type = options.enums === String ? $root.tendermint.types.SignedMsgType[message.type] : message.type;
+                if (message.height != null && message.hasOwnProperty("height"))
+                    if (typeof message.height === "number")
+                        object.height = options.longs === String ? String(message.height) : message.height;
+                    else
+                        object.height = options.longs === String ? $util.Long.prototype.toString.call(message.height) : options.longs === Number ? new $util.LongBits(message.height.low >>> 0, message.height.high >>> 0).toNumber() : message.height;
+                if (message.round != null && message.hasOwnProperty("round"))
+                    object.round = message.round;
+                if (message.polRound != null && message.hasOwnProperty("polRound"))
+                    object.polRound = message.polRound;
+                if (message.blockId != null && message.hasOwnProperty("blockId"))
+                    object.blockId = $root.tendermint.types.BlockID.toObject(message.blockId, options);
+                if (message.timestamp != null && message.hasOwnProperty("timestamp"))
+                    object.timestamp = $root.google.protobuf.Timestamp.toObject(message.timestamp, options);
+                if (message.signature != null && message.hasOwnProperty("signature"))
+                    object.signature = options.bytes === String ? $util.base64.encode(message.signature, 0, message.signature.length) : options.bytes === Array ? Array.prototype.slice.call(message.signature) : message.signature;
+                if (message.coreChainLockedHeight != null && message.hasOwnProperty("coreChainLockedHeight"))
+                    object.coreChainLockedHeight = message.coreChainLockedHeight;
+                return object;
+            };
+
+            /**
+             * Converts this Proposal to JSON.
+             * @function toJSON
+             * @memberof tendermint.types.Proposal
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Proposal.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Proposal;
+        })();
+
+        types.SignedHeader = (function() {
+
+            /**
+             * Properties of a SignedHeader.
+             * @memberof tendermint.types
+             * @interface ISignedHeader
+             * @property {tendermint.types.IHeader|null} [header] SignedHeader header
+             * @property {tendermint.types.ICommit|null} [commit] SignedHeader commit
+             */
+
+            /**
+             * Constructs a new SignedHeader.
+             * @memberof tendermint.types
+             * @classdesc Represents a SignedHeader.
+             * @implements ISignedHeader
+             * @constructor
+             * @param {tendermint.types.ISignedHeader=} [properties] Properties to set
+             */
+            function SignedHeader(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * SignedHeader header.
+             * @member {tendermint.types.IHeader|null|undefined} header
+             * @memberof tendermint.types.SignedHeader
+             * @instance
+             */
+            SignedHeader.prototype.header = null;
+
+            /**
+             * SignedHeader commit.
+             * @member {tendermint.types.ICommit|null|undefined} commit
+             * @memberof tendermint.types.SignedHeader
+             * @instance
+             */
+            SignedHeader.prototype.commit = null;
+
+            /**
+             * Creates a new SignedHeader instance using the specified properties.
+             * @function create
+             * @memberof tendermint.types.SignedHeader
+             * @static
+             * @param {tendermint.types.ISignedHeader=} [properties] Properties to set
+             * @returns {tendermint.types.SignedHeader} SignedHeader instance
+             */
+            SignedHeader.create = function create(properties) {
+                return new SignedHeader(properties);
+            };
+
+            /**
+             * Encodes the specified SignedHeader message. Does not implicitly {@link tendermint.types.SignedHeader.verify|verify} messages.
+             * @function encode
+             * @memberof tendermint.types.SignedHeader
+             * @static
+             * @param {tendermint.types.ISignedHeader} message SignedHeader message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SignedHeader.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.header != null && Object.hasOwnProperty.call(message, "header"))
+                    $root.tendermint.types.Header.encode(message.header, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.commit != null && Object.hasOwnProperty.call(message, "commit"))
+                    $root.tendermint.types.Commit.encode(message.commit, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified SignedHeader message, length delimited. Does not implicitly {@link tendermint.types.SignedHeader.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof tendermint.types.SignedHeader
+             * @static
+             * @param {tendermint.types.ISignedHeader} message SignedHeader message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SignedHeader.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a SignedHeader message from the specified reader or buffer.
+             * @function decode
+             * @memberof tendermint.types.SignedHeader
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {tendermint.types.SignedHeader} SignedHeader
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SignedHeader.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.tendermint.types.SignedHeader();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.header = $root.tendermint.types.Header.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.commit = $root.tendermint.types.Commit.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a SignedHeader message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof tendermint.types.SignedHeader
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {tendermint.types.SignedHeader} SignedHeader
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SignedHeader.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a SignedHeader message.
+             * @function verify
+             * @memberof tendermint.types.SignedHeader
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            SignedHeader.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.header != null && message.hasOwnProperty("header")) {
+                    var error = $root.tendermint.types.Header.verify(message.header);
+                    if (error)
+                        return "header." + error;
+                }
+                if (message.commit != null && message.hasOwnProperty("commit")) {
+                    var error = $root.tendermint.types.Commit.verify(message.commit);
+                    if (error)
+                        return "commit." + error;
+                }
+                return null;
+            };
+
+            /**
+             * Creates a SignedHeader message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof tendermint.types.SignedHeader
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {tendermint.types.SignedHeader} SignedHeader
+             */
+            SignedHeader.fromObject = function fromObject(object) {
+                if (object instanceof $root.tendermint.types.SignedHeader)
+                    return object;
+                var message = new $root.tendermint.types.SignedHeader();
+                if (object.header != null) {
+                    if (typeof object.header !== "object")
+                        throw TypeError(".tendermint.types.SignedHeader.header: object expected");
+                    message.header = $root.tendermint.types.Header.fromObject(object.header);
+                }
+                if (object.commit != null) {
+                    if (typeof object.commit !== "object")
+                        throw TypeError(".tendermint.types.SignedHeader.commit: object expected");
+                    message.commit = $root.tendermint.types.Commit.fromObject(object.commit);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a SignedHeader message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof tendermint.types.SignedHeader
+             * @static
+             * @param {tendermint.types.SignedHeader} message SignedHeader
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            SignedHeader.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.header = null;
+                    object.commit = null;
+                }
+                if (message.header != null && message.hasOwnProperty("header"))
+                    object.header = $root.tendermint.types.Header.toObject(message.header, options);
+                if (message.commit != null && message.hasOwnProperty("commit"))
+                    object.commit = $root.tendermint.types.Commit.toObject(message.commit, options);
+                return object;
+            };
+
+            /**
+             * Converts this SignedHeader to JSON.
+             * @function toJSON
+             * @memberof tendermint.types.SignedHeader
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            SignedHeader.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return SignedHeader;
+        })();
+
+        types.LightBlock = (function() {
+
+            /**
+             * Properties of a LightBlock.
+             * @memberof tendermint.types
+             * @interface ILightBlock
+             * @property {tendermint.types.ISignedHeader|null} [signedHeader] LightBlock signedHeader
+             * @property {tendermint.types.IValidatorSet|null} [validatorSet] LightBlock validatorSet
+             */
+
+            /**
+             * Constructs a new LightBlock.
+             * @memberof tendermint.types
+             * @classdesc Represents a LightBlock.
+             * @implements ILightBlock
+             * @constructor
+             * @param {tendermint.types.ILightBlock=} [properties] Properties to set
+             */
+            function LightBlock(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * LightBlock signedHeader.
+             * @member {tendermint.types.ISignedHeader|null|undefined} signedHeader
+             * @memberof tendermint.types.LightBlock
+             * @instance
+             */
+            LightBlock.prototype.signedHeader = null;
+
+            /**
+             * LightBlock validatorSet.
+             * @member {tendermint.types.IValidatorSet|null|undefined} validatorSet
+             * @memberof tendermint.types.LightBlock
+             * @instance
+             */
+            LightBlock.prototype.validatorSet = null;
+
+            /**
+             * Creates a new LightBlock instance using the specified properties.
+             * @function create
+             * @memberof tendermint.types.LightBlock
+             * @static
+             * @param {tendermint.types.ILightBlock=} [properties] Properties to set
+             * @returns {tendermint.types.LightBlock} LightBlock instance
+             */
+            LightBlock.create = function create(properties) {
+                return new LightBlock(properties);
+            };
+
+            /**
+             * Encodes the specified LightBlock message. Does not implicitly {@link tendermint.types.LightBlock.verify|verify} messages.
+             * @function encode
+             * @memberof tendermint.types.LightBlock
+             * @static
+             * @param {tendermint.types.ILightBlock} message LightBlock message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LightBlock.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.signedHeader != null && Object.hasOwnProperty.call(message, "signedHeader"))
+                    $root.tendermint.types.SignedHeader.encode(message.signedHeader, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.validatorSet != null && Object.hasOwnProperty.call(message, "validatorSet"))
+                    $root.tendermint.types.ValidatorSet.encode(message.validatorSet, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified LightBlock message, length delimited. Does not implicitly {@link tendermint.types.LightBlock.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof tendermint.types.LightBlock
+             * @static
+             * @param {tendermint.types.ILightBlock} message LightBlock message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            LightBlock.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a LightBlock message from the specified reader or buffer.
+             * @function decode
+             * @memberof tendermint.types.LightBlock
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {tendermint.types.LightBlock} LightBlock
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LightBlock.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.tendermint.types.LightBlock();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.signedHeader = $root.tendermint.types.SignedHeader.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.validatorSet = $root.tendermint.types.ValidatorSet.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a LightBlock message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof tendermint.types.LightBlock
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {tendermint.types.LightBlock} LightBlock
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            LightBlock.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a LightBlock message.
+             * @function verify
+             * @memberof tendermint.types.LightBlock
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            LightBlock.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.signedHeader != null && message.hasOwnProperty("signedHeader")) {
+                    var error = $root.tendermint.types.SignedHeader.verify(message.signedHeader);
+                    if (error)
+                        return "signedHeader." + error;
+                }
+                if (message.validatorSet != null && message.hasOwnProperty("validatorSet")) {
+                    var error = $root.tendermint.types.ValidatorSet.verify(message.validatorSet);
+                    if (error)
+                        return "validatorSet." + error;
+                }
+                return null;
+            };
+
+            /**
+             * Creates a LightBlock message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof tendermint.types.LightBlock
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {tendermint.types.LightBlock} LightBlock
+             */
+            LightBlock.fromObject = function fromObject(object) {
+                if (object instanceof $root.tendermint.types.LightBlock)
+                    return object;
+                var message = new $root.tendermint.types.LightBlock();
+                if (object.signedHeader != null) {
+                    if (typeof object.signedHeader !== "object")
+                        throw TypeError(".tendermint.types.LightBlock.signedHeader: object expected");
+                    message.signedHeader = $root.tendermint.types.SignedHeader.fromObject(object.signedHeader);
+                }
+                if (object.validatorSet != null) {
+                    if (typeof object.validatorSet !== "object")
+                        throw TypeError(".tendermint.types.LightBlock.validatorSet: object expected");
+                    message.validatorSet = $root.tendermint.types.ValidatorSet.fromObject(object.validatorSet);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a LightBlock message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof tendermint.types.LightBlock
+             * @static
+             * @param {tendermint.types.LightBlock} message LightBlock
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            LightBlock.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.signedHeader = null;
+                    object.validatorSet = null;
+                }
+                if (message.signedHeader != null && message.hasOwnProperty("signedHeader"))
+                    object.signedHeader = $root.tendermint.types.SignedHeader.toObject(message.signedHeader, options);
+                if (message.validatorSet != null && message.hasOwnProperty("validatorSet"))
+                    object.validatorSet = $root.tendermint.types.ValidatorSet.toObject(message.validatorSet, options);
+                return object;
+            };
+
+            /**
+             * Converts this LightBlock to JSON.
+             * @function toJSON
+             * @memberof tendermint.types.LightBlock
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            LightBlock.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return LightBlock;
+        })();
+
+        types.BlockMeta = (function() {
+
+            /**
+             * Properties of a BlockMeta.
+             * @memberof tendermint.types
+             * @interface IBlockMeta
+             * @property {tendermint.types.IBlockID|null} [blockId] BlockMeta blockId
+             * @property {tendermint.types.IStateID|null} [stateId] BlockMeta stateId
+             * @property {number|Long|null} [blockSize] BlockMeta blockSize
+             * @property {tendermint.types.IHeader|null} [header] BlockMeta header
+             * @property {number|Long|null} [numTxs] BlockMeta numTxs
+             * @property {boolean|null} [hasCoreChainLock] BlockMeta hasCoreChainLock
+             */
+
+            /**
+             * Constructs a new BlockMeta.
+             * @memberof tendermint.types
+             * @classdesc Represents a BlockMeta.
+             * @implements IBlockMeta
+             * @constructor
+             * @param {tendermint.types.IBlockMeta=} [properties] Properties to set
+             */
+            function BlockMeta(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * BlockMeta blockId.
+             * @member {tendermint.types.IBlockID|null|undefined} blockId
+             * @memberof tendermint.types.BlockMeta
+             * @instance
+             */
+            BlockMeta.prototype.blockId = null;
+
+            /**
+             * BlockMeta stateId.
+             * @member {tendermint.types.IStateID|null|undefined} stateId
+             * @memberof tendermint.types.BlockMeta
+             * @instance
+             */
+            BlockMeta.prototype.stateId = null;
+
+            /**
+             * BlockMeta blockSize.
+             * @member {number|Long} blockSize
+             * @memberof tendermint.types.BlockMeta
+             * @instance
+             */
+            BlockMeta.prototype.blockSize = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * BlockMeta header.
+             * @member {tendermint.types.IHeader|null|undefined} header
+             * @memberof tendermint.types.BlockMeta
+             * @instance
+             */
+            BlockMeta.prototype.header = null;
+
+            /**
+             * BlockMeta numTxs.
+             * @member {number|Long} numTxs
+             * @memberof tendermint.types.BlockMeta
+             * @instance
+             */
+            BlockMeta.prototype.numTxs = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * BlockMeta hasCoreChainLock.
+             * @member {boolean} hasCoreChainLock
+             * @memberof tendermint.types.BlockMeta
+             * @instance
+             */
+            BlockMeta.prototype.hasCoreChainLock = false;
+
+            /**
+             * Creates a new BlockMeta instance using the specified properties.
+             * @function create
+             * @memberof tendermint.types.BlockMeta
+             * @static
+             * @param {tendermint.types.IBlockMeta=} [properties] Properties to set
+             * @returns {tendermint.types.BlockMeta} BlockMeta instance
+             */
+            BlockMeta.create = function create(properties) {
+                return new BlockMeta(properties);
+            };
+
+            /**
+             * Encodes the specified BlockMeta message. Does not implicitly {@link tendermint.types.BlockMeta.verify|verify} messages.
+             * @function encode
+             * @memberof tendermint.types.BlockMeta
+             * @static
+             * @param {tendermint.types.IBlockMeta} message BlockMeta message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BlockMeta.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.blockId != null && Object.hasOwnProperty.call(message, "blockId"))
+                    $root.tendermint.types.BlockID.encode(message.blockId, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.blockSize != null && Object.hasOwnProperty.call(message, "blockSize"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.blockSize);
+                if (message.header != null && Object.hasOwnProperty.call(message, "header"))
+                    $root.tendermint.types.Header.encode(message.header, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.numTxs != null && Object.hasOwnProperty.call(message, "numTxs"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int64(message.numTxs);
+                if (message.hasCoreChainLock != null && Object.hasOwnProperty.call(message, "hasCoreChainLock"))
+                    writer.uint32(/* id 100, wireType 0 =*/800).bool(message.hasCoreChainLock);
+                if (message.stateId != null && Object.hasOwnProperty.call(message, "stateId"))
+                    $root.tendermint.types.StateID.encode(message.stateId, writer.uint32(/* id 101, wireType 2 =*/810).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified BlockMeta message, length delimited. Does not implicitly {@link tendermint.types.BlockMeta.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof tendermint.types.BlockMeta
+             * @static
+             * @param {tendermint.types.IBlockMeta} message BlockMeta message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BlockMeta.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a BlockMeta message from the specified reader or buffer.
+             * @function decode
+             * @memberof tendermint.types.BlockMeta
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {tendermint.types.BlockMeta} BlockMeta
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BlockMeta.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.tendermint.types.BlockMeta();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.blockId = $root.tendermint.types.BlockID.decode(reader, reader.uint32());
+                        break;
+                    case 101:
+                        message.stateId = $root.tendermint.types.StateID.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.blockSize = reader.int64();
+                        break;
+                    case 3:
+                        message.header = $root.tendermint.types.Header.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.numTxs = reader.int64();
+                        break;
+                    case 100:
+                        message.hasCoreChainLock = reader.bool();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a BlockMeta message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof tendermint.types.BlockMeta
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {tendermint.types.BlockMeta} BlockMeta
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BlockMeta.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a BlockMeta message.
+             * @function verify
+             * @memberof tendermint.types.BlockMeta
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            BlockMeta.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.blockId != null && message.hasOwnProperty("blockId")) {
+                    var error = $root.tendermint.types.BlockID.verify(message.blockId);
+                    if (error)
+                        return "blockId." + error;
+                }
+                if (message.stateId != null && message.hasOwnProperty("stateId")) {
+                    var error = $root.tendermint.types.StateID.verify(message.stateId);
+                    if (error)
+                        return "stateId." + error;
+                }
+                if (message.blockSize != null && message.hasOwnProperty("blockSize"))
+                    if (!$util.isInteger(message.blockSize) && !(message.blockSize && $util.isInteger(message.blockSize.low) && $util.isInteger(message.blockSize.high)))
+                        return "blockSize: integer|Long expected";
+                if (message.header != null && message.hasOwnProperty("header")) {
+                    var error = $root.tendermint.types.Header.verify(message.header);
+                    if (error)
+                        return "header." + error;
+                }
+                if (message.numTxs != null && message.hasOwnProperty("numTxs"))
+                    if (!$util.isInteger(message.numTxs) && !(message.numTxs && $util.isInteger(message.numTxs.low) && $util.isInteger(message.numTxs.high)))
+                        return "numTxs: integer|Long expected";
+                if (message.hasCoreChainLock != null && message.hasOwnProperty("hasCoreChainLock"))
+                    if (typeof message.hasCoreChainLock !== "boolean")
+                        return "hasCoreChainLock: boolean expected";
+                return null;
+            };
+
+            /**
+             * Creates a BlockMeta message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof tendermint.types.BlockMeta
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {tendermint.types.BlockMeta} BlockMeta
+             */
+            BlockMeta.fromObject = function fromObject(object) {
+                if (object instanceof $root.tendermint.types.BlockMeta)
+                    return object;
+                var message = new $root.tendermint.types.BlockMeta();
+                if (object.blockId != null) {
+                    if (typeof object.blockId !== "object")
+                        throw TypeError(".tendermint.types.BlockMeta.blockId: object expected");
+                    message.blockId = $root.tendermint.types.BlockID.fromObject(object.blockId);
+                }
+                if (object.stateId != null) {
+                    if (typeof object.stateId !== "object")
+                        throw TypeError(".tendermint.types.BlockMeta.stateId: object expected");
+                    message.stateId = $root.tendermint.types.StateID.fromObject(object.stateId);
+                }
+                if (object.blockSize != null)
+                    if ($util.Long)
+                        (message.blockSize = $util.Long.fromValue(object.blockSize)).unsigned = false;
+                    else if (typeof object.blockSize === "string")
+                        message.blockSize = parseInt(object.blockSize, 10);
+                    else if (typeof object.blockSize === "number")
+                        message.blockSize = object.blockSize;
+                    else if (typeof object.blockSize === "object")
+                        message.blockSize = new $util.LongBits(object.blockSize.low >>> 0, object.blockSize.high >>> 0).toNumber();
+                if (object.header != null) {
+                    if (typeof object.header !== "object")
+                        throw TypeError(".tendermint.types.BlockMeta.header: object expected");
+                    message.header = $root.tendermint.types.Header.fromObject(object.header);
+                }
+                if (object.numTxs != null)
+                    if ($util.Long)
+                        (message.numTxs = $util.Long.fromValue(object.numTxs)).unsigned = false;
+                    else if (typeof object.numTxs === "string")
+                        message.numTxs = parseInt(object.numTxs, 10);
+                    else if (typeof object.numTxs === "number")
+                        message.numTxs = object.numTxs;
+                    else if (typeof object.numTxs === "object")
+                        message.numTxs = new $util.LongBits(object.numTxs.low >>> 0, object.numTxs.high >>> 0).toNumber();
+                if (object.hasCoreChainLock != null)
+                    message.hasCoreChainLock = Boolean(object.hasCoreChainLock);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a BlockMeta message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof tendermint.types.BlockMeta
+             * @static
+             * @param {tendermint.types.BlockMeta} message BlockMeta
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            BlockMeta.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.blockId = null;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.blockSize = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.blockSize = options.longs === String ? "0" : 0;
+                    object.header = null;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.numTxs = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.numTxs = options.longs === String ? "0" : 0;
+                    object.hasCoreChainLock = false;
+                    object.stateId = null;
+                }
+                if (message.blockId != null && message.hasOwnProperty("blockId"))
+                    object.blockId = $root.tendermint.types.BlockID.toObject(message.blockId, options);
+                if (message.blockSize != null && message.hasOwnProperty("blockSize"))
+                    if (typeof message.blockSize === "number")
+                        object.blockSize = options.longs === String ? String(message.blockSize) : message.blockSize;
+                    else
+                        object.blockSize = options.longs === String ? $util.Long.prototype.toString.call(message.blockSize) : options.longs === Number ? new $util.LongBits(message.blockSize.low >>> 0, message.blockSize.high >>> 0).toNumber() : message.blockSize;
+                if (message.header != null && message.hasOwnProperty("header"))
+                    object.header = $root.tendermint.types.Header.toObject(message.header, options);
+                if (message.numTxs != null && message.hasOwnProperty("numTxs"))
+                    if (typeof message.numTxs === "number")
+                        object.numTxs = options.longs === String ? String(message.numTxs) : message.numTxs;
+                    else
+                        object.numTxs = options.longs === String ? $util.Long.prototype.toString.call(message.numTxs) : options.longs === Number ? new $util.LongBits(message.numTxs.low >>> 0, message.numTxs.high >>> 0).toNumber() : message.numTxs;
+                if (message.hasCoreChainLock != null && message.hasOwnProperty("hasCoreChainLock"))
+                    object.hasCoreChainLock = message.hasCoreChainLock;
+                if (message.stateId != null && message.hasOwnProperty("stateId"))
+                    object.stateId = $root.tendermint.types.StateID.toObject(message.stateId, options);
+                return object;
+            };
+
+            /**
+             * Converts this BlockMeta to JSON.
+             * @function toJSON
+             * @memberof tendermint.types.BlockMeta
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            BlockMeta.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return BlockMeta;
+        })();
+
+        types.TxProof = (function() {
+
+            /**
+             * Properties of a TxProof.
+             * @memberof tendermint.types
+             * @interface ITxProof
+             * @property {Uint8Array|null} [rootHash] TxProof rootHash
+             * @property {Uint8Array|null} [data] TxProof data
+             * @property {tendermint.crypto.IProof|null} [proof] TxProof proof
+             */
+
+            /**
+             * Constructs a new TxProof.
+             * @memberof tendermint.types
+             * @classdesc Represents a TxProof.
+             * @implements ITxProof
+             * @constructor
+             * @param {tendermint.types.ITxProof=} [properties] Properties to set
+             */
+            function TxProof(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * TxProof rootHash.
+             * @member {Uint8Array} rootHash
+             * @memberof tendermint.types.TxProof
+             * @instance
+             */
+            TxProof.prototype.rootHash = $util.newBuffer([]);
+
+            /**
+             * TxProof data.
+             * @member {Uint8Array} data
+             * @memberof tendermint.types.TxProof
+             * @instance
+             */
+            TxProof.prototype.data = $util.newBuffer([]);
+
+            /**
+             * TxProof proof.
+             * @member {tendermint.crypto.IProof|null|undefined} proof
+             * @memberof tendermint.types.TxProof
+             * @instance
+             */
+            TxProof.prototype.proof = null;
+
+            /**
+             * Creates a new TxProof instance using the specified properties.
+             * @function create
+             * @memberof tendermint.types.TxProof
+             * @static
+             * @param {tendermint.types.ITxProof=} [properties] Properties to set
+             * @returns {tendermint.types.TxProof} TxProof instance
+             */
+            TxProof.create = function create(properties) {
+                return new TxProof(properties);
+            };
+
+            /**
+             * Encodes the specified TxProof message. Does not implicitly {@link tendermint.types.TxProof.verify|verify} messages.
+             * @function encode
+             * @memberof tendermint.types.TxProof
+             * @static
+             * @param {tendermint.types.ITxProof} message TxProof message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TxProof.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.rootHash != null && Object.hasOwnProperty.call(message, "rootHash"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.rootHash);
+                if (message.data != null && Object.hasOwnProperty.call(message, "data"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.data);
+                if (message.proof != null && Object.hasOwnProperty.call(message, "proof"))
+                    $root.tendermint.crypto.Proof.encode(message.proof, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                return writer;
+            };
+
+            /**
+             * Encodes the specified TxProof message, length delimited. Does not implicitly {@link tendermint.types.TxProof.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof tendermint.types.TxProof
+             * @static
+             * @param {tendermint.types.ITxProof} message TxProof message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TxProof.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a TxProof message from the specified reader or buffer.
+             * @function decode
+             * @memberof tendermint.types.TxProof
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {tendermint.types.TxProof} TxProof
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TxProof.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.tendermint.types.TxProof();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.rootHash = reader.bytes();
+                        break;
+                    case 2:
+                        message.data = reader.bytes();
+                        break;
+                    case 3:
+                        message.proof = $root.tendermint.crypto.Proof.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a TxProof message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof tendermint.types.TxProof
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {tendermint.types.TxProof} TxProof
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TxProof.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a TxProof message.
+             * @function verify
+             * @memberof tendermint.types.TxProof
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TxProof.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.rootHash != null && message.hasOwnProperty("rootHash"))
+                    if (!(message.rootHash && typeof message.rootHash.length === "number" || $util.isString(message.rootHash)))
+                        return "rootHash: buffer expected";
+                if (message.data != null && message.hasOwnProperty("data"))
+                    if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
+                        return "data: buffer expected";
+                if (message.proof != null && message.hasOwnProperty("proof")) {
+                    var error = $root.tendermint.crypto.Proof.verify(message.proof);
+                    if (error)
+                        return "proof." + error;
+                }
+                return null;
+            };
+
+            /**
+             * Creates a TxProof message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof tendermint.types.TxProof
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {tendermint.types.TxProof} TxProof
+             */
+            TxProof.fromObject = function fromObject(object) {
+                if (object instanceof $root.tendermint.types.TxProof)
+                    return object;
+                var message = new $root.tendermint.types.TxProof();
+                if (object.rootHash != null)
+                    if (typeof object.rootHash === "string")
+                        $util.base64.decode(object.rootHash, message.rootHash = $util.newBuffer($util.base64.length(object.rootHash)), 0);
+                    else if (object.rootHash.length >= 0)
+                        message.rootHash = object.rootHash;
+                if (object.data != null)
+                    if (typeof object.data === "string")
+                        $util.base64.decode(object.data, message.data = $util.newBuffer($util.base64.length(object.data)), 0);
+                    else if (object.data.length >= 0)
+                        message.data = object.data;
+                if (object.proof != null) {
+                    if (typeof object.proof !== "object")
+                        throw TypeError(".tendermint.types.TxProof.proof: object expected");
+                    message.proof = $root.tendermint.crypto.Proof.fromObject(object.proof);
+                }
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a TxProof message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof tendermint.types.TxProof
+             * @static
+             * @param {tendermint.types.TxProof} message TxProof
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            TxProof.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    if (options.bytes === String)
+                        object.rootHash = "";
+                    else {
+                        object.rootHash = [];
+                        if (options.bytes !== Array)
+                            object.rootHash = $util.newBuffer(object.rootHash);
+                    }
+                    if (options.bytes === String)
+                        object.data = "";
+                    else {
+                        object.data = [];
+                        if (options.bytes !== Array)
+                            object.data = $util.newBuffer(object.data);
+                    }
+                    object.proof = null;
+                }
+                if (message.rootHash != null && message.hasOwnProperty("rootHash"))
+                    object.rootHash = options.bytes === String ? $util.base64.encode(message.rootHash, 0, message.rootHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.rootHash) : message.rootHash;
+                if (message.data != null && message.hasOwnProperty("data"))
+                    object.data = options.bytes === String ? $util.base64.encode(message.data, 0, message.data.length) : options.bytes === Array ? Array.prototype.slice.call(message.data) : message.data;
+                if (message.proof != null && message.hasOwnProperty("proof"))
+                    object.proof = $root.tendermint.crypto.Proof.toObject(message.proof, options);
+                return object;
+            };
+
+            /**
+             * Converts this TxProof to JSON.
+             * @function toJSON
+             * @memberof tendermint.types.TxProof
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            TxProof.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return TxProof;
+        })();
+
+        types.ValidatorSet = (function() {
+
+            /**
+             * Properties of a ValidatorSet.
+             * @memberof tendermint.types
+             * @interface IValidatorSet
+             * @property {Array.<tendermint.types.IValidator>|null} [validators] ValidatorSet validators
+             * @property {tendermint.types.IValidator|null} [proposer] ValidatorSet proposer
+             * @property {number|Long|null} [totalVotingPower] ValidatorSet totalVotingPower
+             * @property {tendermint.crypto.IPublicKey|null} [thresholdPublicKey] ValidatorSet thresholdPublicKey
+             * @property {number|null} [quorumType] ValidatorSet quorumType
+             * @property {Uint8Array|null} [quorumHash] ValidatorSet quorumHash
+             * @property {boolean|null} [hasPublicKeys] ValidatorSet hasPublicKeys
+             */
+
+            /**
+             * Constructs a new ValidatorSet.
+             * @memberof tendermint.types
+             * @classdesc Represents a ValidatorSet.
+             * @implements IValidatorSet
+             * @constructor
+             * @param {tendermint.types.IValidatorSet=} [properties] Properties to set
+             */
+            function ValidatorSet(properties) {
+                this.validators = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * ValidatorSet validators.
+             * @member {Array.<tendermint.types.IValidator>} validators
+             * @memberof tendermint.types.ValidatorSet
+             * @instance
+             */
+            ValidatorSet.prototype.validators = $util.emptyArray;
+
+            /**
+             * ValidatorSet proposer.
+             * @member {tendermint.types.IValidator|null|undefined} proposer
+             * @memberof tendermint.types.ValidatorSet
+             * @instance
+             */
+            ValidatorSet.prototype.proposer = null;
+
+            /**
+             * ValidatorSet totalVotingPower.
+             * @member {number|Long} totalVotingPower
+             * @memberof tendermint.types.ValidatorSet
+             * @instance
+             */
+            ValidatorSet.prototype.totalVotingPower = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * ValidatorSet thresholdPublicKey.
+             * @member {tendermint.crypto.IPublicKey|null|undefined} thresholdPublicKey
+             * @memberof tendermint.types.ValidatorSet
+             * @instance
+             */
+            ValidatorSet.prototype.thresholdPublicKey = null;
+
+            /**
+             * ValidatorSet quorumType.
+             * @member {number} quorumType
+             * @memberof tendermint.types.ValidatorSet
+             * @instance
+             */
+            ValidatorSet.prototype.quorumType = 0;
+
+            /**
+             * ValidatorSet quorumHash.
+             * @member {Uint8Array} quorumHash
+             * @memberof tendermint.types.ValidatorSet
+             * @instance
+             */
+            ValidatorSet.prototype.quorumHash = $util.newBuffer([]);
+
+            /**
+             * ValidatorSet hasPublicKeys.
+             * @member {boolean} hasPublicKeys
+             * @memberof tendermint.types.ValidatorSet
+             * @instance
+             */
+            ValidatorSet.prototype.hasPublicKeys = false;
+
+            /**
+             * Creates a new ValidatorSet instance using the specified properties.
+             * @function create
+             * @memberof tendermint.types.ValidatorSet
+             * @static
+             * @param {tendermint.types.IValidatorSet=} [properties] Properties to set
+             * @returns {tendermint.types.ValidatorSet} ValidatorSet instance
+             */
+            ValidatorSet.create = function create(properties) {
+                return new ValidatorSet(properties);
+            };
+
+            /**
+             * Encodes the specified ValidatorSet message. Does not implicitly {@link tendermint.types.ValidatorSet.verify|verify} messages.
+             * @function encode
+             * @memberof tendermint.types.ValidatorSet
+             * @static
+             * @param {tendermint.types.IValidatorSet} message ValidatorSet message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ValidatorSet.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.validators != null && message.validators.length)
+                    for (var i = 0; i < message.validators.length; ++i)
+                        $root.tendermint.types.Validator.encode(message.validators[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.proposer != null && Object.hasOwnProperty.call(message, "proposer"))
+                    $root.tendermint.types.Validator.encode(message.proposer, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.totalVotingPower != null && Object.hasOwnProperty.call(message, "totalVotingPower"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.totalVotingPower);
+                if (message.thresholdPublicKey != null && Object.hasOwnProperty.call(message, "thresholdPublicKey"))
+                    $root.tendermint.crypto.PublicKey.encode(message.thresholdPublicKey, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.quorumType != null && Object.hasOwnProperty.call(message, "quorumType"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int32(message.quorumType);
+                if (message.quorumHash != null && Object.hasOwnProperty.call(message, "quorumHash"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).bytes(message.quorumHash);
+                if (message.hasPublicKeys != null && Object.hasOwnProperty.call(message, "hasPublicKeys"))
+                    writer.uint32(/* id 7, wireType 0 =*/56).bool(message.hasPublicKeys);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified ValidatorSet message, length delimited. Does not implicitly {@link tendermint.types.ValidatorSet.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof tendermint.types.ValidatorSet
+             * @static
+             * @param {tendermint.types.IValidatorSet} message ValidatorSet message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ValidatorSet.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a ValidatorSet message from the specified reader or buffer.
+             * @function decode
+             * @memberof tendermint.types.ValidatorSet
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {tendermint.types.ValidatorSet} ValidatorSet
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ValidatorSet.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.tendermint.types.ValidatorSet();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.validators && message.validators.length))
+                            message.validators = [];
+                        message.validators.push($root.tendermint.types.Validator.decode(reader, reader.uint32()));
+                        break;
+                    case 2:
+                        message.proposer = $root.tendermint.types.Validator.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.totalVotingPower = reader.int64();
+                        break;
+                    case 4:
+                        message.thresholdPublicKey = $root.tendermint.crypto.PublicKey.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.quorumType = reader.int32();
+                        break;
+                    case 6:
+                        message.quorumHash = reader.bytes();
+                        break;
+                    case 7:
+                        message.hasPublicKeys = reader.bool();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a ValidatorSet message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof tendermint.types.ValidatorSet
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {tendermint.types.ValidatorSet} ValidatorSet
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ValidatorSet.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a ValidatorSet message.
+             * @function verify
+             * @memberof tendermint.types.ValidatorSet
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ValidatorSet.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.validators != null && message.hasOwnProperty("validators")) {
+                    if (!Array.isArray(message.validators))
+                        return "validators: array expected";
+                    for (var i = 0; i < message.validators.length; ++i) {
+                        var error = $root.tendermint.types.Validator.verify(message.validators[i]);
+                        if (error)
+                            return "validators." + error;
+                    }
+                }
+                if (message.proposer != null && message.hasOwnProperty("proposer")) {
+                    var error = $root.tendermint.types.Validator.verify(message.proposer);
+                    if (error)
+                        return "proposer." + error;
+                }
+                if (message.totalVotingPower != null && message.hasOwnProperty("totalVotingPower"))
+                    if (!$util.isInteger(message.totalVotingPower) && !(message.totalVotingPower && $util.isInteger(message.totalVotingPower.low) && $util.isInteger(message.totalVotingPower.high)))
+                        return "totalVotingPower: integer|Long expected";
+                if (message.thresholdPublicKey != null && message.hasOwnProperty("thresholdPublicKey")) {
+                    var error = $root.tendermint.crypto.PublicKey.verify(message.thresholdPublicKey);
+                    if (error)
+                        return "thresholdPublicKey." + error;
+                }
+                if (message.quorumType != null && message.hasOwnProperty("quorumType"))
+                    if (!$util.isInteger(message.quorumType))
+                        return "quorumType: integer expected";
+                if (message.quorumHash != null && message.hasOwnProperty("quorumHash"))
+                    if (!(message.quorumHash && typeof message.quorumHash.length === "number" || $util.isString(message.quorumHash)))
+                        return "quorumHash: buffer expected";
+                if (message.hasPublicKeys != null && message.hasOwnProperty("hasPublicKeys"))
+                    if (typeof message.hasPublicKeys !== "boolean")
+                        return "hasPublicKeys: boolean expected";
+                return null;
+            };
+
+            /**
+             * Creates a ValidatorSet message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof tendermint.types.ValidatorSet
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {tendermint.types.ValidatorSet} ValidatorSet
+             */
+            ValidatorSet.fromObject = function fromObject(object) {
+                if (object instanceof $root.tendermint.types.ValidatorSet)
+                    return object;
+                var message = new $root.tendermint.types.ValidatorSet();
+                if (object.validators) {
+                    if (!Array.isArray(object.validators))
+                        throw TypeError(".tendermint.types.ValidatorSet.validators: array expected");
+                    message.validators = [];
+                    for (var i = 0; i < object.validators.length; ++i) {
+                        if (typeof object.validators[i] !== "object")
+                            throw TypeError(".tendermint.types.ValidatorSet.validators: object expected");
+                        message.validators[i] = $root.tendermint.types.Validator.fromObject(object.validators[i]);
+                    }
+                }
+                if (object.proposer != null) {
+                    if (typeof object.proposer !== "object")
+                        throw TypeError(".tendermint.types.ValidatorSet.proposer: object expected");
+                    message.proposer = $root.tendermint.types.Validator.fromObject(object.proposer);
+                }
+                if (object.totalVotingPower != null)
+                    if ($util.Long)
+                        (message.totalVotingPower = $util.Long.fromValue(object.totalVotingPower)).unsigned = false;
+                    else if (typeof object.totalVotingPower === "string")
+                        message.totalVotingPower = parseInt(object.totalVotingPower, 10);
+                    else if (typeof object.totalVotingPower === "number")
+                        message.totalVotingPower = object.totalVotingPower;
+                    else if (typeof object.totalVotingPower === "object")
+                        message.totalVotingPower = new $util.LongBits(object.totalVotingPower.low >>> 0, object.totalVotingPower.high >>> 0).toNumber();
+                if (object.thresholdPublicKey != null) {
+                    if (typeof object.thresholdPublicKey !== "object")
+                        throw TypeError(".tendermint.types.ValidatorSet.thresholdPublicKey: object expected");
+                    message.thresholdPublicKey = $root.tendermint.crypto.PublicKey.fromObject(object.thresholdPublicKey);
+                }
+                if (object.quorumType != null)
+                    message.quorumType = object.quorumType | 0;
+                if (object.quorumHash != null)
+                    if (typeof object.quorumHash === "string")
+                        $util.base64.decode(object.quorumHash, message.quorumHash = $util.newBuffer($util.base64.length(object.quorumHash)), 0);
+                    else if (object.quorumHash.length >= 0)
+                        message.quorumHash = object.quorumHash;
+                if (object.hasPublicKeys != null)
+                    message.hasPublicKeys = Boolean(object.hasPublicKeys);
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a ValidatorSet message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof tendermint.types.ValidatorSet
+             * @static
+             * @param {tendermint.types.ValidatorSet} message ValidatorSet
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ValidatorSet.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.validators = [];
+                if (options.defaults) {
+                    object.proposer = null;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.totalVotingPower = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.totalVotingPower = options.longs === String ? "0" : 0;
+                    object.thresholdPublicKey = null;
+                    object.quorumType = 0;
+                    if (options.bytes === String)
+                        object.quorumHash = "";
+                    else {
+                        object.quorumHash = [];
+                        if (options.bytes !== Array)
+                            object.quorumHash = $util.newBuffer(object.quorumHash);
+                    }
+                    object.hasPublicKeys = false;
+                }
+                if (message.validators && message.validators.length) {
+                    object.validators = [];
+                    for (var j = 0; j < message.validators.length; ++j)
+                        object.validators[j] = $root.tendermint.types.Validator.toObject(message.validators[j], options);
+                }
+                if (message.proposer != null && message.hasOwnProperty("proposer"))
+                    object.proposer = $root.tendermint.types.Validator.toObject(message.proposer, options);
+                if (message.totalVotingPower != null && message.hasOwnProperty("totalVotingPower"))
+                    if (typeof message.totalVotingPower === "number")
+                        object.totalVotingPower = options.longs === String ? String(message.totalVotingPower) : message.totalVotingPower;
+                    else
+                        object.totalVotingPower = options.longs === String ? $util.Long.prototype.toString.call(message.totalVotingPower) : options.longs === Number ? new $util.LongBits(message.totalVotingPower.low >>> 0, message.totalVotingPower.high >>> 0).toNumber() : message.totalVotingPower;
+                if (message.thresholdPublicKey != null && message.hasOwnProperty("thresholdPublicKey"))
+                    object.thresholdPublicKey = $root.tendermint.crypto.PublicKey.toObject(message.thresholdPublicKey, options);
+                if (message.quorumType != null && message.hasOwnProperty("quorumType"))
+                    object.quorumType = message.quorumType;
+                if (message.quorumHash != null && message.hasOwnProperty("quorumHash"))
+                    object.quorumHash = options.bytes === String ? $util.base64.encode(message.quorumHash, 0, message.quorumHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.quorumHash) : message.quorumHash;
+                if (message.hasPublicKeys != null && message.hasOwnProperty("hasPublicKeys"))
+                    object.hasPublicKeys = message.hasPublicKeys;
+                return object;
+            };
+
+            /**
+             * Converts this ValidatorSet to JSON.
+             * @function toJSON
+             * @memberof tendermint.types.ValidatorSet
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ValidatorSet.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return ValidatorSet;
+        })();
+
+        types.Validator = (function() {
+
+            /**
+             * Properties of a Validator.
+             * @memberof tendermint.types
+             * @interface IValidator
+             * @property {tendermint.crypto.IPublicKey|null} [pubKey] Validator pubKey
+             * @property {number|Long|null} [votingPower] Validator votingPower
+             * @property {number|Long|null} [proposerPriority] Validator proposerPriority
+             * @property {Uint8Array|null} [proTxHash] Validator proTxHash
+             */
+
+            /**
+             * Constructs a new Validator.
+             * @memberof tendermint.types
+             * @classdesc Represents a Validator.
+             * @implements IValidator
+             * @constructor
+             * @param {tendermint.types.IValidator=} [properties] Properties to set
+             */
+            function Validator(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Validator pubKey.
+             * @member {tendermint.crypto.IPublicKey|null|undefined} pubKey
+             * @memberof tendermint.types.Validator
+             * @instance
+             */
+            Validator.prototype.pubKey = null;
+
+            /**
+             * Validator votingPower.
+             * @member {number|Long} votingPower
+             * @memberof tendermint.types.Validator
+             * @instance
+             */
+            Validator.prototype.votingPower = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Validator proposerPriority.
+             * @member {number|Long} proposerPriority
+             * @memberof tendermint.types.Validator
+             * @instance
+             */
+            Validator.prototype.proposerPriority = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Validator proTxHash.
+             * @member {Uint8Array} proTxHash
+             * @memberof tendermint.types.Validator
+             * @instance
+             */
+            Validator.prototype.proTxHash = $util.newBuffer([]);
+
+            /**
+             * Creates a new Validator instance using the specified properties.
+             * @function create
+             * @memberof tendermint.types.Validator
+             * @static
+             * @param {tendermint.types.IValidator=} [properties] Properties to set
+             * @returns {tendermint.types.Validator} Validator instance
+             */
+            Validator.create = function create(properties) {
+                return new Validator(properties);
+            };
+
+            /**
+             * Encodes the specified Validator message. Does not implicitly {@link tendermint.types.Validator.verify|verify} messages.
+             * @function encode
+             * @memberof tendermint.types.Validator
+             * @static
+             * @param {tendermint.types.IValidator} message Validator message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Validator.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.pubKey != null && Object.hasOwnProperty.call(message, "pubKey"))
+                    $root.tendermint.crypto.PublicKey.encode(message.pubKey, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.votingPower != null && Object.hasOwnProperty.call(message, "votingPower"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.votingPower);
+                if (message.proposerPriority != null && Object.hasOwnProperty.call(message, "proposerPriority"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).int64(message.proposerPriority);
+                if (message.proTxHash != null && Object.hasOwnProperty.call(message, "proTxHash"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).bytes(message.proTxHash);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Validator message, length delimited. Does not implicitly {@link tendermint.types.Validator.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof tendermint.types.Validator
+             * @static
+             * @param {tendermint.types.IValidator} message Validator message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Validator.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Validator message from the specified reader or buffer.
+             * @function decode
+             * @memberof tendermint.types.Validator
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {tendermint.types.Validator} Validator
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Validator.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.tendermint.types.Validator();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 2:
+                        message.pubKey = $root.tendermint.crypto.PublicKey.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.votingPower = reader.int64();
+                        break;
+                    case 4:
+                        message.proposerPriority = reader.int64();
+                        break;
+                    case 5:
+                        message.proTxHash = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Validator message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof tendermint.types.Validator
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {tendermint.types.Validator} Validator
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Validator.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Validator message.
+             * @function verify
+             * @memberof tendermint.types.Validator
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Validator.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.pubKey != null && message.hasOwnProperty("pubKey")) {
+                    var error = $root.tendermint.crypto.PublicKey.verify(message.pubKey);
+                    if (error)
+                        return "pubKey." + error;
+                }
+                if (message.votingPower != null && message.hasOwnProperty("votingPower"))
+                    if (!$util.isInteger(message.votingPower) && !(message.votingPower && $util.isInteger(message.votingPower.low) && $util.isInteger(message.votingPower.high)))
+                        return "votingPower: integer|Long expected";
+                if (message.proposerPriority != null && message.hasOwnProperty("proposerPriority"))
+                    if (!$util.isInteger(message.proposerPriority) && !(message.proposerPriority && $util.isInteger(message.proposerPriority.low) && $util.isInteger(message.proposerPriority.high)))
+                        return "proposerPriority: integer|Long expected";
+                if (message.proTxHash != null && message.hasOwnProperty("proTxHash"))
+                    if (!(message.proTxHash && typeof message.proTxHash.length === "number" || $util.isString(message.proTxHash)))
+                        return "proTxHash: buffer expected";
+                return null;
+            };
+
+            /**
+             * Creates a Validator message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof tendermint.types.Validator
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {tendermint.types.Validator} Validator
+             */
+            Validator.fromObject = function fromObject(object) {
+                if (object instanceof $root.tendermint.types.Validator)
+                    return object;
+                var message = new $root.tendermint.types.Validator();
+                if (object.pubKey != null) {
+                    if (typeof object.pubKey !== "object")
+                        throw TypeError(".tendermint.types.Validator.pubKey: object expected");
+                    message.pubKey = $root.tendermint.crypto.PublicKey.fromObject(object.pubKey);
+                }
+                if (object.votingPower != null)
+                    if ($util.Long)
+                        (message.votingPower = $util.Long.fromValue(object.votingPower)).unsigned = false;
+                    else if (typeof object.votingPower === "string")
+                        message.votingPower = parseInt(object.votingPower, 10);
+                    else if (typeof object.votingPower === "number")
+                        message.votingPower = object.votingPower;
+                    else if (typeof object.votingPower === "object")
+                        message.votingPower = new $util.LongBits(object.votingPower.low >>> 0, object.votingPower.high >>> 0).toNumber();
+                if (object.proposerPriority != null)
+                    if ($util.Long)
+                        (message.proposerPriority = $util.Long.fromValue(object.proposerPriority)).unsigned = false;
+                    else if (typeof object.proposerPriority === "string")
+                        message.proposerPriority = parseInt(object.proposerPriority, 10);
+                    else if (typeof object.proposerPriority === "number")
+                        message.proposerPriority = object.proposerPriority;
+                    else if (typeof object.proposerPriority === "object")
+                        message.proposerPriority = new $util.LongBits(object.proposerPriority.low >>> 0, object.proposerPriority.high >>> 0).toNumber();
+                if (object.proTxHash != null)
+                    if (typeof object.proTxHash === "string")
+                        $util.base64.decode(object.proTxHash, message.proTxHash = $util.newBuffer($util.base64.length(object.proTxHash)), 0);
+                    else if (object.proTxHash.length >= 0)
+                        message.proTxHash = object.proTxHash;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Validator message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof tendermint.types.Validator
+             * @static
+             * @param {tendermint.types.Validator} message Validator
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Validator.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.pubKey = null;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.votingPower = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.votingPower = options.longs === String ? "0" : 0;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.proposerPriority = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.proposerPriority = options.longs === String ? "0" : 0;
+                    if (options.bytes === String)
+                        object.proTxHash = "";
+                    else {
+                        object.proTxHash = [];
+                        if (options.bytes !== Array)
+                            object.proTxHash = $util.newBuffer(object.proTxHash);
+                    }
+                }
+                if (message.pubKey != null && message.hasOwnProperty("pubKey"))
+                    object.pubKey = $root.tendermint.crypto.PublicKey.toObject(message.pubKey, options);
+                if (message.votingPower != null && message.hasOwnProperty("votingPower"))
+                    if (typeof message.votingPower === "number")
+                        object.votingPower = options.longs === String ? String(message.votingPower) : message.votingPower;
+                    else
+                        object.votingPower = options.longs === String ? $util.Long.prototype.toString.call(message.votingPower) : options.longs === Number ? new $util.LongBits(message.votingPower.low >>> 0, message.votingPower.high >>> 0).toNumber() : message.votingPower;
+                if (message.proposerPriority != null && message.hasOwnProperty("proposerPriority"))
+                    if (typeof message.proposerPriority === "number")
+                        object.proposerPriority = options.longs === String ? String(message.proposerPriority) : message.proposerPriority;
+                    else
+                        object.proposerPriority = options.longs === String ? $util.Long.prototype.toString.call(message.proposerPriority) : options.longs === Number ? new $util.LongBits(message.proposerPriority.low >>> 0, message.proposerPriority.high >>> 0).toNumber() : message.proposerPriority;
+                if (message.proTxHash != null && message.hasOwnProperty("proTxHash"))
+                    object.proTxHash = options.bytes === String ? $util.base64.encode(message.proTxHash, 0, message.proTxHash.length) : options.bytes === Array ? Array.prototype.slice.call(message.proTxHash) : message.proTxHash;
+                return object;
+            };
+
+            /**
+             * Converts this Validator to JSON.
+             * @function toJSON
+             * @memberof tendermint.types.Validator
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Validator.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Validator;
+        })();
+
+        types.SimpleValidator = (function() {
+
+            /**
+             * Properties of a SimpleValidator.
+             * @memberof tendermint.types
+             * @interface ISimpleValidator
+             * @property {tendermint.crypto.IPublicKey|null} [pubKey] SimpleValidator pubKey
+             * @property {number|Long|null} [votingPower] SimpleValidator votingPower
+             */
+
+            /**
+             * Constructs a new SimpleValidator.
+             * @memberof tendermint.types
+             * @classdesc Represents a SimpleValidator.
+             * @implements ISimpleValidator
+             * @constructor
+             * @param {tendermint.types.ISimpleValidator=} [properties] Properties to set
+             */
+            function SimpleValidator(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * SimpleValidator pubKey.
+             * @member {tendermint.crypto.IPublicKey|null|undefined} pubKey
+             * @memberof tendermint.types.SimpleValidator
+             * @instance
+             */
+            SimpleValidator.prototype.pubKey = null;
+
+            /**
+             * SimpleValidator votingPower.
+             * @member {number|Long} votingPower
+             * @memberof tendermint.types.SimpleValidator
+             * @instance
+             */
+            SimpleValidator.prototype.votingPower = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+
+            /**
+             * Creates a new SimpleValidator instance using the specified properties.
+             * @function create
+             * @memberof tendermint.types.SimpleValidator
+             * @static
+             * @param {tendermint.types.ISimpleValidator=} [properties] Properties to set
+             * @returns {tendermint.types.SimpleValidator} SimpleValidator instance
+             */
+            SimpleValidator.create = function create(properties) {
+                return new SimpleValidator(properties);
+            };
+
+            /**
+             * Encodes the specified SimpleValidator message. Does not implicitly {@link tendermint.types.SimpleValidator.verify|verify} messages.
+             * @function encode
+             * @memberof tendermint.types.SimpleValidator
+             * @static
+             * @param {tendermint.types.ISimpleValidator} message SimpleValidator message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SimpleValidator.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.pubKey != null && Object.hasOwnProperty.call(message, "pubKey"))
+                    $root.tendermint.crypto.PublicKey.encode(message.pubKey, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.votingPower != null && Object.hasOwnProperty.call(message, "votingPower"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.votingPower);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified SimpleValidator message, length delimited. Does not implicitly {@link tendermint.types.SimpleValidator.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof tendermint.types.SimpleValidator
+             * @static
+             * @param {tendermint.types.ISimpleValidator} message SimpleValidator message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            SimpleValidator.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a SimpleValidator message from the specified reader or buffer.
+             * @function decode
+             * @memberof tendermint.types.SimpleValidator
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {tendermint.types.SimpleValidator} SimpleValidator
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SimpleValidator.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.tendermint.types.SimpleValidator();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.pubKey = $root.tendermint.crypto.PublicKey.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.votingPower = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a SimpleValidator message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof tendermint.types.SimpleValidator
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {tendermint.types.SimpleValidator} SimpleValidator
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            SimpleValidator.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a SimpleValidator message.
+             * @function verify
+             * @memberof tendermint.types.SimpleValidator
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            SimpleValidator.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.pubKey != null && message.hasOwnProperty("pubKey")) {
+                    var error = $root.tendermint.crypto.PublicKey.verify(message.pubKey);
+                    if (error)
+                        return "pubKey." + error;
+                }
+                if (message.votingPower != null && message.hasOwnProperty("votingPower"))
+                    if (!$util.isInteger(message.votingPower) && !(message.votingPower && $util.isInteger(message.votingPower.low) && $util.isInteger(message.votingPower.high)))
+                        return "votingPower: integer|Long expected";
+                return null;
+            };
+
+            /**
+             * Creates a SimpleValidator message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof tendermint.types.SimpleValidator
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {tendermint.types.SimpleValidator} SimpleValidator
+             */
+            SimpleValidator.fromObject = function fromObject(object) {
+                if (object instanceof $root.tendermint.types.SimpleValidator)
+                    return object;
+                var message = new $root.tendermint.types.SimpleValidator();
+                if (object.pubKey != null) {
+                    if (typeof object.pubKey !== "object")
+                        throw TypeError(".tendermint.types.SimpleValidator.pubKey: object expected");
+                    message.pubKey = $root.tendermint.crypto.PublicKey.fromObject(object.pubKey);
+                }
+                if (object.votingPower != null)
+                    if ($util.Long)
+                        (message.votingPower = $util.Long.fromValue(object.votingPower)).unsigned = false;
+                    else if (typeof object.votingPower === "string")
+                        message.votingPower = parseInt(object.votingPower, 10);
+                    else if (typeof object.votingPower === "number")
+                        message.votingPower = object.votingPower;
+                    else if (typeof object.votingPower === "object")
+                        message.votingPower = new $util.LongBits(object.votingPower.low >>> 0, object.votingPower.high >>> 0).toNumber();
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a SimpleValidator message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof tendermint.types.SimpleValidator
+             * @static
+             * @param {tendermint.types.SimpleValidator} message SimpleValidator
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            SimpleValidator.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.pubKey = null;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.votingPower = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.votingPower = options.longs === String ? "0" : 0;
+                }
+                if (message.pubKey != null && message.hasOwnProperty("pubKey"))
+                    object.pubKey = $root.tendermint.crypto.PublicKey.toObject(message.pubKey, options);
+                if (message.votingPower != null && message.hasOwnProperty("votingPower"))
+                    if (typeof message.votingPower === "number")
+                        object.votingPower = options.longs === String ? String(message.votingPower) : message.votingPower;
+                    else
+                        object.votingPower = options.longs === String ? $util.Long.prototype.toString.call(message.votingPower) : options.longs === Number ? new $util.LongBits(message.votingPower.low >>> 0, message.votingPower.high >>> 0).toNumber() : message.votingPower;
+                return object;
+            };
+
+            /**
+             * Converts this SimpleValidator to JSON.
+             * @function toJSON
+             * @memberof tendermint.types.SimpleValidator
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            SimpleValidator.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return SimpleValidator;
         })();
 
         types.ConsensusParams = (function() {
@@ -15408,13 +20026,13 @@ $root.tendermint = (function() {
             ConsensusParams.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.block != null && message.hasOwnProperty("block"))
+                if (message.block != null && Object.hasOwnProperty.call(message, "block"))
                     $root.tendermint.types.BlockParams.encode(message.block, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.evidence != null && message.hasOwnProperty("evidence"))
+                if (message.evidence != null && Object.hasOwnProperty.call(message, "evidence"))
                     $root.tendermint.types.EvidenceParams.encode(message.evidence, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.validator != null && message.hasOwnProperty("validator"))
+                if (message.validator != null && Object.hasOwnProperty.call(message, "validator"))
                     $root.tendermint.types.ValidatorParams.encode(message.validator, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.version != null && message.hasOwnProperty("version"))
+                if (message.version != null && Object.hasOwnProperty.call(message, "version"))
                     $root.tendermint.types.VersionParams.encode(message.version, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
@@ -15673,11 +20291,11 @@ $root.tendermint = (function() {
             BlockParams.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.maxBytes != null && message.hasOwnProperty("maxBytes"))
+                if (message.maxBytes != null && Object.hasOwnProperty.call(message, "maxBytes"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.maxBytes);
-                if (message.maxGas != null && message.hasOwnProperty("maxGas"))
+                if (message.maxGas != null && Object.hasOwnProperty.call(message, "maxGas"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int64(message.maxGas);
-                if (message.timeIotaMs != null && message.hasOwnProperty("timeIotaMs"))
+                if (message.timeIotaMs != null && Object.hasOwnProperty.call(message, "timeIotaMs"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int64(message.timeIotaMs);
                 return writer;
             };
@@ -15947,11 +20565,11 @@ $root.tendermint = (function() {
             EvidenceParams.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.maxAgeNumBlocks != null && message.hasOwnProperty("maxAgeNumBlocks"))
+                if (message.maxAgeNumBlocks != null && Object.hasOwnProperty.call(message, "maxAgeNumBlocks"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.maxAgeNumBlocks);
-                if (message.maxAgeDuration != null && message.hasOwnProperty("maxAgeDuration"))
+                if (message.maxAgeDuration != null && Object.hasOwnProperty.call(message, "maxAgeDuration"))
                     $root.google.protobuf.Duration.encode(message.maxAgeDuration, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.maxBytes != null && message.hasOwnProperty("maxBytes"))
+                if (message.maxBytes != null && Object.hasOwnProperty.call(message, "maxBytes"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int64(message.maxBytes);
                 return writer;
             };
@@ -16397,7 +21015,7 @@ $root.tendermint = (function() {
             VersionParams.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.appVersion != null && message.hasOwnProperty("appVersion"))
+                if (message.appVersion != null && Object.hasOwnProperty.call(message, "appVersion"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.appVersion);
                 return writer;
             };
@@ -16607,9 +21225,9 @@ $root.tendermint = (function() {
             HashedParams.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.blockMaxBytes != null && message.hasOwnProperty("blockMaxBytes"))
+                if (message.blockMaxBytes != null && Object.hasOwnProperty.call(message, "blockMaxBytes"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.blockMaxBytes);
-                if (message.blockMaxGas != null && message.hasOwnProperty("blockMaxGas"))
+                if (message.blockMaxGas != null && Object.hasOwnProperty.call(message, "blockMaxGas"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int64(message.blockMaxGas);
                 return writer;
             };
@@ -16857,9 +21475,9 @@ $root.tendermint = (function() {
             App.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.protocol != null && message.hasOwnProperty("protocol"))
+                if (message.protocol != null && Object.hasOwnProperty.call(message, "protocol"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.protocol);
-                if (message.software != null && message.hasOwnProperty("software"))
+                if (message.software != null && Object.hasOwnProperty.call(message, "software"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.software);
                 return writer;
             };
@@ -17081,9 +21699,9 @@ $root.tendermint = (function() {
             Consensus.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.block != null && message.hasOwnProperty("block"))
+                if (message.block != null && Object.hasOwnProperty.call(message, "block"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.block);
-                if (message.app != null && message.hasOwnProperty("app"))
+                if (message.app != null && Object.hasOwnProperty.call(message, "app"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint64(message.app);
                 return writer;
             };
@@ -17660,9 +22278,9 @@ $root.google = (function() {
             FileDescriptorProto.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-                if (message["package"] != null && message.hasOwnProperty("package"))
+                if (message["package"] != null && Object.hasOwnProperty.call(message, "package"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message["package"]);
                 if (message.dependency != null && message.dependency.length)
                     for (var i = 0; i < message.dependency.length; ++i)
@@ -17679,9 +22297,9 @@ $root.google = (function() {
                 if (message.extension != null && message.extension.length)
                     for (var i = 0; i < message.extension.length; ++i)
                         $root.google.protobuf.FieldDescriptorProto.encode(message.extension[i], writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
-                if (message.options != null && message.hasOwnProperty("options"))
+                if (message.options != null && Object.hasOwnProperty.call(message, "options"))
                     $root.google.protobuf.FileOptions.encode(message.options, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                if (message.sourceCodeInfo != null && message.hasOwnProperty("sourceCodeInfo"))
+                if (message.sourceCodeInfo != null && Object.hasOwnProperty.call(message, "sourceCodeInfo"))
                     $root.google.protobuf.SourceCodeInfo.encode(message.sourceCodeInfo, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 if (message.publicDependency != null && message.publicDependency.length)
                     for (var i = 0; i < message.publicDependency.length; ++i)
@@ -17689,7 +22307,7 @@ $root.google = (function() {
                 if (message.weakDependency != null && message.weakDependency.length)
                     for (var i = 0; i < message.weakDependency.length; ++i)
                         writer.uint32(/* id 11, wireType 0 =*/88).int32(message.weakDependency[i]);
-                if (message.syntax != null && message.hasOwnProperty("syntax"))
+                if (message.syntax != null && Object.hasOwnProperty.call(message, "syntax"))
                     writer.uint32(/* id 12, wireType 2 =*/98).string(message.syntax);
                 return writer;
             };
@@ -18227,7 +22845,7 @@ $root.google = (function() {
             DescriptorProto.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
                 if (message.field != null && message.field.length)
                     for (var i = 0; i < message.field.length; ++i)
@@ -18244,7 +22862,7 @@ $root.google = (function() {
                 if (message.extension != null && message.extension.length)
                     for (var i = 0; i < message.extension.length; ++i)
                         $root.google.protobuf.FieldDescriptorProto.encode(message.extension[i], writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.options != null && message.hasOwnProperty("options"))
+                if (message.options != null && Object.hasOwnProperty.call(message, "options"))
                     $root.google.protobuf.MessageOptions.encode(message.options, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
                 if (message.oneofDecl != null && message.oneofDecl.length)
                     for (var i = 0; i < message.oneofDecl.length; ++i)
@@ -18700,9 +23318,9 @@ $root.google = (function() {
                 ExtensionRange.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.start != null && message.hasOwnProperty("start"))
+                    if (message.start != null && Object.hasOwnProperty.call(message, "start"))
                         writer.uint32(/* id 1, wireType 0 =*/8).int32(message.start);
-                    if (message.end != null && message.hasOwnProperty("end"))
+                    if (message.end != null && Object.hasOwnProperty.call(message, "end"))
                         writer.uint32(/* id 2, wireType 0 =*/16).int32(message.end);
                     return writer;
                 };
@@ -18910,9 +23528,9 @@ $root.google = (function() {
                 ReservedRange.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.start != null && message.hasOwnProperty("start"))
+                    if (message.start != null && Object.hasOwnProperty.call(message, "start"))
                         writer.uint32(/* id 1, wireType 0 =*/8).int32(message.start);
-                    if (message.end != null && message.hasOwnProperty("end"))
+                    if (message.end != null && Object.hasOwnProperty.call(message, "end"))
                         writer.uint32(/* id 2, wireType 0 =*/16).int32(message.end);
                     return writer;
                 };
@@ -19195,25 +23813,25 @@ $root.google = (function() {
             FieldDescriptorProto.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-                if (message.extendee != null && message.hasOwnProperty("extendee"))
+                if (message.extendee != null && Object.hasOwnProperty.call(message, "extendee"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.extendee);
-                if (message.number != null && message.hasOwnProperty("number"))
+                if (message.number != null && Object.hasOwnProperty.call(message, "number"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int32(message.number);
-                if (message.label != null && message.hasOwnProperty("label"))
+                if (message.label != null && Object.hasOwnProperty.call(message, "label"))
                     writer.uint32(/* id 4, wireType 0 =*/32).int32(message.label);
-                if (message.type != null && message.hasOwnProperty("type"))
+                if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                     writer.uint32(/* id 5, wireType 0 =*/40).int32(message.type);
-                if (message.typeName != null && message.hasOwnProperty("typeName"))
+                if (message.typeName != null && Object.hasOwnProperty.call(message, "typeName"))
                     writer.uint32(/* id 6, wireType 2 =*/50).string(message.typeName);
-                if (message.defaultValue != null && message.hasOwnProperty("defaultValue"))
+                if (message.defaultValue != null && Object.hasOwnProperty.call(message, "defaultValue"))
                     writer.uint32(/* id 7, wireType 2 =*/58).string(message.defaultValue);
-                if (message.options != null && message.hasOwnProperty("options"))
+                if (message.options != null && Object.hasOwnProperty.call(message, "options"))
                     $root.google.protobuf.FieldOptions.encode(message.options, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
-                if (message.oneofIndex != null && message.hasOwnProperty("oneofIndex"))
+                if (message.oneofIndex != null && Object.hasOwnProperty.call(message, "oneofIndex"))
                     writer.uint32(/* id 9, wireType 0 =*/72).int32(message.oneofIndex);
-                if (message.jsonName != null && message.hasOwnProperty("jsonName"))
+                if (message.jsonName != null && Object.hasOwnProperty.call(message, "jsonName"))
                     writer.uint32(/* id 10, wireType 2 =*/82).string(message.jsonName);
                 return writer;
             };
@@ -19560,7 +24178,7 @@ $root.google = (function() {
             /**
              * Type enum.
              * @name google.protobuf.FieldDescriptorProto.Type
-             * @enum {string}
+             * @enum {number}
              * @property {number} TYPE_DOUBLE=1 TYPE_DOUBLE value
              * @property {number} TYPE_FLOAT=2 TYPE_FLOAT value
              * @property {number} TYPE_INT64=3 TYPE_INT64 value
@@ -19606,7 +24224,7 @@ $root.google = (function() {
             /**
              * Label enum.
              * @name google.protobuf.FieldDescriptorProto.Label
-             * @enum {string}
+             * @enum {number}
              * @property {number} LABEL_OPTIONAL=1 LABEL_OPTIONAL value
              * @property {number} LABEL_REQUIRED=2 LABEL_REQUIRED value
              * @property {number} LABEL_REPEATED=3 LABEL_REPEATED value
@@ -19687,9 +24305,9 @@ $root.google = (function() {
             OneofDescriptorProto.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-                if (message.options != null && message.hasOwnProperty("options"))
+                if (message.options != null && Object.hasOwnProperty.call(message, "options"))
                     $root.google.protobuf.OneofOptions.encode(message.options, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
@@ -19912,12 +24530,12 @@ $root.google = (function() {
             EnumDescriptorProto.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
                 if (message.value != null && message.value.length)
                     for (var i = 0; i < message.value.length; ++i)
                         $root.google.protobuf.EnumValueDescriptorProto.encode(message.value[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.options != null && message.hasOwnProperty("options"))
+                if (message.options != null && Object.hasOwnProperty.call(message, "options"))
                     $root.google.protobuf.EnumOptions.encode(message.options, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
@@ -20170,11 +24788,11 @@ $root.google = (function() {
             EnumValueDescriptorProto.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-                if (message.number != null && message.hasOwnProperty("number"))
+                if (message.number != null && Object.hasOwnProperty.call(message, "number"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.number);
-                if (message.options != null && message.hasOwnProperty("options"))
+                if (message.options != null && Object.hasOwnProperty.call(message, "options"))
                     $root.google.protobuf.EnumValueOptions.encode(message.options, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
@@ -20408,12 +25026,12 @@ $root.google = (function() {
             ServiceDescriptorProto.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
                 if (message.method != null && message.method.length)
                     for (var i = 0; i < message.method.length; ++i)
                         $root.google.protobuf.MethodDescriptorProto.encode(message.method[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.options != null && message.hasOwnProperty("options"))
+                if (message.options != null && Object.hasOwnProperty.call(message, "options"))
                     $root.google.protobuf.ServiceOptions.encode(message.options, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
@@ -20693,17 +25311,17 @@ $root.google = (function() {
             MethodDescriptorProto.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-                if (message.inputType != null && message.hasOwnProperty("inputType"))
+                if (message.inputType != null && Object.hasOwnProperty.call(message, "inputType"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.inputType);
-                if (message.outputType != null && message.hasOwnProperty("outputType"))
+                if (message.outputType != null && Object.hasOwnProperty.call(message, "outputType"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.outputType);
-                if (message.options != null && message.hasOwnProperty("options"))
+                if (message.options != null && Object.hasOwnProperty.call(message, "options"))
                     $root.google.protobuf.MethodOptions.encode(message.options, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.clientStreaming != null && message.hasOwnProperty("clientStreaming"))
+                if (message.clientStreaming != null && Object.hasOwnProperty.call(message, "clientStreaming"))
                     writer.uint32(/* id 5, wireType 0 =*/40).bool(message.clientStreaming);
-                if (message.serverStreaming != null && message.hasOwnProperty("serverStreaming"))
+                if (message.serverStreaming != null && Object.hasOwnProperty.call(message, "serverStreaming"))
                     writer.uint32(/* id 6, wireType 0 =*/48).bool(message.serverStreaming);
                 return writer;
             };
@@ -21366,100 +25984,100 @@ $root.google = (function() {
             FileOptions.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.javaPackage != null && message.hasOwnProperty("javaPackage"))
+                if (message.javaPackage != null && Object.hasOwnProperty.call(message, "javaPackage"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.javaPackage);
-                if (message.javaOuterClassname != null && message.hasOwnProperty("javaOuterClassname"))
+                if (message.javaOuterClassname != null && Object.hasOwnProperty.call(message, "javaOuterClassname"))
                     writer.uint32(/* id 8, wireType 2 =*/66).string(message.javaOuterClassname);
-                if (message.optimizeFor != null && message.hasOwnProperty("optimizeFor"))
+                if (message.optimizeFor != null && Object.hasOwnProperty.call(message, "optimizeFor"))
                     writer.uint32(/* id 9, wireType 0 =*/72).int32(message.optimizeFor);
-                if (message.javaMultipleFiles != null && message.hasOwnProperty("javaMultipleFiles"))
+                if (message.javaMultipleFiles != null && Object.hasOwnProperty.call(message, "javaMultipleFiles"))
                     writer.uint32(/* id 10, wireType 0 =*/80).bool(message.javaMultipleFiles);
-                if (message.goPackage != null && message.hasOwnProperty("goPackage"))
+                if (message.goPackage != null && Object.hasOwnProperty.call(message, "goPackage"))
                     writer.uint32(/* id 11, wireType 2 =*/90).string(message.goPackage);
-                if (message.ccGenericServices != null && message.hasOwnProperty("ccGenericServices"))
+                if (message.ccGenericServices != null && Object.hasOwnProperty.call(message, "ccGenericServices"))
                     writer.uint32(/* id 16, wireType 0 =*/128).bool(message.ccGenericServices);
-                if (message.javaGenericServices != null && message.hasOwnProperty("javaGenericServices"))
+                if (message.javaGenericServices != null && Object.hasOwnProperty.call(message, "javaGenericServices"))
                     writer.uint32(/* id 17, wireType 0 =*/136).bool(message.javaGenericServices);
-                if (message.pyGenericServices != null && message.hasOwnProperty("pyGenericServices"))
+                if (message.pyGenericServices != null && Object.hasOwnProperty.call(message, "pyGenericServices"))
                     writer.uint32(/* id 18, wireType 0 =*/144).bool(message.pyGenericServices);
-                if (message.javaGenerateEqualsAndHash != null && message.hasOwnProperty("javaGenerateEqualsAndHash"))
+                if (message.javaGenerateEqualsAndHash != null && Object.hasOwnProperty.call(message, "javaGenerateEqualsAndHash"))
                     writer.uint32(/* id 20, wireType 0 =*/160).bool(message.javaGenerateEqualsAndHash);
-                if (message.deprecated != null && message.hasOwnProperty("deprecated"))
+                if (message.deprecated != null && Object.hasOwnProperty.call(message, "deprecated"))
                     writer.uint32(/* id 23, wireType 0 =*/184).bool(message.deprecated);
-                if (message.javaStringCheckUtf8 != null && message.hasOwnProperty("javaStringCheckUtf8"))
+                if (message.javaStringCheckUtf8 != null && Object.hasOwnProperty.call(message, "javaStringCheckUtf8"))
                     writer.uint32(/* id 27, wireType 0 =*/216).bool(message.javaStringCheckUtf8);
-                if (message.ccEnableArenas != null && message.hasOwnProperty("ccEnableArenas"))
+                if (message.ccEnableArenas != null && Object.hasOwnProperty.call(message, "ccEnableArenas"))
                     writer.uint32(/* id 31, wireType 0 =*/248).bool(message.ccEnableArenas);
-                if (message.objcClassPrefix != null && message.hasOwnProperty("objcClassPrefix"))
+                if (message.objcClassPrefix != null && Object.hasOwnProperty.call(message, "objcClassPrefix"))
                     writer.uint32(/* id 36, wireType 2 =*/290).string(message.objcClassPrefix);
-                if (message.csharpNamespace != null && message.hasOwnProperty("csharpNamespace"))
+                if (message.csharpNamespace != null && Object.hasOwnProperty.call(message, "csharpNamespace"))
                     writer.uint32(/* id 37, wireType 2 =*/298).string(message.csharpNamespace);
                 if (message.uninterpretedOption != null && message.uninterpretedOption.length)
                     for (var i = 0; i < message.uninterpretedOption.length; ++i)
                         $root.google.protobuf.UninterpretedOption.encode(message.uninterpretedOption[i], writer.uint32(/* id 999, wireType 2 =*/7994).fork()).ldelim();
-                if (message[".gogoproto.goprotoGettersAll"] != null && message.hasOwnProperty(".gogoproto.goprotoGettersAll"))
+                if (message[".gogoproto.goprotoGettersAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoGettersAll"))
                     writer.uint32(/* id 63001, wireType 0 =*/504008).bool(message[".gogoproto.goprotoGettersAll"]);
-                if (message[".gogoproto.goprotoEnumPrefixAll"] != null && message.hasOwnProperty(".gogoproto.goprotoEnumPrefixAll"))
+                if (message[".gogoproto.goprotoEnumPrefixAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoEnumPrefixAll"))
                     writer.uint32(/* id 63002, wireType 0 =*/504016).bool(message[".gogoproto.goprotoEnumPrefixAll"]);
-                if (message[".gogoproto.goprotoStringerAll"] != null && message.hasOwnProperty(".gogoproto.goprotoStringerAll"))
+                if (message[".gogoproto.goprotoStringerAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoStringerAll"))
                     writer.uint32(/* id 63003, wireType 0 =*/504024).bool(message[".gogoproto.goprotoStringerAll"]);
-                if (message[".gogoproto.verboseEqualAll"] != null && message.hasOwnProperty(".gogoproto.verboseEqualAll"))
+                if (message[".gogoproto.verboseEqualAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.verboseEqualAll"))
                     writer.uint32(/* id 63004, wireType 0 =*/504032).bool(message[".gogoproto.verboseEqualAll"]);
-                if (message[".gogoproto.faceAll"] != null && message.hasOwnProperty(".gogoproto.faceAll"))
+                if (message[".gogoproto.faceAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.faceAll"))
                     writer.uint32(/* id 63005, wireType 0 =*/504040).bool(message[".gogoproto.faceAll"]);
-                if (message[".gogoproto.gostringAll"] != null && message.hasOwnProperty(".gogoproto.gostringAll"))
+                if (message[".gogoproto.gostringAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.gostringAll"))
                     writer.uint32(/* id 63006, wireType 0 =*/504048).bool(message[".gogoproto.gostringAll"]);
-                if (message[".gogoproto.populateAll"] != null && message.hasOwnProperty(".gogoproto.populateAll"))
+                if (message[".gogoproto.populateAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.populateAll"))
                     writer.uint32(/* id 63007, wireType 0 =*/504056).bool(message[".gogoproto.populateAll"]);
-                if (message[".gogoproto.stringerAll"] != null && message.hasOwnProperty(".gogoproto.stringerAll"))
+                if (message[".gogoproto.stringerAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.stringerAll"))
                     writer.uint32(/* id 63008, wireType 0 =*/504064).bool(message[".gogoproto.stringerAll"]);
-                if (message[".gogoproto.onlyoneAll"] != null && message.hasOwnProperty(".gogoproto.onlyoneAll"))
+                if (message[".gogoproto.onlyoneAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.onlyoneAll"))
                     writer.uint32(/* id 63009, wireType 0 =*/504072).bool(message[".gogoproto.onlyoneAll"]);
-                if (message[".gogoproto.equalAll"] != null && message.hasOwnProperty(".gogoproto.equalAll"))
+                if (message[".gogoproto.equalAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.equalAll"))
                     writer.uint32(/* id 63013, wireType 0 =*/504104).bool(message[".gogoproto.equalAll"]);
-                if (message[".gogoproto.descriptionAll"] != null && message.hasOwnProperty(".gogoproto.descriptionAll"))
+                if (message[".gogoproto.descriptionAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.descriptionAll"))
                     writer.uint32(/* id 63014, wireType 0 =*/504112).bool(message[".gogoproto.descriptionAll"]);
-                if (message[".gogoproto.testgenAll"] != null && message.hasOwnProperty(".gogoproto.testgenAll"))
+                if (message[".gogoproto.testgenAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.testgenAll"))
                     writer.uint32(/* id 63015, wireType 0 =*/504120).bool(message[".gogoproto.testgenAll"]);
-                if (message[".gogoproto.benchgenAll"] != null && message.hasOwnProperty(".gogoproto.benchgenAll"))
+                if (message[".gogoproto.benchgenAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.benchgenAll"))
                     writer.uint32(/* id 63016, wireType 0 =*/504128).bool(message[".gogoproto.benchgenAll"]);
-                if (message[".gogoproto.marshalerAll"] != null && message.hasOwnProperty(".gogoproto.marshalerAll"))
+                if (message[".gogoproto.marshalerAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.marshalerAll"))
                     writer.uint32(/* id 63017, wireType 0 =*/504136).bool(message[".gogoproto.marshalerAll"]);
-                if (message[".gogoproto.unmarshalerAll"] != null && message.hasOwnProperty(".gogoproto.unmarshalerAll"))
+                if (message[".gogoproto.unmarshalerAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.unmarshalerAll"))
                     writer.uint32(/* id 63018, wireType 0 =*/504144).bool(message[".gogoproto.unmarshalerAll"]);
-                if (message[".gogoproto.stableMarshalerAll"] != null && message.hasOwnProperty(".gogoproto.stableMarshalerAll"))
+                if (message[".gogoproto.stableMarshalerAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.stableMarshalerAll"))
                     writer.uint32(/* id 63019, wireType 0 =*/504152).bool(message[".gogoproto.stableMarshalerAll"]);
-                if (message[".gogoproto.sizerAll"] != null && message.hasOwnProperty(".gogoproto.sizerAll"))
+                if (message[".gogoproto.sizerAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.sizerAll"))
                     writer.uint32(/* id 63020, wireType 0 =*/504160).bool(message[".gogoproto.sizerAll"]);
-                if (message[".gogoproto.goprotoEnumStringerAll"] != null && message.hasOwnProperty(".gogoproto.goprotoEnumStringerAll"))
+                if (message[".gogoproto.goprotoEnumStringerAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoEnumStringerAll"))
                     writer.uint32(/* id 63021, wireType 0 =*/504168).bool(message[".gogoproto.goprotoEnumStringerAll"]);
-                if (message[".gogoproto.enumStringerAll"] != null && message.hasOwnProperty(".gogoproto.enumStringerAll"))
+                if (message[".gogoproto.enumStringerAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.enumStringerAll"))
                     writer.uint32(/* id 63022, wireType 0 =*/504176).bool(message[".gogoproto.enumStringerAll"]);
-                if (message[".gogoproto.unsafeMarshalerAll"] != null && message.hasOwnProperty(".gogoproto.unsafeMarshalerAll"))
+                if (message[".gogoproto.unsafeMarshalerAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.unsafeMarshalerAll"))
                     writer.uint32(/* id 63023, wireType 0 =*/504184).bool(message[".gogoproto.unsafeMarshalerAll"]);
-                if (message[".gogoproto.unsafeUnmarshalerAll"] != null && message.hasOwnProperty(".gogoproto.unsafeUnmarshalerAll"))
+                if (message[".gogoproto.unsafeUnmarshalerAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.unsafeUnmarshalerAll"))
                     writer.uint32(/* id 63024, wireType 0 =*/504192).bool(message[".gogoproto.unsafeUnmarshalerAll"]);
-                if (message[".gogoproto.goprotoExtensionsMapAll"] != null && message.hasOwnProperty(".gogoproto.goprotoExtensionsMapAll"))
+                if (message[".gogoproto.goprotoExtensionsMapAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoExtensionsMapAll"))
                     writer.uint32(/* id 63025, wireType 0 =*/504200).bool(message[".gogoproto.goprotoExtensionsMapAll"]);
-                if (message[".gogoproto.goprotoUnrecognizedAll"] != null && message.hasOwnProperty(".gogoproto.goprotoUnrecognizedAll"))
+                if (message[".gogoproto.goprotoUnrecognizedAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoUnrecognizedAll"))
                     writer.uint32(/* id 63026, wireType 0 =*/504208).bool(message[".gogoproto.goprotoUnrecognizedAll"]);
-                if (message[".gogoproto.gogoprotoImport"] != null && message.hasOwnProperty(".gogoproto.gogoprotoImport"))
+                if (message[".gogoproto.gogoprotoImport"] != null && Object.hasOwnProperty.call(message, ".gogoproto.gogoprotoImport"))
                     writer.uint32(/* id 63027, wireType 0 =*/504216).bool(message[".gogoproto.gogoprotoImport"]);
-                if (message[".gogoproto.protosizerAll"] != null && message.hasOwnProperty(".gogoproto.protosizerAll"))
+                if (message[".gogoproto.protosizerAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.protosizerAll"))
                     writer.uint32(/* id 63028, wireType 0 =*/504224).bool(message[".gogoproto.protosizerAll"]);
-                if (message[".gogoproto.compareAll"] != null && message.hasOwnProperty(".gogoproto.compareAll"))
+                if (message[".gogoproto.compareAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.compareAll"))
                     writer.uint32(/* id 63029, wireType 0 =*/504232).bool(message[".gogoproto.compareAll"]);
-                if (message[".gogoproto.typedeclAll"] != null && message.hasOwnProperty(".gogoproto.typedeclAll"))
+                if (message[".gogoproto.typedeclAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.typedeclAll"))
                     writer.uint32(/* id 63030, wireType 0 =*/504240).bool(message[".gogoproto.typedeclAll"]);
-                if (message[".gogoproto.enumdeclAll"] != null && message.hasOwnProperty(".gogoproto.enumdeclAll"))
+                if (message[".gogoproto.enumdeclAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.enumdeclAll"))
                     writer.uint32(/* id 63031, wireType 0 =*/504248).bool(message[".gogoproto.enumdeclAll"]);
-                if (message[".gogoproto.goprotoRegistration"] != null && message.hasOwnProperty(".gogoproto.goprotoRegistration"))
+                if (message[".gogoproto.goprotoRegistration"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoRegistration"))
                     writer.uint32(/* id 63032, wireType 0 =*/504256).bool(message[".gogoproto.goprotoRegistration"]);
-                if (message[".gogoproto.messagenameAll"] != null && message.hasOwnProperty(".gogoproto.messagenameAll"))
+                if (message[".gogoproto.messagenameAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.messagenameAll"))
                     writer.uint32(/* id 63033, wireType 0 =*/504264).bool(message[".gogoproto.messagenameAll"]);
-                if (message[".gogoproto.goprotoSizecacheAll"] != null && message.hasOwnProperty(".gogoproto.goprotoSizecacheAll"))
+                if (message[".gogoproto.goprotoSizecacheAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoSizecacheAll"))
                     writer.uint32(/* id 63034, wireType 0 =*/504272).bool(message[".gogoproto.goprotoSizecacheAll"]);
-                if (message[".gogoproto.goprotoUnkeyedAll"] != null && message.hasOwnProperty(".gogoproto.goprotoUnkeyedAll"))
+                if (message[".gogoproto.goprotoUnkeyedAll"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoUnkeyedAll"))
                     writer.uint32(/* id 63035, wireType 0 =*/504280).bool(message[".gogoproto.goprotoUnkeyedAll"]);
                 return writer;
             };
@@ -22135,7 +26753,7 @@ $root.google = (function() {
             /**
              * OptimizeMode enum.
              * @name google.protobuf.FileOptions.OptimizeMode
-             * @enum {string}
+             * @enum {number}
              * @property {number} SPEED=1 SPEED value
              * @property {number} CODE_SIZE=2 CODE_SIZE value
              * @property {number} LITE_RUNTIME=3 LITE_RUNTIME value
@@ -22478,68 +27096,68 @@ $root.google = (function() {
             MessageOptions.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.messageSetWireFormat != null && message.hasOwnProperty("messageSetWireFormat"))
+                if (message.messageSetWireFormat != null && Object.hasOwnProperty.call(message, "messageSetWireFormat"))
                     writer.uint32(/* id 1, wireType 0 =*/8).bool(message.messageSetWireFormat);
-                if (message.noStandardDescriptorAccessor != null && message.hasOwnProperty("noStandardDescriptorAccessor"))
+                if (message.noStandardDescriptorAccessor != null && Object.hasOwnProperty.call(message, "noStandardDescriptorAccessor"))
                     writer.uint32(/* id 2, wireType 0 =*/16).bool(message.noStandardDescriptorAccessor);
-                if (message.deprecated != null && message.hasOwnProperty("deprecated"))
+                if (message.deprecated != null && Object.hasOwnProperty.call(message, "deprecated"))
                     writer.uint32(/* id 3, wireType 0 =*/24).bool(message.deprecated);
-                if (message.mapEntry != null && message.hasOwnProperty("mapEntry"))
+                if (message.mapEntry != null && Object.hasOwnProperty.call(message, "mapEntry"))
                     writer.uint32(/* id 7, wireType 0 =*/56).bool(message.mapEntry);
                 if (message.uninterpretedOption != null && message.uninterpretedOption.length)
                     for (var i = 0; i < message.uninterpretedOption.length; ++i)
                         $root.google.protobuf.UninterpretedOption.encode(message.uninterpretedOption[i], writer.uint32(/* id 999, wireType 2 =*/7994).fork()).ldelim();
-                if (message[".gogoproto.goprotoGetters"] != null && message.hasOwnProperty(".gogoproto.goprotoGetters"))
+                if (message[".gogoproto.goprotoGetters"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoGetters"))
                     writer.uint32(/* id 64001, wireType 0 =*/512008).bool(message[".gogoproto.goprotoGetters"]);
-                if (message[".gogoproto.goprotoStringer"] != null && message.hasOwnProperty(".gogoproto.goprotoStringer"))
+                if (message[".gogoproto.goprotoStringer"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoStringer"))
                     writer.uint32(/* id 64003, wireType 0 =*/512024).bool(message[".gogoproto.goprotoStringer"]);
-                if (message[".gogoproto.verboseEqual"] != null && message.hasOwnProperty(".gogoproto.verboseEqual"))
+                if (message[".gogoproto.verboseEqual"] != null && Object.hasOwnProperty.call(message, ".gogoproto.verboseEqual"))
                     writer.uint32(/* id 64004, wireType 0 =*/512032).bool(message[".gogoproto.verboseEqual"]);
-                if (message[".gogoproto.face"] != null && message.hasOwnProperty(".gogoproto.face"))
+                if (message[".gogoproto.face"] != null && Object.hasOwnProperty.call(message, ".gogoproto.face"))
                     writer.uint32(/* id 64005, wireType 0 =*/512040).bool(message[".gogoproto.face"]);
-                if (message[".gogoproto.gostring"] != null && message.hasOwnProperty(".gogoproto.gostring"))
+                if (message[".gogoproto.gostring"] != null && Object.hasOwnProperty.call(message, ".gogoproto.gostring"))
                     writer.uint32(/* id 64006, wireType 0 =*/512048).bool(message[".gogoproto.gostring"]);
-                if (message[".gogoproto.populate"] != null && message.hasOwnProperty(".gogoproto.populate"))
+                if (message[".gogoproto.populate"] != null && Object.hasOwnProperty.call(message, ".gogoproto.populate"))
                     writer.uint32(/* id 64007, wireType 0 =*/512056).bool(message[".gogoproto.populate"]);
-                if (message[".gogoproto.onlyone"] != null && message.hasOwnProperty(".gogoproto.onlyone"))
+                if (message[".gogoproto.onlyone"] != null && Object.hasOwnProperty.call(message, ".gogoproto.onlyone"))
                     writer.uint32(/* id 64009, wireType 0 =*/512072).bool(message[".gogoproto.onlyone"]);
-                if (message[".gogoproto.equal"] != null && message.hasOwnProperty(".gogoproto.equal"))
+                if (message[".gogoproto.equal"] != null && Object.hasOwnProperty.call(message, ".gogoproto.equal"))
                     writer.uint32(/* id 64013, wireType 0 =*/512104).bool(message[".gogoproto.equal"]);
-                if (message[".gogoproto.description"] != null && message.hasOwnProperty(".gogoproto.description"))
+                if (message[".gogoproto.description"] != null && Object.hasOwnProperty.call(message, ".gogoproto.description"))
                     writer.uint32(/* id 64014, wireType 0 =*/512112).bool(message[".gogoproto.description"]);
-                if (message[".gogoproto.testgen"] != null && message.hasOwnProperty(".gogoproto.testgen"))
+                if (message[".gogoproto.testgen"] != null && Object.hasOwnProperty.call(message, ".gogoproto.testgen"))
                     writer.uint32(/* id 64015, wireType 0 =*/512120).bool(message[".gogoproto.testgen"]);
-                if (message[".gogoproto.benchgen"] != null && message.hasOwnProperty(".gogoproto.benchgen"))
+                if (message[".gogoproto.benchgen"] != null && Object.hasOwnProperty.call(message, ".gogoproto.benchgen"))
                     writer.uint32(/* id 64016, wireType 0 =*/512128).bool(message[".gogoproto.benchgen"]);
-                if (message[".gogoproto.marshaler"] != null && message.hasOwnProperty(".gogoproto.marshaler"))
+                if (message[".gogoproto.marshaler"] != null && Object.hasOwnProperty.call(message, ".gogoproto.marshaler"))
                     writer.uint32(/* id 64017, wireType 0 =*/512136).bool(message[".gogoproto.marshaler"]);
-                if (message[".gogoproto.unmarshaler"] != null && message.hasOwnProperty(".gogoproto.unmarshaler"))
+                if (message[".gogoproto.unmarshaler"] != null && Object.hasOwnProperty.call(message, ".gogoproto.unmarshaler"))
                     writer.uint32(/* id 64018, wireType 0 =*/512144).bool(message[".gogoproto.unmarshaler"]);
-                if (message[".gogoproto.stableMarshaler"] != null && message.hasOwnProperty(".gogoproto.stableMarshaler"))
+                if (message[".gogoproto.stableMarshaler"] != null && Object.hasOwnProperty.call(message, ".gogoproto.stableMarshaler"))
                     writer.uint32(/* id 64019, wireType 0 =*/512152).bool(message[".gogoproto.stableMarshaler"]);
-                if (message[".gogoproto.sizer"] != null && message.hasOwnProperty(".gogoproto.sizer"))
+                if (message[".gogoproto.sizer"] != null && Object.hasOwnProperty.call(message, ".gogoproto.sizer"))
                     writer.uint32(/* id 64020, wireType 0 =*/512160).bool(message[".gogoproto.sizer"]);
-                if (message[".gogoproto.unsafeMarshaler"] != null && message.hasOwnProperty(".gogoproto.unsafeMarshaler"))
+                if (message[".gogoproto.unsafeMarshaler"] != null && Object.hasOwnProperty.call(message, ".gogoproto.unsafeMarshaler"))
                     writer.uint32(/* id 64023, wireType 0 =*/512184).bool(message[".gogoproto.unsafeMarshaler"]);
-                if (message[".gogoproto.unsafeUnmarshaler"] != null && message.hasOwnProperty(".gogoproto.unsafeUnmarshaler"))
+                if (message[".gogoproto.unsafeUnmarshaler"] != null && Object.hasOwnProperty.call(message, ".gogoproto.unsafeUnmarshaler"))
                     writer.uint32(/* id 64024, wireType 0 =*/512192).bool(message[".gogoproto.unsafeUnmarshaler"]);
-                if (message[".gogoproto.goprotoExtensionsMap"] != null && message.hasOwnProperty(".gogoproto.goprotoExtensionsMap"))
+                if (message[".gogoproto.goprotoExtensionsMap"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoExtensionsMap"))
                     writer.uint32(/* id 64025, wireType 0 =*/512200).bool(message[".gogoproto.goprotoExtensionsMap"]);
-                if (message[".gogoproto.goprotoUnrecognized"] != null && message.hasOwnProperty(".gogoproto.goprotoUnrecognized"))
+                if (message[".gogoproto.goprotoUnrecognized"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoUnrecognized"))
                     writer.uint32(/* id 64026, wireType 0 =*/512208).bool(message[".gogoproto.goprotoUnrecognized"]);
-                if (message[".gogoproto.protosizer"] != null && message.hasOwnProperty(".gogoproto.protosizer"))
+                if (message[".gogoproto.protosizer"] != null && Object.hasOwnProperty.call(message, ".gogoproto.protosizer"))
                     writer.uint32(/* id 64028, wireType 0 =*/512224).bool(message[".gogoproto.protosizer"]);
-                if (message[".gogoproto.compare"] != null && message.hasOwnProperty(".gogoproto.compare"))
+                if (message[".gogoproto.compare"] != null && Object.hasOwnProperty.call(message, ".gogoproto.compare"))
                     writer.uint32(/* id 64029, wireType 0 =*/512232).bool(message[".gogoproto.compare"]);
-                if (message[".gogoproto.typedecl"] != null && message.hasOwnProperty(".gogoproto.typedecl"))
+                if (message[".gogoproto.typedecl"] != null && Object.hasOwnProperty.call(message, ".gogoproto.typedecl"))
                     writer.uint32(/* id 64030, wireType 0 =*/512240).bool(message[".gogoproto.typedecl"]);
-                if (message[".gogoproto.messagename"] != null && message.hasOwnProperty(".gogoproto.messagename"))
+                if (message[".gogoproto.messagename"] != null && Object.hasOwnProperty.call(message, ".gogoproto.messagename"))
                     writer.uint32(/* id 64033, wireType 0 =*/512264).bool(message[".gogoproto.messagename"]);
-                if (message[".gogoproto.goprotoSizecache"] != null && message.hasOwnProperty(".gogoproto.goprotoSizecache"))
+                if (message[".gogoproto.goprotoSizecache"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoSizecache"))
                     writer.uint32(/* id 64034, wireType 0 =*/512272).bool(message[".gogoproto.goprotoSizecache"]);
-                if (message[".gogoproto.goprotoUnkeyed"] != null && message.hasOwnProperty(".gogoproto.goprotoUnkeyed"))
+                if (message[".gogoproto.goprotoUnkeyed"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoUnkeyed"))
                     writer.uint32(/* id 64035, wireType 0 =*/512280).bool(message[".gogoproto.goprotoUnkeyed"]);
-                if (message[".gogoproto.stringer"] != null && message.hasOwnProperty(".gogoproto.stringer"))
+                if (message[".gogoproto.stringer"] != null && Object.hasOwnProperty.call(message, ".gogoproto.stringer"))
                     writer.uint32(/* id 67008, wireType 0 =*/536064).bool(message[".gogoproto.stringer"]);
                 return writer;
             };
@@ -23249,46 +27867,46 @@ $root.google = (function() {
             FieldOptions.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.ctype != null && message.hasOwnProperty("ctype"))
+                if (message.ctype != null && Object.hasOwnProperty.call(message, "ctype"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.ctype);
-                if (message.packed != null && message.hasOwnProperty("packed"))
+                if (message.packed != null && Object.hasOwnProperty.call(message, "packed"))
                     writer.uint32(/* id 2, wireType 0 =*/16).bool(message.packed);
-                if (message.deprecated != null && message.hasOwnProperty("deprecated"))
+                if (message.deprecated != null && Object.hasOwnProperty.call(message, "deprecated"))
                     writer.uint32(/* id 3, wireType 0 =*/24).bool(message.deprecated);
-                if (message.lazy != null && message.hasOwnProperty("lazy"))
+                if (message.lazy != null && Object.hasOwnProperty.call(message, "lazy"))
                     writer.uint32(/* id 5, wireType 0 =*/40).bool(message.lazy);
-                if (message.jstype != null && message.hasOwnProperty("jstype"))
+                if (message.jstype != null && Object.hasOwnProperty.call(message, "jstype"))
                     writer.uint32(/* id 6, wireType 0 =*/48).int32(message.jstype);
-                if (message.weak != null && message.hasOwnProperty("weak"))
+                if (message.weak != null && Object.hasOwnProperty.call(message, "weak"))
                     writer.uint32(/* id 10, wireType 0 =*/80).bool(message.weak);
                 if (message.uninterpretedOption != null && message.uninterpretedOption.length)
                     for (var i = 0; i < message.uninterpretedOption.length; ++i)
                         $root.google.protobuf.UninterpretedOption.encode(message.uninterpretedOption[i], writer.uint32(/* id 999, wireType 2 =*/7994).fork()).ldelim();
-                if (message[".gogoproto.nullable"] != null && message.hasOwnProperty(".gogoproto.nullable"))
+                if (message[".gogoproto.nullable"] != null && Object.hasOwnProperty.call(message, ".gogoproto.nullable"))
                     writer.uint32(/* id 65001, wireType 0 =*/520008).bool(message[".gogoproto.nullable"]);
-                if (message[".gogoproto.embed"] != null && message.hasOwnProperty(".gogoproto.embed"))
+                if (message[".gogoproto.embed"] != null && Object.hasOwnProperty.call(message, ".gogoproto.embed"))
                     writer.uint32(/* id 65002, wireType 0 =*/520016).bool(message[".gogoproto.embed"]);
-                if (message[".gogoproto.customtype"] != null && message.hasOwnProperty(".gogoproto.customtype"))
+                if (message[".gogoproto.customtype"] != null && Object.hasOwnProperty.call(message, ".gogoproto.customtype"))
                     writer.uint32(/* id 65003, wireType 2 =*/520026).string(message[".gogoproto.customtype"]);
-                if (message[".gogoproto.customname"] != null && message.hasOwnProperty(".gogoproto.customname"))
+                if (message[".gogoproto.customname"] != null && Object.hasOwnProperty.call(message, ".gogoproto.customname"))
                     writer.uint32(/* id 65004, wireType 2 =*/520034).string(message[".gogoproto.customname"]);
-                if (message[".gogoproto.jsontag"] != null && message.hasOwnProperty(".gogoproto.jsontag"))
+                if (message[".gogoproto.jsontag"] != null && Object.hasOwnProperty.call(message, ".gogoproto.jsontag"))
                     writer.uint32(/* id 65005, wireType 2 =*/520042).string(message[".gogoproto.jsontag"]);
-                if (message[".gogoproto.moretags"] != null && message.hasOwnProperty(".gogoproto.moretags"))
+                if (message[".gogoproto.moretags"] != null && Object.hasOwnProperty.call(message, ".gogoproto.moretags"))
                     writer.uint32(/* id 65006, wireType 2 =*/520050).string(message[".gogoproto.moretags"]);
-                if (message[".gogoproto.casttype"] != null && message.hasOwnProperty(".gogoproto.casttype"))
+                if (message[".gogoproto.casttype"] != null && Object.hasOwnProperty.call(message, ".gogoproto.casttype"))
                     writer.uint32(/* id 65007, wireType 2 =*/520058).string(message[".gogoproto.casttype"]);
-                if (message[".gogoproto.castkey"] != null && message.hasOwnProperty(".gogoproto.castkey"))
+                if (message[".gogoproto.castkey"] != null && Object.hasOwnProperty.call(message, ".gogoproto.castkey"))
                     writer.uint32(/* id 65008, wireType 2 =*/520066).string(message[".gogoproto.castkey"]);
-                if (message[".gogoproto.castvalue"] != null && message.hasOwnProperty(".gogoproto.castvalue"))
+                if (message[".gogoproto.castvalue"] != null && Object.hasOwnProperty.call(message, ".gogoproto.castvalue"))
                     writer.uint32(/* id 65009, wireType 2 =*/520074).string(message[".gogoproto.castvalue"]);
-                if (message[".gogoproto.stdtime"] != null && message.hasOwnProperty(".gogoproto.stdtime"))
+                if (message[".gogoproto.stdtime"] != null && Object.hasOwnProperty.call(message, ".gogoproto.stdtime"))
                     writer.uint32(/* id 65010, wireType 0 =*/520080).bool(message[".gogoproto.stdtime"]);
-                if (message[".gogoproto.stdduration"] != null && message.hasOwnProperty(".gogoproto.stdduration"))
+                if (message[".gogoproto.stdduration"] != null && Object.hasOwnProperty.call(message, ".gogoproto.stdduration"))
                     writer.uint32(/* id 65011, wireType 0 =*/520088).bool(message[".gogoproto.stdduration"]);
-                if (message[".gogoproto.wktpointer"] != null && message.hasOwnProperty(".gogoproto.wktpointer"))
+                if (message[".gogoproto.wktpointer"] != null && Object.hasOwnProperty.call(message, ".gogoproto.wktpointer"))
                     writer.uint32(/* id 65012, wireType 0 =*/520096).bool(message[".gogoproto.wktpointer"]);
-                if (message[".gogoproto.castrepeated"] != null && message.hasOwnProperty(".gogoproto.castrepeated"))
+                if (message[".gogoproto.castrepeated"] != null && Object.hasOwnProperty.call(message, ".gogoproto.castrepeated"))
                     writer.uint32(/* id 65013, wireType 2 =*/520106).string(message[".gogoproto.castrepeated"]);
                 return writer;
             };
@@ -23685,7 +28303,7 @@ $root.google = (function() {
             /**
              * CType enum.
              * @name google.protobuf.FieldOptions.CType
-             * @enum {string}
+             * @enum {number}
              * @property {number} STRING=0 STRING value
              * @property {number} CORD=1 CORD value
              * @property {number} STRING_PIECE=2 STRING_PIECE value
@@ -23701,7 +28319,7 @@ $root.google = (function() {
             /**
              * JSType enum.
              * @name google.protobuf.FieldOptions.JSType
-             * @enum {string}
+             * @enum {number}
              * @property {number} JS_NORMAL=0 JS_NORMAL value
              * @property {number} JS_STRING=1 JS_STRING value
              * @property {number} JS_NUMBER=2 JS_NUMBER value
@@ -24045,22 +28663,22 @@ $root.google = (function() {
             EnumOptions.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.allowAlias != null && message.hasOwnProperty("allowAlias"))
+                if (message.allowAlias != null && Object.hasOwnProperty.call(message, "allowAlias"))
                     writer.uint32(/* id 2, wireType 0 =*/16).bool(message.allowAlias);
-                if (message.deprecated != null && message.hasOwnProperty("deprecated"))
+                if (message.deprecated != null && Object.hasOwnProperty.call(message, "deprecated"))
                     writer.uint32(/* id 3, wireType 0 =*/24).bool(message.deprecated);
                 if (message.uninterpretedOption != null && message.uninterpretedOption.length)
                     for (var i = 0; i < message.uninterpretedOption.length; ++i)
                         $root.google.protobuf.UninterpretedOption.encode(message.uninterpretedOption[i], writer.uint32(/* id 999, wireType 2 =*/7994).fork()).ldelim();
-                if (message[".gogoproto.goprotoEnumPrefix"] != null && message.hasOwnProperty(".gogoproto.goprotoEnumPrefix"))
+                if (message[".gogoproto.goprotoEnumPrefix"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoEnumPrefix"))
                     writer.uint32(/* id 62001, wireType 0 =*/496008).bool(message[".gogoproto.goprotoEnumPrefix"]);
-                if (message[".gogoproto.goprotoEnumStringer"] != null && message.hasOwnProperty(".gogoproto.goprotoEnumStringer"))
+                if (message[".gogoproto.goprotoEnumStringer"] != null && Object.hasOwnProperty.call(message, ".gogoproto.goprotoEnumStringer"))
                     writer.uint32(/* id 62021, wireType 0 =*/496168).bool(message[".gogoproto.goprotoEnumStringer"]);
-                if (message[".gogoproto.enumStringer"] != null && message.hasOwnProperty(".gogoproto.enumStringer"))
+                if (message[".gogoproto.enumStringer"] != null && Object.hasOwnProperty.call(message, ".gogoproto.enumStringer"))
                     writer.uint32(/* id 62022, wireType 0 =*/496176).bool(message[".gogoproto.enumStringer"]);
-                if (message[".gogoproto.enumCustomname"] != null && message.hasOwnProperty(".gogoproto.enumCustomname"))
+                if (message[".gogoproto.enumCustomname"] != null && Object.hasOwnProperty.call(message, ".gogoproto.enumCustomname"))
                     writer.uint32(/* id 62023, wireType 2 =*/496186).string(message[".gogoproto.enumCustomname"]);
-                if (message[".gogoproto.enumdecl"] != null && message.hasOwnProperty(".gogoproto.enumdecl"))
+                if (message[".gogoproto.enumdecl"] != null && Object.hasOwnProperty.call(message, ".gogoproto.enumdecl"))
                     writer.uint32(/* id 62024, wireType 0 =*/496192).bool(message[".gogoproto.enumdecl"]);
                 return writer;
             };
@@ -24364,12 +28982,12 @@ $root.google = (function() {
             EnumValueOptions.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.deprecated != null && message.hasOwnProperty("deprecated"))
+                if (message.deprecated != null && Object.hasOwnProperty.call(message, "deprecated"))
                     writer.uint32(/* id 1, wireType 0 =*/8).bool(message.deprecated);
                 if (message.uninterpretedOption != null && message.uninterpretedOption.length)
                     for (var i = 0; i < message.uninterpretedOption.length; ++i)
                         $root.google.protobuf.UninterpretedOption.encode(message.uninterpretedOption[i], writer.uint32(/* id 999, wireType 2 =*/7994).fork()).ldelim();
-                if (message[".gogoproto.enumvalueCustomname"] != null && message.hasOwnProperty(".gogoproto.enumvalueCustomname"))
+                if (message[".gogoproto.enumvalueCustomname"] != null && Object.hasOwnProperty.call(message, ".gogoproto.enumvalueCustomname"))
                     writer.uint32(/* id 66001, wireType 2 =*/528010).string(message[".gogoproto.enumvalueCustomname"]);
                 return writer;
             };
@@ -24609,7 +29227,7 @@ $root.google = (function() {
             ServiceOptions.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.deprecated != null && message.hasOwnProperty("deprecated"))
+                if (message.deprecated != null && Object.hasOwnProperty.call(message, "deprecated"))
                     writer.uint32(/* id 33, wireType 0 =*/264).bool(message.deprecated);
                 if (message.uninterpretedOption != null && message.uninterpretedOption.length)
                     for (var i = 0; i < message.uninterpretedOption.length; ++i)
@@ -24840,7 +29458,7 @@ $root.google = (function() {
             MethodOptions.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.deprecated != null && message.hasOwnProperty("deprecated"))
+                if (message.deprecated != null && Object.hasOwnProperty.call(message, "deprecated"))
                     writer.uint32(/* id 33, wireType 0 =*/264).bool(message.deprecated);
                 if (message.uninterpretedOption != null && message.uninterpretedOption.length)
                     for (var i = 0; i < message.uninterpretedOption.length; ++i)
@@ -25119,17 +29737,17 @@ $root.google = (function() {
                 if (message.name != null && message.name.length)
                     for (var i = 0; i < message.name.length; ++i)
                         $root.google.protobuf.UninterpretedOption.NamePart.encode(message.name[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.identifierValue != null && message.hasOwnProperty("identifierValue"))
+                if (message.identifierValue != null && Object.hasOwnProperty.call(message, "identifierValue"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.identifierValue);
-                if (message.positiveIntValue != null && message.hasOwnProperty("positiveIntValue"))
+                if (message.positiveIntValue != null && Object.hasOwnProperty.call(message, "positiveIntValue"))
                     writer.uint32(/* id 4, wireType 0 =*/32).uint64(message.positiveIntValue);
-                if (message.negativeIntValue != null && message.hasOwnProperty("negativeIntValue"))
+                if (message.negativeIntValue != null && Object.hasOwnProperty.call(message, "negativeIntValue"))
                     writer.uint32(/* id 5, wireType 0 =*/40).int64(message.negativeIntValue);
-                if (message.doubleValue != null && message.hasOwnProperty("doubleValue"))
+                if (message.doubleValue != null && Object.hasOwnProperty.call(message, "doubleValue"))
                     writer.uint32(/* id 6, wireType 1 =*/49).double(message.doubleValue);
-                if (message.stringValue != null && message.hasOwnProperty("stringValue"))
+                if (message.stringValue != null && Object.hasOwnProperty.call(message, "stringValue"))
                     writer.uint32(/* id 7, wireType 2 =*/58).bytes(message.stringValue);
-                if (message.aggregateValue != null && message.hasOwnProperty("aggregateValue"))
+                if (message.aggregateValue != null && Object.hasOwnProperty.call(message, "aggregateValue"))
                     writer.uint32(/* id 8, wireType 2 =*/66).string(message.aggregateValue);
                 return writer;
             };
@@ -25300,7 +29918,7 @@ $root.google = (function() {
                 if (object.stringValue != null)
                     if (typeof object.stringValue === "string")
                         $util.base64.decode(object.stringValue, message.stringValue = $util.newBuffer($util.base64.length(object.stringValue)), 0);
-                    else if (object.stringValue.length)
+                    else if (object.stringValue.length >= 0)
                         message.stringValue = object.stringValue;
                 if (object.aggregateValue != null)
                     message.aggregateValue = String(object.aggregateValue);
@@ -25906,9 +30524,9 @@ $root.google = (function() {
                             writer.int32(message.span[i]);
                         writer.ldelim();
                     }
-                    if (message.leadingComments != null && message.hasOwnProperty("leadingComments"))
+                    if (message.leadingComments != null && Object.hasOwnProperty.call(message, "leadingComments"))
                         writer.uint32(/* id 3, wireType 2 =*/26).string(message.leadingComments);
-                    if (message.trailingComments != null && message.hasOwnProperty("trailingComments"))
+                    if (message.trailingComments != null && Object.hasOwnProperty.call(message, "trailingComments"))
                         writer.uint32(/* id 4, wireType 2 =*/34).string(message.trailingComments);
                     if (message.leadingDetachedComments != null && message.leadingDetachedComments.length)
                         for (var i = 0; i < message.leadingDetachedComments.length; ++i)
@@ -26439,11 +31057,11 @@ $root.google = (function() {
                             writer.int32(message.path[i]);
                         writer.ldelim();
                     }
-                    if (message.sourceFile != null && message.hasOwnProperty("sourceFile"))
+                    if (message.sourceFile != null && Object.hasOwnProperty.call(message, "sourceFile"))
                         writer.uint32(/* id 2, wireType 2 =*/18).string(message.sourceFile);
-                    if (message.begin != null && message.hasOwnProperty("begin"))
+                    if (message.begin != null && Object.hasOwnProperty.call(message, "begin"))
                         writer.uint32(/* id 3, wireType 0 =*/24).int32(message.begin);
-                    if (message.end != null && message.hasOwnProperty("end"))
+                    if (message.end != null && Object.hasOwnProperty.call(message, "end"))
                         writer.uint32(/* id 4, wireType 0 =*/32).int32(message.end);
                     return writer;
                 };
@@ -26696,9 +31314,9 @@ $root.google = (function() {
             Timestamp.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.seconds != null && message.hasOwnProperty("seconds"))
+                if (message.seconds != null && Object.hasOwnProperty.call(message, "seconds"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.seconds);
-                if (message.nanos != null && message.hasOwnProperty("nanos"))
+                if (message.nanos != null && Object.hasOwnProperty.call(message, "nanos"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.nanos);
                 return writer;
             };
@@ -26920,9 +31538,9 @@ $root.google = (function() {
             Duration.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.seconds != null && message.hasOwnProperty("seconds"))
+                if (message.seconds != null && Object.hasOwnProperty.call(message, "seconds"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.seconds);
-                if (message.nanos != null && message.hasOwnProperty("nanos"))
+                if (message.nanos != null && Object.hasOwnProperty.call(message, "nanos"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.nanos);
                 return writer;
             };
