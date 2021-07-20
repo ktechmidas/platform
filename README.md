@@ -17,4 +17,4 @@ run `lerna run --scope @dashevo/dpp test` (use the package name from the respect
 
 ### Building and linking
 
-To link packages after you've made changes, you'll need to run `lerna bootstrap --ci`
+To intall modules, you need to run `lerna bootstrap --ci`. To link local modules, you need to run `lerna link`
