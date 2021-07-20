@@ -11,8 +11,10 @@ it is constructed from. A new repository can be added via
 
 ### Running scripts for a specific package withing a repository
 
-Scripts can be run for the all packages at the same time, as well as on per-package basis
+Scripts can be run for the all packages at the same time, as well as on per-package basis. To run the 
+script with the same name from all repos, run `lerna run test`. To run it for a specific package, 
+run `lerna run --scope @dashevo/dpp test` (use the package name from the respective component `package.json`)
 
 ### Building and linking
 
-To link packages after you've made changes, you'll need to run `lerna bootstrap`
+To link packages after you've made changes, you'll need to run `lerna bootstrap --ci`
