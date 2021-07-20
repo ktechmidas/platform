@@ -1,6 +1,17 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap --ci",
+    "link": "lerna link --force-local",
+    "build": "npm run link && lerna run build",
+    "configure": "./scripts/configure_dashmate.sh",
+    "start": "./packages/dashmate/bin/dashmate group:start --wait-for-readiness --verbose",
+    "stop": "./packages/dashmate/bin/dashmate group:stop",
+    "reset_data": "./scripts/configure_dashmate.sh && ./scripts/reset_data.sh",
+    "test": "lerna run test --scope platform-test-suite",
+    "build_and_test": "npm run link && lerna run build --scope dash && npm run configure && npm run start && npm run test && npm run stop"
+  },
   "devDependencies": {
     "lerna": "3.22.1"
   }
