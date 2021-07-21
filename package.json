@@ -2,17 +2,19 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "bootstrap": "lerna exec npm ci && npm run build && lerna bootstrap --hoist=grpc* --force-local --ci",
+    "clean_install": "npm ci && lerna clean && npm run bootstrap",
+    "bootstrap": "lerna exec npm ci && lerna run build",
+    "bootstrap:old": "lerna exec npm ci && npm run build && lerna bootstrap --hoist=grpc --force-local --ci && lerna run build",
     "link": "lerna link --force-local",
     "build": "npm run link && lerna run build",
     "configure": "./scripts/configure_dashmate.sh",
     "start": "./packages/dashmate/bin/dashmate group:start --wait-for-readiness --verbose",
     "stop": "./packages/dashmate/bin/dashmate group:stop",
-    "clean_data": "./scripts/clean_data.sh",
-    "setup_local": "./scripts/setup_local.sh",
-    "reset_data": "npm run clean_data && npm run configure && npm run setup_local",
-    "test": "lerna run test --scope platform-test-suite",
-    "build_and_test": "npm run build && npm run configure && npm run start && npm run test && npm run stop"
+    "data:clean": "./scripts/clean_data.sh",
+    "data:setup": "./scripts/setup_local.sh",
+    "data:reset": "npm run data:clean && npm run configure && npm run data:setup",
+    "test": "npm run start && lerna run test --scope @dashevo/platform-test-suite ; npm run stop",
+    "build_and_test": "npm run build && npm run configure && npm run test"
   },
   "devDependencies": {
     "lerna": "3.22.1"
