@@ -13,7 +13,7 @@ const Long = require('long');
 // eslint-disable-next-line import/no-unresolved
 const level = require('level-rocksdb');
 
-const Merk = require('@dashevo/merk');
+const { Merk } = require('@dashevo/merk');
 
 const LRUCache = require('lru-cache');
 const RpcClient = require('@dashevo/dashd-rpc/promise');

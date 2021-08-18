@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "dash-platform",
   "private": true,
   "scripts": {
     "setup": "npm run clean_install && npm run data:reset",
@@ -18,11 +18,10 @@
     "test:suite:configure": "./scripts/configure_test_suite.sh",
     "test:suite": "npm run start && lerna run test --scope @dashevo/platform-test-suite ; npm run stop",
     "build_and_run_test_suite": "npm run build && npm run configure && npm run test:suite",
-    "test": "npm run start && lerna run test; npm run stop"
+    "testi": "npm run start && lerna run test; npm run stop"
   },
   "devDependencies": {
-    "lerna": "3.22.1",
-    "verdaccio": "^5.1.2"
+    "lerna": "3.22.1"
   },
   "workspaces": [
     "packages/dapi",
