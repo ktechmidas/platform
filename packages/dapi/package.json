@@ -72,5 +72,11 @@
   "bugs": {
     "url": "https://github.com/dashevo/dapi/issues"
   },
-  "homepage": "https://github.com/dashevo/dapi#readme"
+  "homepage": "https://github.com/dashevo/dapi#readme",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "lib": "lib",
+    "test": "test"
+  }
 }

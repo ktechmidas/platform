@@ -15,7 +15,7 @@
     "test:unit": "mocha -r ts-node/register \"src/**/*.spec.ts\"",
     "test:functional": "npm run build && mocha --recursive tests/functional/**/*.js",
     "prepublishOnly": "npm run build",
-    "prepare": "npm run build"
+    "prepare": "npm run build:ts"
   },
   "repository": {
     "type": "git",
@@ -66,5 +66,10 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-node-externals": "^2.5.1"
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "tests"
   }
 }

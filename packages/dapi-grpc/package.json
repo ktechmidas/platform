@@ -12,16 +12,8 @@
     "test:unit": "mocha './test/unit/**/*.spec.js'"
   },
   "contributors": [
-    {
-      "name": "Ivan Shumkov",
-      "email": "shumkov@dash.org",
-      "url": "https://github.com/shumkov"
-    },
-    {
-      "name": "Anton Suprunchuk",
-      "email": "anton.suprunchuk@dash.org",
-      "url": "https://github.com/antouhou"
-    }
+    "Ivan Shumkov <shumkov@dash.org> (https://github.com/shumkov)",
+    "Anton Suprunchuk <anton.suprunchuk@dash.org> (https://github.com/antouhou)"
   ],
   "repository": {
     "type": "git",
@@ -50,5 +42,10 @@
     "mocha-sinon": "^2.1.2",
     "sinon": "^7.5.0",
     "sinon-chai": "^3.5.0"
-  }
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "author": ""
 }

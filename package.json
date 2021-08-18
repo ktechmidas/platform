@@ -5,6 +5,7 @@
     "setup": "npm run clean_install && npm run data:reset",
     "clean_install": "npm ci && lerna clean && npm run bootstrap",
     "bootstrap": "lerna exec npm ci && lerna run build",
+    "pack:all": "lerna exec -- npm publish --dry-run && lerna exec npm pack",
     "bootstrap:old": "lerna exec npm ci && npm run build && lerna bootstrap --hoist=grpc --force-local --ci && lerna run build",
     "link": "lerna link --force-local",
     "build": "npm run link && lerna run build",
@@ -16,10 +17,26 @@
     "data:reset": "npm run data:clean && npm run configure && npm run data:setup",
     "test:suite:configure": "./scripts/configure_test_suite.sh",
     "test:suite": "npm run start && lerna run test --scope @dashevo/platform-test-suite ; npm run stop",
-    "build_and_run_test_suite": "npm run build && npm run configure && npm run test",
-    "test": "lerna run test"
+    "build_and_run_test_suite": "npm run build && npm run configure && npm run test:suite",
+    "test": "npm run start && lerna run test; npm run stop"
   },
   "devDependencies": {
-    "lerna": "3.22.1"
-  }
+    "lerna": "3.22.1",
+    "verdaccio": "^5.1.2"
+  },
+  "workspaces": [
+    "packages/dapi",
+    "packages/dapi-client",
+    "packages/dapi-grpc",
+    "packages/dashmate",
+    "packages/dpns-contract",
+    "packages/drive",
+    "packages/feature-flags-contract",
+    "packages/js-abci",
+    "packages/js-dash-sdk",
+    "packages/js-dpp",
+    "packages/js-grpc-common",
+    "packages/platform-test-suite",
+    "packages/wallet-lib"
+  ]
 }

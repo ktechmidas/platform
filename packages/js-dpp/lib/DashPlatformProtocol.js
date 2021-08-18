@@ -19,6 +19,8 @@ class DashPlatformProtocol {
    * @param {JsonSchemaValidator} [options.jsonSchemaValidator]
    */
   constructor(options = {}) {
+    console.log('Keks');
+
     this.options = options;
 
     this.stateRepository = undefined;

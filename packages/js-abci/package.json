@@ -39,6 +39,7 @@
   },
   "directories": {
     "example": "example",
+    "lib": "lib",
     "test": "test"
   },
   "repository": {
