@@ -20,9 +20,13 @@ ENV npm_config_zmq_external=true
 
 WORKDIR /platform
 
-COPY package.json package-lock.json /platform/
+COPY package.json package-lock.json clean_node_modules.sh /platform/
+
+COPY replace_symlinks_with_copies.sh /platform/
 
 COPY packages/ /platform/packages/
+
+RUN ./clean_node_modules.sh
 
 RUN --mount=type=cache,target=/root/.npm --mount=type=cache,target=/root/.cache npm ci -w packages/dapi --production
 
@@ -37,8 +41,11 @@ LABEL description="DAPI Node.JS"
 # Install ZMQ shared library
 RUN apk update && apk add --no-cache zeromq-dev
 
-# Copy hoisted NPM modules
+COPY --from=node_modules /platform/replace_symlinks_with_copies.sh /replace_symlinks_with_copies.sh
+
+# Copy packages dir to create symlinks to modules available locally
 COPY --from=node_modules /platform/packages/ /packages
+# Copy hoisted NPM modules
 COPY --from=node_modules /platform/node_modules/ /node_modules
 COPY --from=node_modules /platform/package.json /package.json
 COPY --from=node_modules /platform/package-lock.json /package-lock.json
