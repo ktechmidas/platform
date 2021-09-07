@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
-CORE_PROTO_PATH="$PWD/protos/core/v0"
-CORE_CLIENTS_PATH="$PWD/clients/core/v0"
+FULL_PATH=$(realpath $0)
+DAPI_GRPC_SCRIPTS_DAPI_GRPC_DIR=$(dirname $FULL_PATH)
+DAPI_GRPC_DIR=$(dirname $DAPI_GRPC_SCRIPTS_DAPI_GRPC_DIR)
 
-PLATFORM_PROTO_PATH="$PWD/protos/platform/v0"
-PLATFORM_CLIENTS_PATH="$PWD/clients/platform/v0"
+CORE_PROTO_PATH="$DAPI_GRPC_DIR/protos/core/v0"
+CORE_CLIENTS_PATH="$DAPI_GRPC_DIR/clients/core/v0"
+
+PLATFORM_PROTO_PATH="$DAPI_GRPC_DIR/protos/platform/v0"
+PLATFORM_CLIENTS_PATH="$DAPI_GRPC_DIR/clients/platform/v0"
 
 CORE_WEB_OUT_PATH="$CORE_CLIENTS_PATH/web"
 PLATFORM_WEB_OUT_PATH="$PLATFORM_CLIENTS_PATH/web"
@@ -43,7 +47,7 @@ rm -rf "$CORE_CLIENTS_PATH/nodejs/*_pbjs.js"
 cp "$CORE_WEB_OUT_PATH/core_pb.js" "$CORE_CLIENTS_PATH/nodejs/core_protoc.js"
 
 # Generate node message classes
-$PWD/node_modules/protobufjs/bin/pbjs \
+pbjs \
   -t static-module \
   -w commonjs \
   -r core_root \
@@ -73,7 +77,7 @@ rm -rf "$PLATFORM_CLIENTS_PATH/nodejs/*_pbjs.js"
 
 cp "$PLATFORM_WEB_OUT_PATH/platform_pb.js" "$PLATFORM_CLIENTS_PATH/nodejs/platform_protoc.js"
 
-$PWD/node_modules/protobufjs/bin/pbjs \
+pbjs \
   -t static-module \
   -w commonjs \
   -r platform_root \
