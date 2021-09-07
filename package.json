@@ -2,7 +2,7 @@
   "name": "dash-platform",
   "private": true,
   "scripts": {
-    "setup": "npm ci && npm run data:clean && npm run configure",
+    "setup": "npm ci && npm run clean:data && npm run configure",
     "configure:dashmate": "./scripts/configure_dashmate.sh",
     "configure:network": "./scripts/setup_local_network.sh",
     "configure:tests": "./scripts/configure_test_suite.sh",
