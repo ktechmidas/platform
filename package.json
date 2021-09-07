@@ -2,18 +2,18 @@
   "name": "dash-platform",
   "private": true,
   "scripts": {
-    "setup": "npm run bootstrap && npm run data:reset",
-    "bootstrap": "npm ci && lerna run build",
-    "build": "lerna run build",
-    "configure": "./scripts/configure_dashmate.sh",
+    "setup": "npm ci && npm run data:clean && npm run configure",
+    "configure:dashmate": "./scripts/configure_dashmate.sh",
+    "configure:network": "./scripts/setup_local_network.sh",
+    "configure:tests": "./scripts/configure_test_suite.sh",
+    "configure": "npm run configure:dashmate && npm run configure:network && npm run configure:tests",
+    "clean:data": "./scripts/clean_data.sh",
+    "clean:build": "./clean_node_modules.sh",
+    "clean": "clean:data && clean:build",
     "start": "./packages/dashmate/bin/dashmate group:start --wait-for-readiness --verbose",
     "stop": "./packages/dashmate/bin/dashmate group:stop",
-    "data:clean": "./scripts/clean_data.sh",
-    "data:setup": "./scripts/setup_local.sh && npm run test:suite:configure",
-    "data:reset": "npm run data:clean && npm run configure && npm run data:setup",
-    "test:suite:configure": "./scripts/configure_test_suite.sh",
-    "test:suite": "npm run start && lerna run test --scope @dashevo/platform-test-suite ; npm run stop",
-    "build_and_run_test_suite": "npm run build && npm run configure && npm run test:suite"
+    "test:suite": "npm run start && npm run test --workspace=@dashevo/platform-test-suite ; npm run stop",
+    "setup_and_test": "npm run setup && npm run test:suite"
   },
   "devDependencies": {
     "lerna": "3.22.1"
