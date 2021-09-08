@@ -15,13 +15,7 @@ const webConfig =  {
     filename: 'dash.min.js',
     // fixes ReferenceError: window is not defined
     globalObject: "(typeof self !== 'undefined' ? self : this)"
-  },
-  resolve: {
-    extensions: ['.js', '.json'],
-    alias: {
-      'bn.js': path.resolve(__dirname, 'node_modules', 'bn.js')
-    }
-  },
+  }
 }
 
 module.exports = webConfig;
