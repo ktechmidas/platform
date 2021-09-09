@@ -22,8 +22,6 @@ WORKDIR /platform
 
 COPY package.json package-lock.json clean_node_modules.sh /platform/
 
-COPY replace_symlinks_with_copies.sh /platform/
-
 COPY packages/ /platform/packages/
 
 RUN ./clean_node_modules.sh
